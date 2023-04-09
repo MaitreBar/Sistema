@@ -1,0 +1,195 @@
+
+  
+  body{
+    margin: 0;
+    font-family: Poppins-Regular;
+  
+  }
+  
+  /* Este é o container da imagem  */
+  .container{
+    background-image: ;
+    height: 105vh;
+    width: 70%;
+    background-size: cover;
+    display: block;
+  }
+  .container-1{
+    background-image: ;
+    height: 105vh;
+    width: 70%;
+    background-size: cover;
+    display: block;
+  }
+  .container-inputs{
+    background-colo(250, 250, 250);
+    height: 100%;
+    width: 30%;
+    display: block;
+    margin-left: 70%;
+    margin-top:-50% ;
+  }
+  
+  .container-inputs h1{
+    display: block;
+    font-family: Poppins-Bold;
+    font-size: 39px;
+    color: #333;
+    line-height: 1.2;
+    text-align: left;
+    margin-left: 50px;
+  }
+  
+  .container-inputs p{
+    font-family: Poppins-SemiBold;
+    font-size: 18px;
+    color: #999;
+    line-height: 1.2;
+    padding-left: 2px;
+    margin-left: 50px;
+  }
+   
+  .single-input{
+    margin-top: -20px;
+    position: relative;
+    margin: 30px 0;
+  }
+  .single-input label{
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    color: rgb(32, 32, 32);
+    cursor: text;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .inputs{
+    margin-top: -30px;
+    margin-left: 10%;
+    width: 70%;
+    height: 50px;
+    padding: 5px;
+    border: 0;
+    border: 0;
+    font-family: Poppins-Regular;
+    font-size: 22px;
+    background-color: transparent;
+    border-bottom: 2px solid rgb(185, 179, 179);
+    outline: 0;
+    font-size: 16px;
+    color: rgb(80,80,80);
+    transition: 0.5s ease-in-out;
+  }
+  
+  .inputs:focus,
+  .inputs:valid{
+    border-bottom: 2px solid cornflowerblue;
+  }
+  .inputs:focus ~ label,
+  .inputs:valid ~ label{
+    transform: translateY(-24px);
+    font-size: 12px;
+    color: cornflowerblue;
+  }
+  .msg-baixo{
+    margin-left: 60px;
+  }
+  .msg-baixo a{
+    color: rgb(5, 5, 5);
+    text-decoration: none;
+    font-family: 'Work Sans';
+    font-weight: 700;
+  
+  }
+  
+  .button-28 {
+    margin-top: 4%;
+    margin-left: 30%;
+    appearance: none;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    min-width: 0;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 35%;
+    height: 50px;
+    will-change: transform;
+  }
+  
+  .button-28:disabled {
+    pointer-events: none;
+  }
+  
+  .button-28:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .button-28:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+  :root {
+    --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+  }
+  
+  select {
+    /* Reset Select */
+    margin-left: 30px;
+    appearance: none;
+    outline: 0;
+    border: 1px solid #000000;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color:  #818181;
+    background-color: #ffffff;
+    background-image: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select wrapper */
+  .select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+    background-color: rgb(185, 179, 179);
+    transition: .25s all ease;
+    pointer-events: none;
+    border:1px solid;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #000000;
+  }
