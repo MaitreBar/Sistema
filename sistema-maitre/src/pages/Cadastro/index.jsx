@@ -4,7 +4,7 @@ function Cadastro() {
     return (
         <div>
 
-            <div className='cadastrese'>
+            <div className='inputs'>
             
             <div className='inputs'>
                     <p> inputs here</p>
