@@ -17,7 +17,7 @@ function AreaLogin() {
         <br></br>
         <span className="subtitulo">
           É sua primeira vez por aqui? <br></br>
-          <a href="cadastro.html">Crie uma conta</a>
+          <a href="../../Cadastro">Crie uma conta</a>
         </span>
       </div>
     </div>
