@@ -1,17 +1,16 @@
 import "./style.css";
-
-import ImagemLateral from "./ImagemLateralCadastro";
-import AreaLogin from "./areaCadastro";
+import AreaCadastro from "./areaCadastro";
 import Navbar from "../navbar";
+import Background from "../Background";
 
-function Login() {
+function Cadastro() {
     return (
       <div>
-        <div className="cadastrese"><AreaLogin /></div>
+        <div className="background"><Background/></div>
         <div className="navbar"><Navbar /></div>
-        <div className="banner"><ImagemLateral /></div>
+        <div className="areaCadastro"><AreaCadastro/></div>
       </div>
     );
 }
 
-export default Login;
+export default Cadastro;

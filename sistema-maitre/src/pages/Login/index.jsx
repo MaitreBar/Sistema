@@ -1,30 +1,17 @@
 import "./style.css";
-
-import ImagemLateral from "./imagemLateralLogin";
 import AreaLogin from "./areaLogin";
 import Navbar from "../navbar";
+import Background from "../Background";
 
 function Login() {
     return (
       <div>
-        <div className="cadastrese"><AreaLogin /></div>
+        
+        <div className="background"><Background/></div>
         <div className="navbar"><Navbar /></div>
-        <div className="banner"><ImagemLateral /></div>
+        <div className="areaLogin"><AreaLogin/></div>
       </div>
     );
-
-//   return (
-//     <div>
-//       <div className="cadastrese">
-//         <div className="inputs">
-//           <p> inputs here</p>
-//         </div>
-//       </div>
-//       <div className="banner">
-//         <p>foto</p>
-//       </div>
-//     </div>
-//   );
 }
 
 export default Login;
