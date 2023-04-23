@@ -1,5 +1,5 @@
 import "./style.css";
-import AreaCadastro from "./areaCadastro";
+import AreaCadastro from "./areaLogin";
 import Navbar from "../navbar";
 import backgroundImg from '../../assets/backgrounds/backgroundCadLog.png';
 
