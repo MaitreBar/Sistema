@@ -1,14 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+.body{ 
+  width: 100%;
+  height: 100vh;
+  background-image: url('../../assets/backgrounds/backgroundCadLog.png');
+}
+
 * {
   margin: 0;
   padding: 0;
 }
+
 
 .botoes a {
   color: #fff;
   text-decoration: none;
   margin-left: 1%;
   cursor: pointer;
-  font-family: Arial, sans-serif;
+  font-family: 'Old Standard TT', serif;
 }
 
 .fundo{
@@ -24,26 +34,40 @@
 }
 
 .titulos {
+  font-family: 'Old Standard TT', serif;
   color: #000;
   text-transform: none;
   font-size: 35px;
-  margin-left: 3vw;
   margin-bottom: -5vh;
   font-weight: bold;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.subtitulo a {
+.subtitulo1 a {
+  color: #587370;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left:3px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.subtitulo2 a {
   color: #587370;
   font-weight: bold;
   text-decoration: none;
   margin-left: 1%;
-  font-family: Arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
+.ou{
+  margin-left: 3px;
+}
 
 .inputs-cadastro {
+  margin-bottom: 8%;
   cursor: inherit;
-  margin-bottom: 2%;
   margin-left: 30%;
   justify-content: center;
   align-items: center;
@@ -51,12 +75,13 @@
   position: absolute;
   bottom: 10px;
   width: 40%;
-  height: 80%;
+  height: 60%;
   border-radius: 10px;
   background-color: #BBAAA1;
 }
 
 .campoTextoCadastro {
+  font-family: 'Quicksand', sans-serif;
   width: 20vw;
   text-transform: none;
   height: 35px;
@@ -73,22 +98,31 @@
   border-radius: 5px;
 }
 
-.subtitulo {
-  font-family: Arial, sans-serif;
+.subtitulo1 {
+  font-family: 'Quicksand', sans-serif;
+  margin-left: 2vw;
+  text-transform: none;
+  text-align: center;
+  display: flex;
+}
+
+.subtitulo2 {
+  font-family: 'Quicksand', sans-serif;
   margin-left: 4vw;
   text-transform: none;
-  margin-top: 13% ;
   text-align: center;
   display: flex;
 }
 
 .button-28 {
+
+  font-family: 'Quicksand', sans-serif;
+  margin-right: 110px;
   appearance: none;
   border: 0;
   text-transform: none;
   border-radius: 5px;
   color: #fff;
-  margin-left: 3.5vw;
   background-color: #587370;
   cursor: pointer;
   display: inline-block;
@@ -126,19 +160,28 @@
 
 .banner {
   width: 60%;
-  height: 100vh;
-  background-color: blue;
-  align-items: center;
-  justify-content: center;
+  height: 100
 }
 
-.cadastrese {
-  width: 40%;
-  height: 100vh;
-  background-color: white;
-  position: absolute;
-  margin-left: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media screen and (max-width: 768px) {
+  .titulos {
+    font-size: 25px;
+  }
+
+  .inputs-cadastro {
+    margin-left: 5%;
+    width: 90%;
+    height: 60%;
+  }
+
+  .campoTextoCadastro {
+    width: 80%;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .button-28 {
+    width: 90%;
+    height: 40px;
+  }
 }

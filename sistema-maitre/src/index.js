@@ -9,7 +9,7 @@ import Login from './pages/Login';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Cadastro/>
+    <Login/>
   </React.StrictMode>
 );
 

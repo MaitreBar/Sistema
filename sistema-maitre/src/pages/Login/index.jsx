@@ -1,15 +1,14 @@
 import "./style.css";
-import AreaLogin from "./areaLogin";
+import AreaCadastro from "./areaCadastro";
 import Navbar from "../navbar";
-import Background from "../Background";
+import backgroundImg from '../../assets/backgrounds/backgroundCadLog.png';
 
 function Login() {
     return (
       <div>
-        
-        <div className="background"><Background/></div>
         <div className="navbar"><Navbar /></div>
-        <div className="areaLogin"><AreaLogin/></div>
+        <div className="areaCadastro"><AreaCadastro/></div> 
+        
       </div>
     );
 }

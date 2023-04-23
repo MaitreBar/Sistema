@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
 .navbar{
     position: fixed;
     width: 100%;
@@ -24,7 +27,7 @@ a{
   color: #fff;
   text-decoration: none;
   margin-left: 1%;
-  font-family: Arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .nome{
@@ -32,8 +35,10 @@ a{
   margin-left: 1vw;
   margin-top: 4.5vh;
   color: #526D6D;
+  font-family: 'Old Standard TT', serif;
 }
 #botoes {
+  font-family: 'Old Standard TT', serif;
   margin-left: 65%;
   align-items: center;
   text-decoration: none;
@@ -51,7 +56,7 @@ a{
     color: #FFF;
     cursor: pointer;
     display: inline-block;
-    font-family: Arial, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 16px;
     font-weight: 600;
     line-height: normal;
