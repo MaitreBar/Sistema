@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
-.body{ 
+.bg{ 
   width: 100%;
   height: 100vh;
   background-image: url('../../assets/backgrounds/backgroundCadLog.png');
@@ -33,12 +30,12 @@
   height: 100vh;
 }
 
-.titulos {
+.titulos-cad{
   font-family: 'Old Standard TT', serif;
   color: #000;
   text-transform: none;
   font-size: 35px;
-  margin-bottom: -5vh;
+  margin-bottom: 2vh;
   font-weight: bold;
   text-align: center;
   margin-left: auto;
@@ -65,19 +62,23 @@
   margin-left: 3px;
 }
 
-.inputs-cadastro {
-  margin-bottom: 8%;
+.input-cadastro {
+  padding-top: 210px;
+  padding-bottom: 10px;
+  max-height: 80%;
+  margin-top: 10%;
   cursor: inherit;
   margin-left: 30%;
   justify-content: center;
   align-items: center;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   position: absolute;
-  bottom: 10px;
   width: 40%;
-  height: 60%;
+  height: 50%;
   border-radius: 10px;
   background-color: #BBAAA1;
+  overflow-y: scroll;
 }
 
 .campoTextoCadastro {
@@ -161,27 +162,4 @@
 .banner {
   width: 60%;
   height: 100
-}
-
-@media screen and (max-width: 768px) {
-  .titulos {
-    font-size: 25px;
-  }
-
-  .inputs-cadastro {
-    margin-left: 5%;
-    width: 90%;
-    height: 60%;
-  }
-
-  .campoTextoCadastro {
-    width: 80%;
-    height: 30px;
-    font-size: 18px;
-  }
-
-  .button-28 {
-    width: 90%;
-    height: 40px;
-  }
 }

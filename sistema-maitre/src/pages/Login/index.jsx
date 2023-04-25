@@ -1,4 +1,4 @@
-import "./style.css";
+import "./styleLogin.css";
 import AreaCadastro from "./areaLogin";
 import Navbar from "../navbar";
 import backgroundImg from '../../assets/backgrounds/backgroundCadLog.png';
