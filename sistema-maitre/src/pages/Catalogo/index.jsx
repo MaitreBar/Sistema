@@ -44,6 +44,7 @@ function Catalogo() {
                         <span className='negrito'>Faixa de Preço</span>
                         <p>de 100R$ a 300R$</p>
                     </div>
+                    <span className='tags'> Bebidas não alcoólicas</span>
                 </div>
 
                 <div className="content">
@@ -56,6 +57,7 @@ function Catalogo() {
                         <span className='negrito'>Faixa de Preço</span>
                         <p>de 100R$ a 300R$</p>
                     </div>
+                    <span className='tags'> Bebidas não alcoólicas</span>
                 </div>
 
                 <div className="content">
@@ -68,6 +70,7 @@ function Catalogo() {
                         <span className='negrito'>Faixa de Preço</span>
                         <p>de 100R$ a 300R$</p>
                     </div>
+                    <span className='tags'> Bebidas não alcoólicas</span>
                 </div>
 
                 <div className="content">
@@ -80,6 +83,7 @@ function Catalogo() {
                         <span className='negrito'>Faixa de Preço</span>
                         <p>de 100R$ a 300R$</p>
                     </div>
+                    <span className='tags'> Bebidas não alcoólicas</span>
                 </div>
 
                 <div className="content">
@@ -92,6 +96,7 @@ function Catalogo() {
                         <span className='negrito'>Faixa de Preço</span>
                         <p>de 100R$ a 300R$</p>
                     </div>
+                    <span className='tags'> Bebidas não alcoólicas</span>
                 </div>
 
                 <div className="content">
@@ -104,6 +109,7 @@ function Catalogo() {
                         <span className='negrito'>Faixa de Preço</span>
                         <p>de 100R$ a 300R$</p>
                     </div>
+                    <span className='tags'> Bebidas não alcoólicas</span>
                 </div>
 
                 <div className="content">
@@ -116,6 +122,7 @@ function Catalogo() {
                         <span className='negrito'>Faixa de Preço</span>
                         <p>de 100R$ a 300R$</p>
                     </div>
+                    <span className='tags'> Bebidas não alcoólicas</span>
                 </div>
 
                 <div className="content">
@@ -128,8 +135,6 @@ function Catalogo() {
                         <span className='negrito'>Faixa de Preço</span>
                         <p>de 100R$ a 300R$</p>
                     </div>
-                    <span className='tags'>Petiscos</span>
-                    <span className='tags'> Forró </span>
                     <span className='tags'> Bebidas não alcoólicas</span>
                 </div>
 

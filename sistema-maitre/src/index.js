@@ -6,11 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import Cadastro from './pages/Cadastro';
 import Login from './pages/Login';
 import Catalogo from './pages/Catalogo';
+import CadastroEstabelecimento from './pages/cadastroEstabelecimento';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Login/>
+    {/* <Catalogo/> */}
+    {/* <Cadastro/> */}
+    {/* <Login/> */}
+    <CadastroEstabelecimento/>
   </React.StrictMode>
 );
 
