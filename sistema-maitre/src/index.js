@@ -11,10 +11,10 @@ import CadastroEstabelecimento from './pages/cadastroEstabelecimento';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <Catalogo/> */}
+    {/* <Catalogo/>  */}
     {/* <Cadastro/> */}
-    {/* <Login/> */}
-    <CadastroEstabelecimento/>
+    {/* <Login/>  */}
+    {/* <CadastroEstabelecimento/> */}
   </React.StrictMode>
 );
 

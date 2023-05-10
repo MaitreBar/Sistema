@@ -1,4 +1,4 @@
-
+import "./styleLogin.css";
 function AreaCadastro() {
   return (
     <div className="body">

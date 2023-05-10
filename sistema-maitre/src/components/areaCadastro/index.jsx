@@ -1,3 +1,4 @@
+import "./styleCadastro.css";
 
 function AreaCadastro() {
   return (

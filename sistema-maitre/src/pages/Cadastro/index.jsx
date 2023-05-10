@@ -1,6 +1,6 @@
-import "./styleCadastro.css";
-import AreaCadastro from "./areaCadastro";
-import Navbar from "../navbar";
+
+import AreaCadastro from "../../components/areaCadastro";
+import Navbar from "../../components/navbar";
 
 function Cadastro() {
     return (

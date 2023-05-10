@@ -1,7 +1,6 @@
-import "./styleLogin.css";
-import AreaCadastro from "./areaLogin";
-import Navbar from "../navbar";
-import backgroundImg from '../../assets/backgrounds/backgroundCadLog.png';
+
+import AreaCadastro from "../../components/areaLogin";
+import Navbar from "../../components/navbar";
 
 function Login() {
     return (
