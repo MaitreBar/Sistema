@@ -9,13 +9,13 @@ function CadastroFaseDois() {
         <span className="subtitulo0"> 2 - 4 </span>
           <br></br>
           <br></br>
-          <input className="campoTextoCadastro" type="text" placeholder="Logradouro"></input>
+          <input className="campoTextoCadastro-cadastro" type="text" placeholder="Logradouro"></input>
           <br className="broken"></br>
-          <input className="campoTextoCadastro" type="text" placeholder="Número"></input>
+          <input className="campoTextoCadastro-cadastro" type="text" placeholder="Número"></input>
           <br className="broken"></br>
-          <input className="campoTextoCadastro" type="text" placeholder="Complemento"></input>
+          <input className="campoTextoCadastro-cadastro" type="text" placeholder="Complemento"></input>
           <br className="broken"></br>
-          <input className="campoTextoCadastro" type="text" placeholder="Telefone"></input>
+          <input className="campoTextoCadastro-cadastro" type="text" placeholder="Telefone"></input>
           <br className="broken"></br>
           <button className="button-28">Proximo</button>
           <br></br>

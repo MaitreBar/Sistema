@@ -9,9 +9,9 @@ function CadastroFaseUm() {
           <span className="subtitulo0"> 1 - 4 </span>
           <br></br>
           <br></br>
-          <input className="campoTextoCadastro" type="text" placeholder="Nome"></input>
+          <input className="campoTextoCadastro-cadastro" type="text" placeholder="Nome"></input>
           <br className="broken"></br>
-          <input className="campoTextoCadastro" type="text" placeholder="Senha"></input>
+          <input className="campoTextoCadastro-cadastro" type="text" placeholder="Senha"></input>
           <br className="broken"></br>
          
           <div className="imagem">
