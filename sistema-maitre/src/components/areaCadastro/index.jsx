@@ -19,22 +19,29 @@ function AreaCadastro() {
   function cadastrar() {
     if (inputSenha === inputRepetirSenha) {
       const novoCadastro = {
-        nome: inputNomeCompleto,
-        email: inputEmail,
-        cpf: inputCPF,
-        dtNasc: inputDataDeNascimento,
-        rg: inputRG,
-        senha: inputSenha,
-        tipoComida: inputTipoComida,
-        tipoBebida: inputTipoBebida,
-        tipoMusica: inputTipoMusica
+        'nome': inputNomeCompleto,
+        'email': inputEmail,
+        'cpf': inputCPF,
+        'dtNasc': inputDataDeNascimento,
+        'rg': inputRG,
+        'senha': inputSenha,
+        'tipoComida': inputTipoComida,
+        'tipoBebida': inputTipoBebida,
+        'tipoMusica': inputTipoMusica,
       };
-      console.log("deu certin, mandando pra api");
-      api.post("/usuarios", novoCadastro).then((response) => console.log(response).catch((err) => console.error(err)));
+      console.log("Entrando no POST");
+      api.post(`/usuarios`, novoCadastro).then((response) => {
+        console.log("Enviando os dados para a API")
+        console.log(response)
+        console.log("API recebeu os dados corretamente");
       console.log("Novo cadastro:", novoCadastro);
+      })    
+        .catch((err) => {
+          console.error(err)
+        });
     } else {
       // cesar crie uma mensagem de erro ou div sei lá tu se vira sz assinado: Lando
-      console.log("senhas incorretas");
+      console.log("Senhas incorretas");
     }
   }
 
@@ -131,7 +138,9 @@ function AreaCadastro() {
             placeholder="Insira seu tipo de música favorito"
           ></input>
           <br className="broken"></br>
-          <button onClick={cadastrar} className="button-28">Cadastrar</button>
+          <button onClick={cadastrar} className="button-28">
+            Cadastrar
+          </button>
           <br></br>
         </div>
       </div>

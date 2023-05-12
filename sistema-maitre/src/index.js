@@ -12,9 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <Catalogo/>  */}
-    {/* <Cadastro/> */}
+    <Cadastro/>
     {/* <Login/>  */}
-    <CadastroEstabelecimento/>
+    {/* <CadastroEstabelecimento/> */}
   </React.StrictMode>
 );
 
