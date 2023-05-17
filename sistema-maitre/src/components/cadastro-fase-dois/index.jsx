@@ -17,7 +17,7 @@ function CadastroFaseDois() {
           <br className="broken"></br>
           <input className="campoTextoCadastro-cadastro" type="text" placeholder="Telefone"></input>
           <br className="broken"></br>
-          <button className="button-28">Proximo</button>
+          <button className="button-28" >Proximo</button>
           <br></br>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import "./styleCadastro.css";
+import { Link } from 'react-router-dom';
 
 import api from "../../api";
 import { useState } from "react";

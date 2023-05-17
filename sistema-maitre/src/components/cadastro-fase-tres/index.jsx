@@ -58,7 +58,7 @@ function CadastroFaseTres() {
           <br className="broken"></br>
 
           <br></br>
-          <button className="button-28">Proximo</button>
+          <button className="button-28" >Proximo</button>
           <br></br>
         </div>
       </div>

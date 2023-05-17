@@ -3,19 +3,15 @@ import ReactDOM from 'react-dom/client';
 
 
 import reportWebVitals from './reportWebVitals';
-import Cadastro from './pages/Cadastro';
-import Login from './pages/Login';
-import Catalogo from './pages/Catalogo';
-import CadastroEstabelecimento from './pages/cadastroEstabelecimento';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    {/* <Catalogo/>  */}
-    <Cadastro/>
-    {/* <Login/>  */}
-    {/* <CadastroEstabelecimento/> */}
-  </React.StrictMode>
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
