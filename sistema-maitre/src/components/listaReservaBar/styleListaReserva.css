@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+.body {
+  width: 100%;
+  height: 100vh;
+  background-color: #526D6D;
+}
+
+a {
+  cursor: pointer;
+}
+
+.filtrar-clientes a:hover {
+  color: #587370;
+  font-size: 15px;
+  background-color: #ffffff7f;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+
+.container-lista {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #6E5D54;
+  border-radius: 10px;
+  width: 91%;
+  height: 700px;
+  /* Definir uma altura fixa */
+  position: fixed;
+  top: 56.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title-head-lista {
+  position: fixed;
+  margin-bottom: 550px;
+  color: #FFF;
+  font-family: 'Old Standard TT', serif;
+}
+
+.filtrar-clientes {
+  margin-top: -27%;
+  width: 100%;
+  height: 8vh;
+}
+
+.spn-filtrar-clientes {
+  margin-left: 22vw;
+}
+
+.click-alfabeto {
+  margin-top: 6vh;
+  margin-left: 22vw;
+}
+
+.button-nova-reserva {
+  margin-bottom: 450px;
+  position: fixed;
+}
+
+.button-reserva {
+  font-family: 'Quicksand', sans-serif;
+  margin-left: 1100px;
+  margin-top: 15px;
+  appearance: none;
+  border: 0;
+  text-transform: none;
+  border-radius: 5px;
+  color: #FFF;
+  background-color: #587370;
+  cursor: pointer;
+  display: inline-block;
+  /* adicionado */
+  font-size: 16px;
+  min-width: 0;
+  outline: none;
+  text-align: center;
+  text-transform: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  height: 50px;
+  will-change: transform;
+}
+
+.button-reserva:disabled {
+  pointer-events: none;
+}
+
+.button-reserva:hover {
+  color: #587370;
+  background-color: #FFF;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-reserva:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+
+.div-do-fundo-maximo-para-as-reservas {
+  margin-top: 190px;
+  width: 100%;
+  height: 510px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  overflow-y: scroll;
+}
+
+.container-reserva {
+  margin-left: 80px;
+  background-color: #BBAAA1;
+  border-radius: 5px;
+  width: 90%;
+  height: 180px;
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+
+.dia-reserva {
+  margin-left: 60px;
+}
+
+.nome-reserva {
+  margin-left: 60px;
+  margin-top: 80px;
+}
+
+.horario-reserva {
+  margin-left: 400px;
+  margin-top: -120px;
+}
+
+.mesa-reserva {
+  margin-left: 800px;
+  margin-top: -20px;
+}
+
+.Quantidade-reserva {
+  margin-left: 1160px;
+  margin-top: -20px;
+}
+
+.button-checkout-reserva {
+  margin-top: -3.6%;
+}
+
+.button-checkin {
+  font-family: 'Quicksand', sans-serif;
+  margin-left: 53vw;
+  margin-top: 70px;
+  appearance: none;
+  border: 0;
+  text-transform: none;
+  border-radius: 5px;
+  color: #FFF;
+  background-color: #587370;
+  cursor: pointer;
+  display: inline-block;
+  /* adicionado */
+  font-size: 16px;
+  min-width: 0;
+  outline: none;
+  text-align: center;
+  text-transform: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  height: 50px;
+  will-change: transform;
+}
+
+.button-checkin:disabled {
+  pointer-events: none;
+}
+
+.button-checkin:hover {
+  color: #587370;
+  background-color: #FFF;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-checkin:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.button-checkout {
+  font-family: 'Quicksand', sans-serif;
+  margin-left: 1135px;
+  appearance: none;
+  border: 0;
+  text-transform: none;
+  border-radius: 5px;
+  color: #FFF;
+  background-color: #587370;
+  cursor: pointer;
+  display: inline-block;
+  /* adicionado */
+  font-size: 16px;
+  min-width: 0;
+  outline: none;
+  text-align: center;
+  text-transform: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  height: 50px;
+  will-change: transform;
+}
+
+.button-checkout:disabled {
+  pointer-events: none;
+}
+
+.button-checkout:hover {
+  color: #587370;
+  background-color: #FFF;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.button-checkout:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
