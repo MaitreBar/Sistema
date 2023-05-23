@@ -1,7 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import imagem from '../../assets/logo/maitre.png';
 import './style.css';
 
 function Navbar() {
+
+  const navigate = useNavigate();
+
   return (
     <div className='navbar'>
         <img id="logo" src={imagem} alt=""></img>
@@ -9,11 +13,11 @@ function Navbar() {
       <div id="botoes">
         <span>
           {" "}
-          <a href="">Inicio</a>
+          <a onClick={() => navigate("/")}>Inicio</a>
         </span>
         <span className="botaoSpan">
           {" "}
-          <a href="">Entrar</a>
+          <a onClick={() => navigate("/login")}>Entrar</a>
         </span>
       </div>
     </div>
