@@ -1,5 +1,4 @@
 import {
-    BrowserRouter,
     Routes,
     Route
 } from "react-router-dom"
@@ -15,12 +14,12 @@ function Routers () {
     return (
             <Routes>
                 <Route path="/" element={Catalogo()} />
-                <Route path="/cadastrar" element={Cadastro()} />
+                <Route path="/cadastro" element={Cadastro()} />
                 <Route path="/login" element={Login()} />    
                 <Route path="/cadastroEstabelecimento1" element={CadastroEstabelecimento1()} />
                 <Route path="/cadastroEstabelecimento2" element={CadastroEstabelecimento2()} />
                 <Route path="/cadastroEstabelecimento3" element={CadastroEstabelecimento3()} />
-                <Route path="cadastroEstabelecimento4" element={CadastroEstabelecimento4()} />
+                <Route path="/cadastroEstabelecimento4" element={CadastroEstabelecimento4()} />
             </Routes>
          );
 }

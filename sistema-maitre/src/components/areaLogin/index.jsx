@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 
 function AreaLogin() {
+  
   const navigate = useNavigate();
   
   return (
@@ -11,7 +12,7 @@ function AreaLogin() {
         <h2 className="titulos">LOGIN</h2>
         <div className="textos">
           <span className="subtitulo2">
-            Não possui cadastro? <a>cadastre-se</a>
+            Não possui cadastro? <a onClick={() => navigate("/cadastro")}>cadastre-se</a>
           </span>
           <br></br>
           <input className="campoTextoCadastro" type="text" placeholder="Digite o seu email"></input>

@@ -1,5 +1,5 @@
 import "./styleCadastro.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import api from "../../api";
 import { useState } from "react";
@@ -17,18 +17,19 @@ function AreaCadastro() {
   const [inputTipoComida, setInputTipoComida] = useState();
   const [inputTipoMusica, setInputTipoMusica] = useState();
 
+  const navigate = useNavigate();
+
   function cadastrar() {
     if (inputSenha === inputRepetirSenha) {
       const novoCadastro = {
         'nome': inputNomeCompleto,
         'email': inputEmail,
         'cpf': inputCPF,
+        'celular': inputCelular,
         'dtNasc': inputDataDeNascimento,
         'rg': inputRG,
         'senha': inputSenha,
-        'tipoComida': inputTipoComida,
-        'tipoBebida': inputTipoBebida,
-        'tipoMusica': inputTipoMusica,
+        'tags': [inputTipoBebida, inputTipoComida, inputTipoMusica]
       };
       console.log("Entrando no POST");
       api.post(`/usuarios`, novoCadastro).then((response) => {
@@ -36,6 +37,7 @@ function AreaCadastro() {
         console.log(response)
         console.log("API recebeu os dados corretamente");
       console.log("Novo cadastro:", novoCadastro);
+      navigate("/login");
       })    
         .catch((err) => {
           console.error(err)
@@ -54,12 +56,12 @@ function AreaCadastro() {
           <span className="subtitulo1">
             {" "}
             Estabelecimento<br></br>
-            <a href="../../Cadastro">Login</a> <p className="ou">ou</p>{" "}
-            <a href="../../Cadastro"> Cadastre - se</a>
+            <a onClick={() => navigate("/login")}>Login</a> <p className="ou">ou</p>{" "}
+            <a onClick={() => navigate("/cadastroEstabelecimento1")}> Cadastre - se</a>
           </span>
           <br></br>
           <span className="subtitulo2">
-            Ja possui cadastro? <a href="../../Cadastro"> Fazer login</a>
+            Ja possui cadastro? <a onClick={() => navigate("/login")}> Fazer login</a>
           </span>
           <br></br>
           <input
