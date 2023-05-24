@@ -14,12 +14,14 @@ import Catalogo from "./pages/Catalogo";
 import ListaReservaBarPages from "./pages/ListaReserva/listaReservaBar";
 import TelaReservaUm from "./pages/Reserva/reserva-um";
 import TelaReservaDois from "./pages/Reserva/reserva-dois";
+import SiteInstitucional from "./pages/siteInstitucional";
 
 
 function Routers() {
     return (
         <Routes>
-            <Route path="/" element={Catalogo()} />
+            <Route path="/" element={SiteInstitucional()} />
+            <Route path="/catalogo" element={Catalogo()} />
             <Route path="/cadastro" element={Cadastro()} />
             <Route path="/login" element={Login()} />
             <Route path="/cadastroEstabelecimento1" element={CadastroEstabelecimento1()} />

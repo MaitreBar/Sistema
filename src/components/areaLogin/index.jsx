@@ -17,7 +17,7 @@ function AreaLogin() {
     .then((response)=>{
       console.log(response);
       console.log("Logado com sucesso");
-      navigate("/")
+      navigate("/catalogo")
     }).catch((err) => {
         console.error(err)
     });
