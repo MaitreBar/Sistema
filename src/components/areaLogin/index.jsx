@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 import api from "../../api"
 import { useState } from "react";
-import Login from "../../pages/Login";
 
 function AreaLogin() {
   

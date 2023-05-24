@@ -1,5 +1,5 @@
 import "./styleCadastro.css";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import api from "../../api";
 import { useState } from "react";
@@ -29,7 +29,7 @@ function AreaCadastro() {
         'dtNasc': inputDataDeNascimento,
         'rg': inputRG,
         'senha': inputSenha,
-        'tags': [inputTipoBebida, inputTipoComida, inputTipoMusica]
+        'tags': JSON.stringify([inputTipoBebida, inputTipoComida, inputTipoMusica])
       };
       console.log("Entrando no POST");
       api.post(`/usuarios`, novoCadastro).then((response) => {
