@@ -1,323 +1,67 @@
+import { useNavigate } from "react-router-dom";
+import ListaReserva from "./listaReserva";
 import "./styleListaReserva.css";
+import { useEffect, useState } from "react";
+import api from "../../api";
 
 function ListaReservaCliente() {
-    return (
-        <div className="body">
-            <div className="container-lista">
-                <div className="title-head-lista-cliente">
-                    <h1> CONFIRA SUAS RESERVAS </h1>
-                </div>
+  const [reservas, setReservas] = useState([]);
 
-                <div className="button-nova-reserva">
-                    <button className="button-reserva"> Nova reserva </button>
-                </div>
-                <div className="div-do-fundo-maximo-para-as-reservas">
-                    <div className="container-reserva">
-                        <div className="dia-reserva">
-                            <span> Dia </span>
-                        </div>
+  useEffect(() => {
+    getReservas();
+  }, []);
 
-                        <div className="nome-reserva">
-                            <span> Nome do cliente</span>
-                        </div>
+  function getReservas() {
+    api
+      .get("/reservas")
+      .then((response) => {
+        console.log("RESPONSE: ", response);
+        console.log("LISTA DE RESERVAS: ", response.data);
+        setReservas(response.data);
+      })
+      .catch((err) => {
+        if (err.response.status === 404) {
+          console.log("Este endpoint não existe");
+        } else {
+          console.error(err);
+        }
+      });
+  }
 
-                        <div className="horario-reserva">
-                            <span> Horário </span>
-                        </div>
+  const navigate = useNavigate();
 
-                        <div className="mesa-reserva">
-                            <span> Mesa </span>
-                        </div>
-
-                        <div className="Quantidade-reserva">
-                            <span>Quantidade pessoal</span>
-                        </div>
-                        <div className="button-cancelar-reserva">
-                            <button className="button-cancelar"> Cancelar reserva </button>
-                        </div>
-                    </div>
-
-                    <div className="container-reserva">
-                        <div className="dia-reserva">
-                            <span> Dia </span>
-                        </div>
-
-                        <div className="nome-reserva">
-                            <span> Nome do cliente</span>
-                        </div>
-
-                        <div className="horario-reserva">
-                            <span> Horário </span>
-                        </div>
-
-                        <div className="mesa-reserva">
-                            <span> Mesa </span>
-                        </div>
-
-                        <div className="Quantidade-reserva">
-                            <span>Quantidade pessoal</span>
-                        </div>
-                        <div className="button-cancelar-reserva">
-                            <button className="button-cancelar"> Cancelar reserva </button>
-                        </div>
-                    </div>
-
-                    <div className="container-reserva">
-                        <div className="dia-reserva">
-                            <span> Dia </span>
-                        </div>
-
-                        <div className="nome-reserva">
-                            <span> Nome do cliente</span>
-                        </div>
-
-                        <div className="horario-reserva">
-                            <span> Horário </span>
-                        </div>
-
-                        <div className="mesa-reserva">
-                            <span> Mesa </span>
-                        </div>
-
-                        <div className="Quantidade-reserva">
-                            <span>Quantidade pessoal</span>
-                        </div>
-                        <div className="button-cancelar-reserva">
-                            <button className="button-cancelar"> Cancelar reserva </button>
-                        </div>
-                    </div>
-
-                    <div className="container-reserva">
-                        <div className="dia-reserva">
-                            <span> Dia </span>
-                        </div>
-
-                        <div className="nome-reserva">
-                            <span> Nome do cliente</span>
-                        </div>
-
-                        <div className="horario-reserva">
-                            <span> Horário </span>
-                        </div>
-
-                        <div className="mesa-reserva">
-                            <span> Mesa </span>
-                        </div>
-
-                        <div className="Quantidade-reserva">
-                            <span>Quantidade pessoal</span>
-                        </div>
-                        <div className="button-cancelar-reserva">
-                            <button className="button-cancelar"> Cancelar reserva </button>
-                        </div>
-                    </div>
-
-                    <div className="container-reserva">
-                        <div className="dia-reserva">
-                            <span> Dia </span>
-                        </div>
-
-                        <div className="nome-reserva">
-                            <span> Nome do cliente</span>
-                        </div>
-
-                        <div className="horario-reserva">
-                            <span> Horário </span>
-                        </div>
-
-                        <div className="mesa-reserva">
-                            <span> Mesa </span>
-                        </div>
-
-                        <div className="Quantidade-reserva">
-                            <span>Quantidade pessoal</span>
-                        </div>
-                        <div className="button-cancelar-reserva">
-                            <button className="button-cancelar"> Cancelar reserva </button>
-                        </div>
-                    </div>
-
-                    <div className="container-reserva">
-                        <div className="dia-reserva">
-                            <span> Dia </span>
-                        </div>
-
-                        <div className="nome-reserva">
-                            <span> Nome do cliente</span>
-                        </div>
-
-                        <div className="horario-reserva">
-                            <span> Horário </span>
-                        </div>
-
-                        <div className="mesa-reserva">
-                            <span> Mesa </span>
-                        </div>
-
-                        <div className="Quantidade-reserva">
-                            <span>Quantidade pessoal</span>
-                        </div>
-                        <div className="button-cancelar-reserva">
-                            <button className="button-cancelar"> Cancelar reserva </button>
-                        </div>
-                    </div>
-
-                    <div className="container-reserva">
-                        <div className="dia-reserva">
-                            <span> Dia </span>
-                        </div>
-
-                        <div className="nome-reserva">
-                            <span> Nome do cliente</span>
-                        </div>
-
-                        <div className="horario-reserva">
-                            <span> Horário </span>
-                        </div>
-
-                        <div className="mesa-reserva">
-                            <span> Mesa </span>
-                        </div>
-
-                        <div className="Quantidade-reserva">
-                            <span>Quantidade pessoal</span>
-                        </div>
-                        <div className="button-cancelar-reserva">
-                            <button className="button-cancelar"> Cancelar reserva </button>
-                        </div>
-                    </div>
-
-                    <div className="container-reserva">
-                        <div className="dia-reserva">
-                            <span> Dia </span>
-                        </div>
-
-                        <div className="nome-reserva">
-                            <span> Nome do cliente</span>
-                        </div>
-
-                        <div className="horario-reserva">
-                            <span> Horário </span>
-                        </div>
-
-                        <div className="mesa-reserva">
-                            <span> Mesa </span>
-                        </div>
-
-                        <div className="Quantidade-reserva">
-                            <span>Quantidade pessoal</span>
-                        </div>
-                        <div className="button-cancelar-reserva">
-                            <button className="button-cancelar"> Cancelar reserva </button>
-                        </div>
-                    </div>
-
-                    <div className="container-reserva">
-                        <div className="dia-reserva">
-                            <span> Dia </span>
-                        </div>
-
-                        <div className="nome-reserva">
-                            <span> Nome do cliente</span>
-                        </div>
-
-                        <div className="horario-reserva">
-                            <span> Horário </span>
-                        </div>
-
-                        <div className="mesa-reserva">
-                            <span> Mesa </span>
-                        </div>
-
-                        <div className="Quantidade-reserva">
-                            <span>Quantidade pessoal</span>
-                        </div>
-                        <div className="button-cancelar-reserva">
-                            <button className="button-cancelar"> Cancelar reserva </button>
-                        </div>
-                    </div>
-
-                    <div className="container-reserva">
-                        <div className="dia-reserva">
-                            <span> Dia </span>
-                        </div>
-
-                        <div className="nome-reserva">
-                            <span> Nome do cliente</span>
-                        </div>
-
-                        <div className="horario-reserva">
-                            <span> Horário </span>
-                        </div>
-
-                        <div className="mesa-reserva">
-                            <span> Mesa </span>
-                        </div>
-
-                        <div className="Quantidade-reserva">
-                            <span>Quantidade pessoal</span>
-                        </div>
-                        <div className="button-cancelar-reserva">
-                            <button className="button-cancelar"> Cancelar reserva </button>
-                        </div>
-                    </div>
-
-                    <div className="container-reserva">
-                        <div className="dia-reserva">
-                            <span> Dia </span>
-                        </div>
-
-                        <div className="nome-reserva">
-                            <span> Nome do cliente</span>
-                        </div>
-
-                        <div className="horario-reserva">
-                            <span> Horário </span>
-                        </div>
-
-                        <div className="mesa-reserva">
-                            <span> Mesa </span>
-                        </div>
-
-                        <div className="Quantidade-reserva">
-                            <span>Quantidade pessoal</span>
-                        </div>
-                        <div className="button-cancelar-reserva">
-                            <button className="button-cancelar"> Cancelar reserva </button>
-                        </div>
-                    </div>
-
-                    <div className="container-reserva">
-                        <div className="dia-reserva">
-                            <span> Dia </span>
-                        </div>
-
-                        <div className="nome-reserva">
-                            <span> Nome do cliente</span>
-                        </div>
-
-                        <div className="horario-reserva">
-                            <span> Horário </span>
-                        </div>
-
-                        <div className="mesa-reserva">
-                            <span> Mesa </span>
-                        </div>
-
-                        <div className="Quantidade-reserva">
-                            <span>Quantidade pessoal</span>
-                        </div>
-                        <div className="button-cancelar-reserva">
-                            <button className="button-cancelar"> Cancelar reserva </button>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+  return (
+    <div className="body">
+      <div className="container-lista">
+        <div className="title-head-lista-cliente">
+          <h1> CONFIRA SUAS RESERVAS </h1>
         </div>
 
-    );
+        <div className="button-nova-reserva">
+          <button
+            onClick={() => navigate("/catalogo")}
+            className="button-reserva"
+          >
+            {" "}
+            Nova reserva{" "}
+          </button>
+        </div>
+        <div className="div-do-fundo-maximo-para-as-reservas">
+          {reservas.map((reserva) => {
+            if (!reserva.checkOut) {
+              return (
+                <ListaReserva
+                  reserva={reserva}
+                  atualizar={getReservas}
+                  key={reserva.id}
+                />
+              );
+            }
+          })}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default ListaReservaCliente;
