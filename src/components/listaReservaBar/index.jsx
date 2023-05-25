@@ -28,7 +28,7 @@ function ListaReservaBar() {
         }
       });
   }
-    function getUsuarios() {
+  function getUsuarios() {
     api
       .get("/usuarios")
       .then((response) => {
@@ -88,17 +88,20 @@ function ListaReservaBar() {
           </div>
         </div>
         <div className="div-do-fundo-maximo-para-as-reservas">
-          {
+          {reservas.map((reserva) =>
             usuarios.map((usuario) => {
-                reservas.map((reserva) => {
-                    if(usuario.reserva.find(el => el.id === reserva.id)) {
-                        return <ListaReserva reserva={reserva} usuario={usuario} key={reserva.id} />;
-                    }
-                })
+              if (!reserva.checkOut) {
+                return (
+                  <ListaReserva
+                    reserva={reserva}
+                    usuario={usuario}
+                    atualizar={getReservas}
+                    key={reserva.id}
+                  />
+                );
+              }
             })
-            // retornará um componente "CardMusica" para cada música no estado de "musicas"
-            // o componente recebe como props o objeto com as informações da música iterada
-          }
+          )}
         </div>
       </div>
     </div>
