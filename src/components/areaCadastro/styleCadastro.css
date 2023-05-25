@@ -1,4 +1,5 @@
 .bg{ 
+  
   width: 100%;
   height: 100vh;
   background-color: #587370;
@@ -21,7 +22,6 @@
 .fundo{
   width: 100%;
   height: 100%;
-  position: fixed;
   cursor: pointer;
 }
 
@@ -34,8 +34,8 @@
   font-family: 'Old Standard TT', serif;
   color: #000;
   text-transform: none;
-  font-size: 35px;
-  margin-bottom: 2vh;
+  font-size: 28px;
+  margin-top: -27vh;
   font-weight: bold;
   text-align: center;
   margin-left: auto;
@@ -62,32 +62,119 @@
   margin-left: 3px;
 }
 
+.alinhamento {
+  display: flex;
+  align-items: center;
+}
+
+.alinhamento input {
+  margin-right: 10px;
+}
+
 .input-cadastro {
   padding-top: 210px;
   padding-bottom: 10px;
   max-height: 80%;
-  margin-top: 10%;
+  margin-top: 15vh;
   cursor: inherit;
-  margin-left: 30%;
+  margin-left: 15%;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
   position: absolute;
-  width: 40%;
-  height: 50%;
+  width: 70%;
+  height: 45%;
   border-radius: 10px;
   background-color: #BBAAA1;
-  overflow-y: scroll;
 }
 
-.campoTextoCadastro {
+.campoTextoCadastro-nome {
   font-family: 'Quicksand', sans-serif;
-  width: 20vw;
+  width: 25vw;
   text-transform: none;
-  height: 35px;
+  height: 18px;
   padding: 10px;
   border: 1px solid;
+  margin-bottom:2%;
+  font-size: 22px;
+  background-color: #d9d9d9;
+  border: #000;
+  outline: 0;
+  font-size: 16px;
+  color: rgb(80, 80, 80);
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+}
+
+.campoTextoCadastro-datanasc {
+  font-family: 'Quicksand', sans-serif;
+  width: 11.5vw;
+  text-transform: none;
+  height: 18px;
+  padding: 10px;
+  margin-bottom:2%;
+  font-size: 22px;
+  background-color: #d9d9d9;
+  border: #000;
+  outline: 0;
+  font-size: 16px;
+  color: rgb(80, 80, 80);
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+}
+
+.campoTextoCadastro-rg {
+  margin-left: -0.2vw;
+  font-family: 'Quicksand', sans-serif;
+  width: 11.5vw;
+  border: 1px solid;
+  margin-top: -1.1vh;
+  text-transform: none;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid;
+  top: -2000vh;
+  font-size: 22px;
+  background-color: #d9d9d9;
+  border: #000;
+  outline: 0;
+  font-size: 16px;
+  color: rgb(80, 80, 80);
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+}
+
+.campoTextoCadastro-cpf {
+  
+  font-family: 'Quicksand', sans-serif;
+  width: 11.5vw;
+  border: 1px solid;
+  text-transform: none;
+  margin-top: -5.9vh;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid;
+  font-size: 22px;
+  background-color: #d9d9d9;
+  border: #000;
+  outline: 0;
+  font-size: 16px;
+  color: rgb(80, 80, 80);
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+}
+
+.campoTextoCadastro-celular {
+
+  font-family: 'Quicksand', sans-serif;
+  width: 11.5vw;
+  text-transform: none;
+   height: 18px;
+  padding: 10px;
+  border: 1px solid;
+  margin-top: -2.7vh;
+  margin-left: -2.5px;
   margin-bottom:6%;
   font-size: 22px;
   background-color: #d9d9d9;
@@ -99,6 +186,115 @@
   border-radius: 5px;
 }
 
+.campoTextoCadastro-email {
+  font-family: 'Quicksand', sans-serif;
+  width: 25vw;
+  text-transform: none;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid;
+  margin-top: -2.3vw;
+  margin-bottom:6%;
+  font-size: 22px;
+  background-color: #d9d9d9;
+  border: #000;
+  outline: 0;
+  font-size: 16px;
+  color: rgb(80, 80, 80);
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+}
+.campoTextoCadastro-senha {
+  
+  font-family: 'Quicksand', sans-serif;
+  width: 11.5vw;
+  border: 1px solid;
+  text-transform: none;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid;
+  margin-top: -8.1vh;
+  font-size: 22px;
+  background-color: #d9d9d9;
+  border: #000;
+  outline: 0;
+  font-size: 16px;
+  color: rgb(80, 80, 80);
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+}
+.campoTextoCadastro-repetir {
+  margin-left: -0.2vw;
+  font-family: 'Quicksand', sans-serif;
+  width: 11.5vw;
+  text-transform: none;
+  height: 18px;
+  padding: 10px;
+  margin-bottom:6%;
+  margin-top: -4.8vh;
+  font-size: 22px;
+  background-color: #d9d9d9;
+  border: #000;
+  outline: 0;
+  font-size: 16px;
+  color: rgb(80, 80, 80);
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+}
+.campoTextoCadastro-drinks {
+  font-family: 'Quicksand', sans-serif;
+  width: 25vw;
+  text-transform: none;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid;
+  margin-top: -4.9vh;
+  margin-bottom:6%;
+  font-size: 22px;
+  background-color: #d9d9d9;
+  border: #000;
+  outline: 0;
+  font-size: 16px;
+  color: rgb(80, 80, 80);
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+}
+.campoTextoCadastro-comida {
+  font-family: 'Quicksand', sans-serif;
+  width: 11.5vw;
+  border: 1px solid;
+  text-transform: none;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid;
+  margin-top: -8vh;
+  font-size: 22px;
+  background-color: #d9d9d9;
+  border: #000;
+  outline: 0;
+  font-size: 16px;
+  color: rgb(80, 80, 80);
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+}
+.campoTextoCadastro-musica {
+  margin-left: -0.2vw;
+  font-family: 'Quicksand', sans-serif;
+  width: 11.5vw;
+  text-transform: none;
+  height: 18px;
+  padding: 10px;
+  margin-top: -4.8vh;
+  margin-bottom:6%;
+  font-size: 22px;
+  background-color: #d9d9d9;
+  border: #000;
+  outline: 0;
+  font-size: 16px;
+  color: rgb(80, 80, 80);
+  transition: 0.5s ease-in-out;
+  border-radius: 5px;
+}
 .subtitulo1 {
   font-family: 'Quicksand', sans-serif;
   margin-left: 2vw;
@@ -110,12 +306,13 @@
 .subtitulo2 {
   font-family: 'Quicksand', sans-serif;
   margin-left: 4vw;
+  margin-top: -2vh;
   text-transform: none;
   text-align: center;
   display: flex;
 }
 
-.button-28 {
+.button-313{
 
   font-family: 'Quicksand', sans-serif;
   margin-right: 110px;
@@ -127,10 +324,12 @@
   background-color: #587370;
   cursor: pointer;
   display: inline-block;
-  font-size: 16px;
+  margin-top: -4vh;
+  font-size: 14px;
   font-weight: 600;
   line-height: normal;
   min-width: 0;
+  margin-left: 8vw;
   outline: none;
   text-align: center;
   text-transform: none;
@@ -139,9 +338,11 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   width: 70%;
-  height: 50px;
+  height: 35px;
   will-change: transform;
 }
+
+
 
 .button-28:disabled {
   pointer-events: none;
