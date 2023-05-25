@@ -13,7 +13,27 @@ function ListaReserva(props) {
         .put(`/reservas/${reserva.id}`, delet)
         .then((response) => {
           console.log(response);
-          props.atualizar();
+          api
+            .put(
+              `/assentos/${
+                reserva.assentos.find((assento) => assento.id).id
+              }`,
+              check_out_assento
+            )
+            .then((response) => {
+              console.log("Enviando os dados para a API");
+              console.log(response);
+              console.log("API recebeu os dados corretamente");
+              console.log(
+                "Assento de id " +
+                  reserva.assentos.find((assento) => assento.id).id +
+                  " agora está disponível"
+              );
+              props.atualizar();
+            })
+            .catch((err) => {
+              console.error(err);
+            });
         })
         .catch((err) => console.error(err));
     }

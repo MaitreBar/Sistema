@@ -34,7 +34,7 @@ function ListaReserva(props) {
           "Check-in feito em:",
           format(currentTime, "yyyy-MM-dd'T'HH:mm:ss.S")
         );
-        navigate("/listaReservaBarPages");
+        props.atualizar();
       })
       .catch((err) => {
         console.error(err);
@@ -73,7 +73,7 @@ function ListaReserva(props) {
                   reserva.assentos.find((assento) => assento.id).id +
                   " agora está disponível"
               );
-              navigate("/listaReservaBarPages");
+              props.atualizar();
             })
             .catch((err) => {
               console.error(err);
