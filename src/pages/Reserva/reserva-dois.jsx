@@ -1,5 +1,5 @@
 
-import Navbar from "../../components/navbar";
+import Navbar from "../../components/navbar/navbarDeslogada";
 import ReservaDois from "../../components/reserva-dois";
 
 function TelaReservaDois() {

@@ -1,5 +1,5 @@
 import AreaLogin from "../../components/areaLogin";
-import Navbar from "../../components/navbar";
+import Navbar from "../../components/navbar/navbarDeslogada";
 import ReservaUm from "../../components/reserva-um";
 
 

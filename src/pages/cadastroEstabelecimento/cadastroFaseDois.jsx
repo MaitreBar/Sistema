@@ -1,11 +1,11 @@
 
-import Navbar from "../../components/navbar";
+import Navbar from "../../components/navbar/navbarDeslogada";
 import CadastroFaseDois from "../../components/cadastro-fase-dois";
 function CadastroEstabelecimento2() {
   return (
     <div>
-      <div className="Navbar"><Navbar/> </div>
-      <div className="CadastroFaseDois"><CadastroFaseDois/></div> 
+      <div className="Navbar"><Navbar /> </div>
+      <div className="CadastroFaseDois"><CadastroFaseDois /></div>
     </div>
   );
 }

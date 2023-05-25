@@ -49,128 +49,129 @@ function AreaCadastro() {
   }
 
   return (
-    <div className="bg">
-      <div className="input-cadastro">
-        <h2 className="titulos-cad">CADASTRE - SE</h2>
-        <div className="textos">
-          <span className="subtitulo1">
-            {" "}
-            Estabelecimento<br></br>
-            <a onClick={() => navigate("/login")}>Login</a> <p className="ou">ou</p>{" "}
-            <a onClick={() => navigate("/cadastro-estabelecimento-pt1")}> Cadastre - se</a>
-          </span>
-          <br></br>
-          <span className="subtitulo2">
-            Ja possui cadastro? <a href="../../Cadastro"> Fazer login</a>
-          </span>
-          <br></br>
-          <input
-            onChange={(evento) => setInputNomeCompleto(evento.target.value)}
-            className="campoTextoCadastro-nome"
-            type="text"
-            placeholder="Nome Completo"
-          ></input>
-          <br className="broken"></br>
-
-          <p className="alinhamento">
-          <input
-            onChange={(evento) => setInputDataDeNascimento(evento.target.value)}
-            className="campoTextoCadastro-datanasc"
-            type="text"
-            placeholder="Data de nascimento"
-          ></input>
-          <br className="broken"></br>
-          <input
-            onChange={(evento) => setInputRG(evento.target.value)}
-            className="campoTextoCadastro-rg "
-            type="text"
-            placeholder="RG"
-          ></input>
-          </p>
-          <br className="broken"></br>
-          <p className="alinhamento">
-          <input
-            onChange={(evento) => setInputCPF(evento.target.value)}
-            className="campoTextoCadastro-cpf"
-            type="text"
-            placeholder="CPF"
-          ></input>
-          <br className="broken"></br>
-          <input
-            onChange={(evento) => setInputCelular(evento.target.value)}
-            className="campoTextoCadastro-celular"
-            type="text"
-            placeholder="Celular"
-          ></input> 
-          </p>
-
-          <br className="broken"></br>
-          <p className="alinhamento">
-          <input
-            onChange={(evento) => setInputEmail(evento.target.value)}
-            className="campoTextoCadastro-email"
-            type="email"
-            placeholder="E-mail"
-          ></input>
-          </p>
-
-          <br className="broken"></br>
-          <p className="alinhamento">
-
-          <input
-            onChange={(evento) => setInputSenha(evento.target.value)}
-            className="campoTextoCadastro-senha"
-            type="password"
-            placeholder="Senha"
-          ></input>
-          <br className="broken"></br>
-          <input
-            onChange={(evento) => setInputRepetirSenha(evento.target.value)}
-            className="campoTextoCadastro-repetir"
-            type="password"
-            placeholder="Repetir senha"
-          ></input>
-           </p>
-
-          <br className="broken"></br>
-          <p className="alinhamento">
-          <input
-            onChange={(evento) => setInputTipoBebida(evento.target.value)}
-            className="campoTextoCadastro-drinks"
-            type="text"
-            placeholder="Bebidas Alcoolicas, Refrigerantes ou Sucos?"
-          ></input>
-           </p>
-
-          <br className="broken"></br>
-          <p className="alinhamento">
-
-          <input
-            onChange={(evento) => setInputTipoComida(evento.target.value)}
-            className="campoTextoCadastro-comida"
-            type="text"
-            placeholder="Insira seu tipo de comida favorito"
-          ></input>
-          <br className="broken"></br>
-          <input
-            onChange={(evento) => setInputTipoMusica(evento.target.value)}
-            className="campoTextoCadastro-musica"
-            type="text"
-            placeholder="Insira seu tipo de música favorito"
-          ></input>
-          </p>
-          <br className="broken"></br>
-          <p className="alinhamento">
-
-          <button onClick={cadastrar} className="button-313">
-            Cadastrar
-          </button>
-          </p>
-          <br></br>
+      <div className="bg">
+        <div className="input-cadastro">
+          <h2 className="titulos-cad">CADASTRE - SE</h2>
+          <div className="textos">
+            <span className="subtitulo1">
+              {" "}
+              Estabelecimento<br></br>
+              <a href="../../Cadastro">Login</a> <p className="ou">ou</p>{" "}
+              <a href="../../Cadastro"> Cadastre - se</a>
+            </span>
+            <br></br>
+            <span className="subtitulo2">
+              Ja possui cadastro? <a href="../../Cadastro"> Fazer login</a>
+            </span>
+            <br></br>
+            <input
+              onChange={(evento) => setInputNomeCompleto(evento.target.value)}
+              className="campoTextoCadastro-nome"
+              type="text"
+              placeholder="Nome Completo"
+            ></input>
+            <br className="broken"></br>
+  
+            <p className="alinhamento">
+            <input
+              onChange={(evento) => setInputDataDeNascimento(evento.target.value)}
+              className="campoTextoCadastro-datanasc"
+              type="text"
+              placeholder="Data de nascimento"
+            ></input>
+            <br className="broken"></br>
+            <input
+              onChange={(evento) => setInputRG(evento.target.value)}
+              className="campoTextoCadastro-rg "
+              type="text"
+              placeholder="RG"
+            ></input>
+            </p>
+            <br className="broken"></br>
+            <p className="alinhamento">
+            <input
+              onChange={(evento) => setInputCPF(evento.target.value)}
+              className="campoTextoCadastro-cpf"
+              type="text"
+              placeholder="CPF"
+            ></input>
+            <br className="broken"></br>
+            <input
+              onChange={(evento) => setInputCelular(evento.target.value)}
+              className="campoTextoCadastro-celular"
+              type="text"
+              placeholder="Celular"
+            ></input> 
+            </p>
+  
+            <br className="broken"></br>
+            <p className="alinhamento">
+            <input
+              onChange={(evento) => setInputEmail(evento.target.value)}
+              className="campoTextoCadastro-email"
+              type="email"
+              placeholder="E-mail"
+            ></input>
+            </p>
+  
+            <br className="broken"></br>
+            <p className="alinhamento">
+  
+            <input
+              onChange={(evento) => setInputSenha(evento.target.value)}
+              className="campoTextoCadastro-senha"
+              type="password"
+              placeholder="Senha"
+            ></input>
+            <br className="broken"></br>
+            <input
+              onChange={(evento) => setInputRepetirSenha(evento.target.value)}
+              className="campoTextoCadastro-repetir"
+              type="password"
+              placeholder="Repetir senha"
+            ></input>
+             </p>
+  
+            <br className="broken"></br>
+            <p className="alinhamento">
+            <input
+              onChange={(evento) => setInputTipoBebida(evento.target.value)}
+              className="campoTextoCadastro-drinks"
+              type="text"
+              placeholder="Bebidas Alcoolicas, Refrigerantes ou Sucos?"
+            ></input>
+             </p>
+  
+            <br className="broken"></br>
+            <p className="alinhamento">
+  
+            <input
+              onChange={(evento) => setInputTipoComida(evento.target.value)}
+              className="campoTextoCadastro-comida"
+              type="text"
+              placeholder="Insira seu tipo de comida favorito"
+            ></input>
+            <br className="broken"></br>
+            <input
+              onChange={(evento) => setInputTipoMusica(evento.target.value)}
+              className="campoTextoCadastro-musica"
+              type="text"
+              placeholder="Insira seu tipo de música favorito"
+            ></input>
+            </p>
+            <br className="broken"></br>
+            <p className="alinhamento">
+  
+            <button onClick={cadastrar} className="button-313">
+              Cadastrar
+            </button>
+            </p>
+            <br></br>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  
 }
 
 export default AreaCadastro;

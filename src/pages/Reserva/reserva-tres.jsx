@@ -7,8 +7,7 @@ function TelaReservaTres() {
     return (
         <div>
             <div className="navbar"><Navbar></Navbar></div>
-            <div className="reserva"><ReservaTres /></div>
-
+            <div className="reserva"><ReservaTres/></div>
         </div>
     );
 

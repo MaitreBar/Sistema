@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./styleFaseDois.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
+
 function CadastroFaseDois() {
   const navigate = useNavigate();
 

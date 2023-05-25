@@ -73,7 +73,7 @@
 
 .input-cadastro {
   padding-top: 210px;
-  padding-bottom: 10px;
+  padding-bottom: 10;
   max-height: 80%;
   margin-top: 15vh;
   cursor: inherit;
@@ -84,7 +84,7 @@
   flex-direction: column;
   position: absolute;
   width: 70%;
-  height: 45%;
+  height: 90%;
   border-radius: 10px;
   background-color: #BBAAA1;
 }
@@ -93,7 +93,7 @@
   font-family: 'Quicksand', sans-serif;
   width: 25vw;
   text-transform: none;
-  height: 18px;
+  height: 2rem;
   padding: 10px;
   border: 1px solid;
   margin-bottom:2%;
@@ -109,9 +109,9 @@
 
 .campoTextoCadastro-datanasc {
   font-family: 'Quicksand', sans-serif;
-  width: 11.5vw;
+  width: 12.3vw;
   text-transform: none;
-  height: 18px;
+  height: 2rem;
   padding: 10px;
   margin-bottom:2%;
   font-size: 22px;
@@ -127,11 +127,11 @@
 .campoTextoCadastro-rg {
   margin-left: -0.2vw;
   font-family: 'Quicksand', sans-serif;
-  width: 11.5vw;
+  width: 12.3vw;
   border: 1px solid;
-  margin-top: -1.1vh;
+  margin-top: -1vh;
   text-transform: none;
-  height: 18px;
+  height: 2rem;
   padding: 10px;
   border: 1px solid;
   top: -2000vh;
@@ -148,11 +148,11 @@
 .campoTextoCadastro-cpf {
   
   font-family: 'Quicksand', sans-serif;
-  width: 11.5vw;
+  width: 12.3vw;
   border: 1px solid;
   text-transform: none;
-  margin-top: -5.9vh;
-  height: 18px;
+  margin-top: -5vh;
+  height: 2rem;
   padding: 10px;
   border: 1px solid;
   font-size: 22px;
@@ -168,12 +168,12 @@
 .campoTextoCadastro-celular {
 
   font-family: 'Quicksand', sans-serif;
-  width: 11.5vw;
+  width: 12.3vw;
   text-transform: none;
-   height: 18px;
+   height: 2rem;
   padding: 10px;
   border: 1px solid;
-  margin-top: -2.7vh;
+  margin-top: -2vh;
   margin-left: -2.5px;
   margin-bottom:6%;
   font-size: 22px;
@@ -190,7 +190,7 @@
   font-family: 'Quicksand', sans-serif;
   width: 25vw;
   text-transform: none;
-  height: 18px;
+  height: 2rem;
   padding: 10px;
   border: 1px solid;
   margin-top: -2.3vw;
@@ -207,13 +207,13 @@
 .campoTextoCadastro-senha {
   
   font-family: 'Quicksand', sans-serif;
-  width: 11.5vw;
+  width: 12.3vw;
   border: 1px solid;
   text-transform: none;
-  height: 18px;
+  height: 2rem;
   padding: 10px;
   border: 1px solid;
-  margin-top: -8.1vh;
+  margin-top: -7vh;
   font-size: 22px;
   background-color: #d9d9d9;
   border: #000;
@@ -226,12 +226,12 @@
 .campoTextoCadastro-repetir {
   margin-left: -0.2vw;
   font-family: 'Quicksand', sans-serif;
-  width: 11.5vw;
+  width: 12.3vw;
   text-transform: none;
-  height: 18px;
+  height: 2rem;
   padding: 10px;
   margin-bottom:6%;
-  margin-top: -4.8vh;
+  margin-top: -4vh;
   font-size: 22px;
   background-color: #d9d9d9;
   border: #000;
@@ -245,10 +245,10 @@
   font-family: 'Quicksand', sans-serif;
   width: 25vw;
   text-transform: none;
-  height: 18px;
+  height: 2rem;
   padding: 10px;
   border: 1px solid;
-  margin-top: -4.9vh;
+  margin-top: -4vh;
   margin-bottom:6%;
   font-size: 22px;
   background-color: #d9d9d9;
@@ -261,13 +261,13 @@
 }
 .campoTextoCadastro-comida {
   font-family: 'Quicksand', sans-serif;
-  width: 11.5vw;
+  width: 12.3vw;
   border: 1px solid;
   text-transform: none;
-  height: 18px;
+  height: 2rem;
   padding: 10px;
   border: 1px solid;
-  margin-top: -8vh;
+  margin-top: -7vh;
   font-size: 22px;
   background-color: #d9d9d9;
   border: #000;
@@ -280,11 +280,11 @@
 .campoTextoCadastro-musica {
   margin-left: -0.2vw;
   font-family: 'Quicksand', sans-serif;
-  width: 11.5vw;
+  width: 12.3vw;
   text-transform: none;
-  height: 18px;
+  height: 2rem;
   padding: 10px;
-  margin-top: -4.8vh;
+  margin-top: -4vh;
   margin-bottom:6%;
   font-size: 22px;
   background-color: #d9d9d9;
@@ -324,7 +324,7 @@
   background-color: #587370;
   cursor: pointer;
   display: inline-block;
-  margin-top: -4vh;
+  margin-top: -2vh;
   font-size: 14px;
   font-weight: 600;
   line-height: normal;
@@ -341,8 +341,6 @@
   height: 35px;
   will-change: transform;
 }
-
-
 
 .button-28:disabled {
   pointer-events: none;

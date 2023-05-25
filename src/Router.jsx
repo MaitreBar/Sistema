@@ -11,6 +11,7 @@ import Catalogo from "./pages/Catalogo";
 import ListaReservaBarPages from "./pages/ListaReserva/listaReservaBar";
 import TelaReservaUm from "./pages/Reserva/reserva-um";
 import TelaReservaDois from "./pages/Reserva/reserva-dois";
+import TelaReservaTres from "./pages/Reserva/reserva-tres";
 import SiteInstitucional from "./pages/siteInstitucional";
 import perfilUsuario from "./pages/profiles/Index";
 
@@ -28,6 +29,7 @@ function Routers() {
       <Route path="/catalogo" element={Catalogo()} />
       <Route path="/tela-reserva-um" element={TelaReservaUm()} />
       <Route path="/tela-reserva-dois" element={TelaReservaDois()} />
+      <Route path="/tela-reserva-tres" element={TelaReservaTres()} />
       <Route path="/lista-reserva/bar" element={ListaReservaBarPages()} />
       <Route path="/lista-reserva/cliente" element={ListaReservaClientePages()} />
     </Routes>
