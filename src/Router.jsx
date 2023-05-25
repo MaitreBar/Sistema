@@ -21,17 +21,17 @@ function Routers() {
     return (
         <Routes>
             <Route path="/" element={SiteInstitucional()} />
-            <Route path="/catalogo" element={Catalogo()} />
             <Route path="/cadastro" element={Cadastro()} />
+            <Route path="/cadastro-estabelecimento-pt1" element={CadastroEstabelecimento1()} />
+            <Route path="/cadastro-estabelecimento-pt2" element={CadastroEstabelecimento2()} />
+            <Route path="/cadastro-estabelecimento-pt3" element={CadastroEstabelecimento3()} />
+            <Route path="/cadastro-estabelecimento-pt4" element={CadastroEstabelecimento4()} />
             <Route path="/login" element={Login()} />
-            <Route path="/cadastroEstabelecimento1" element={CadastroEstabelecimento1()} />
-            <Route path="/cadastroEstabelecimento2" element={CadastroEstabelecimento2()} />
-            <Route path="/cadastroEstabelecimento3" element={CadastroEstabelecimento3()} />
-            <Route path="/cadastroEstabelecimento4" element={CadastroEstabelecimento4()} />
-            <Route path="/listaReservaClientePages" element={ListaReservaClientePages()} />
-            <Route path="/listaReservaBarPages" element={ListaReservaBarPages()} />
-            <Route path="/TelareservaUm" element={TelaReservaUm()} />
-            <Route path="/TelareservaDois" element={TelaReservaDois()} />
+            <Route path="/catalogo" element={Catalogo()} />
+            <Route path="/tela-reserva-um" element={TelaReservaUm()} />
+            <Route path="/tela-reserva-dois" element={TelaReservaDois()} />
+            <Route path="/lista-reserva/bar" element={ListaReservaBarPages()} />
+            <Route path="/lista-reserva/cliente" element={ListaReservaClientePages()} />
         </Routes>
     );
 }

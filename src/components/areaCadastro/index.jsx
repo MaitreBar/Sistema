@@ -57,7 +57,7 @@ function AreaCadastro() {
             {" "}
             Estabelecimento<br></br>
             <a onClick={() => navigate("/login")}>Login</a> <p className="ou">ou</p>{" "}
-            <a onClick={() => navigate("/cadastroEstabelecimento1")}> Cadastre - se</a>
+            <a onClick={() => navigate("/cadastro-estabelecimento-pt1")}> Cadastre - se</a>
           </span>
           <br></br>
           <span className="subtitulo2">

@@ -1,42 +1,42 @@
 import api from "../../api";
-import "./styleListaReserva.css"
+import "./styleListaReserva.css";
 
 function ListaReserva(props) {
+  function cancelarReserva(reserva) {
+    const delet = {
+      id: reserva.id,
+      checkOut: true,
+    };
+    const check_out_assento = {
+      disponivel: true,
+    };
 
-    function cancelarReserva(reserva) {
-        const delet = {
-            id: reserva.id,
-            checkOut: true,
-        }
-
+    api
+      .put(`/reservas/${reserva.id}`, delet)
+      .then((response) => {
+        console.log(response);
         api
-        .put(`/reservas/${reserva.id}`, delet)
-        .then((response) => {
-          console.log(response);
-          api
-            .put(
-              `/assentos/${
-                reserva.assentos.find((assento) => assento.id).id
-              }`,
-              check_out_assento
-            )
-            .then((response) => {
-              console.log("Enviando os dados para a API");
-              console.log(response);
-              console.log("API recebeu os dados corretamente");
-              console.log(
-                "Assento de id " +
-                  reserva.assentos.find((assento) => assento.id).id +
-                  " agora está disponível"
-              );
-              props.atualizar();
-            })
-            .catch((err) => {
-              console.error(err);
-            });
-        })
-        .catch((err) => console.error(err));
-    }
+          .put(
+            `/assentos/${reserva.assentos.find((assento) => assento.id).id}`,
+            check_out_assento
+          )
+          .then((response) => {
+            console.log("Enviando os dados para a API");
+            console.log(response);
+            console.log("API recebeu os dados corretamente");
+            console.log(
+              "Assento de id " +
+                reserva.assentos.find((assento) => assento.id).id +
+                " agora está disponível"
+            );
+            props.atualizar();
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+      })
+      .catch((err) => console.error(err));
+  }
 
   return (
     <div className="container-reserva">
@@ -45,7 +45,7 @@ function ListaReserva(props) {
       </div>
 
       <div className="nome-reserva">
-        <span> Nome do cliente: fazer depoissss</span>
+        <span> Nome do cliente: {/* precisa da navbar com o botão de perfil para passar os dados de login */}</span>
       </div>
 
       <div className="horario-reserva">
@@ -63,7 +63,13 @@ function ListaReserva(props) {
         <span>Quantidade pessoal: 1</span>
       </div>
       <div className="button-cancelar-reserva">
-        <button onClick={() => cancelarReserva(props.reserva)} className="button-cancelar"> Cancelar reserva </button>
+        <button
+          onClick={() => cancelarReserva(props.reserva)}
+          className="button-cancelar"
+        >
+          {" "}
+          Cancelar reserva{" "}
+        </button>
       </div>
     </div>
   );

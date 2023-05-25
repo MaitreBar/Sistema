@@ -1,147 +1,43 @@
-import React from 'react';
-import Navbar from '../../components/navbar';
-import imagem from '../../assets/banner/bannercard.png';
+import React, { useEffect, useState } from "react";
+import Navbar from "../../components/navbar";
+import CardCatalogo from "../../components/cardCatalogo/cardCatalogo";
+import api from "../../api";
+import "./catalogo.css";
 
-import './catalogo.css';
 function Catalogo() {
-    return (
-        <div className='body'>
-            <Navbar />
+  const [estabelecimentos, setEstabelecimentos] = useState([]);
 
-            <div className="container">
+  useEffect(() => {
+    getEstabelecimentos();
+  }, []);
 
-                <div className="content">
-                    <img src={imagem} alt="Imagem" />
-                    <div className="text">
-                        <span className='negrito'>Restaurantes na região</span>
-                        <p>Rua Rosa Nova,123</p>
-                    </div>
-                    <div className='text-2'>
-                        <span className='negrito'>Faixa de Preço</span>
-                        <p>de 100R$ a 300R$</p>
-                    </div>
-                </div>
+  function getEstabelecimentos() {
+    api
+      .get("/estabelecimentos")
+      .then((response) => {
+        console.log("RESPONSE: ", response);
+        console.log("LISTA DE ESTABELECIMENTOS: ", response.data);
+        setEstabelecimentos(response.data);
+      })
+      .catch((err) => {
+        if (err.response.status === 404) {
+          console.log("Este endpoint não existe");
+        } else {
+          console.error(err);
+        }
+      });
+  }
 
-                <div className="content">
-                    <img src={imagem} alt="Imagem" />
-                    <div className="text">
-                        <span className='negrito'>Restaurantes na região</span>
-                        <p>Rua Rosa Nova,123</p>
-                    </div>
-                    <div className='text-2'>
-                        <span className='negrito'>Faixa de Preço</span>
-                        <p>de 100R$ a 300R$</p>
-                    </div>
-                </div>
-                
-                <div className="content">
-                    <img src={imagem} alt="Imagem" />
-                    <div className="text">
-                        <span className='negrito'>Restaurantes na região</span>
-                        <p>Rua Rosa Nova,123</p>
-                    </div>
-                    <div className='text-2'>
-                        <span className='negrito'>Faixa de Preço</span>
-                        <p>de 100R$ a 300R$</p>
-                    </div>
-                    <span className='tags'> Bebidas não alcoólicas</span>
-                </div>
+  return (
+    <div className="body">
+      <Navbar />
 
-                <div className="content">
-                    <img src={imagem} alt="Imagem" />
-                    <div className="text">
-                        <span className='negrito'>Restaurantes na região</span>
-                        <p>Rua Rosa Nova,123</p>
-                    </div>
-                    <div className='text-2'>
-                        <span className='negrito'>Faixa de Preço</span>
-                        <p>de 100R$ a 300R$</p>
-                    </div>
-                    <span className='tags'> Bebidas não alcoólicas</span>
-                </div>
-
-                <div className="content">
-                    <img src={imagem} alt="Imagem" />
-                    <div className="text">
-                        <span className='negrito'>Restaurantes na região</span>
-                        <p>Rua Rosa Nova,123</p>
-                    </div>
-                    <div className='text-2'>
-                        <span className='negrito'>Faixa de Preço</span>
-                        <p>de 100R$ a 300R$</p>
-                    </div>
-                    <span className='tags'> Bebidas não alcoólicas</span>
-                </div>
-
-                <div className="content">
-                    <img src={imagem} alt="Imagem" />
-                    <div className="text">
-                        <span className='negrito'>Restaurantes na região</span>
-                        <p>Rua Rosa Nova,123</p>
-                    </div>
-                    <div className='text-2'>
-                        <span className='negrito'>Faixa de Preço</span>
-                        <p>de 100R$ a 300R$</p>
-                    </div>
-                    <span className='tags'> Bebidas não alcoólicas</span>
-                </div>
-
-                <div className="content">
-                    <img src={imagem} alt="Imagem" />
-                    <div className="text">
-                        <span className='negrito'>Restaurantes na região</span>
-                        <p>Rua Rosa Nova,123</p>
-                    </div>
-                    <div className='text-2'>
-                        <span className='negrito'>Faixa de Preço</span>
-                        <p>de 100R$ a 300R$</p>
-                    </div>
-                    <span className='tags'> Bebidas não alcoólicas</span>
-                </div>
-
-                <div className="content">
-                    <img src={imagem} alt="Imagem" />
-                    <div className="text">
-                        <span className='negrito'>Restaurantes na região</span>
-                        <p>Rua Rosa Nova,123</p>
-                    </div>
-                    <div className='text-2'>
-                        <span className='negrito'>Faixa de Preço</span>
-                        <p>de 100R$ a 300R$</p>
-                    </div>
-                    <span className='tags'> Bebidas não alcoólicas</span>
-                </div>
-
-                <div className="content">
-                    <img src={imagem} alt="Imagem" />
-                    <div className="text">
-                        <span className='negrito'>Restaurantes na região</span>
-                        <p>Rua Rosa Nova,123</p>
-                    </div>
-                    <div className='text-2'>
-                        <span className='negrito'>Faixa de Preço</span>
-                        <p>de 100R$ a 300R$</p>
-                    </div>
-                    <span className='tags'> Bebidas não alcoólicas</span>
-                </div>
-
-                <div className="content">
-                    <img src={imagem} alt="Imagem" />
-                    <div className="text">
-                        <span className='negrito'>Restaurantes na região</span>
-                        <p>Rua Rosa Nova,123</p>
-                    </div>
-                    <div className='text-2'>
-                        <span className='negrito'>Faixa de Preço</span>
-                        <p>de 100R$ a 300R$</p>
-                    </div>
-                    <span className='tags'> Bebidas não alcoólicas</span>
-                </div>
-
-
-
-            </div>
-        </div>
-    );
+      <div className="body">
+        {estabelecimentos.map((estabelecimento) => {
+          return <CardCatalogo estabelecimento={estabelecimento} key={estabelecimento.id} />;
+        })}
+      </div>
+    </div>
+  );
 }
 export default Catalogo;

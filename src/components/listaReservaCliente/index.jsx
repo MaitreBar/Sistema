@@ -13,7 +13,7 @@ function ListaReservaCliente() {
 
   function getReservas() {
     api
-      .get("/reservas")
+      .get("/reservas/busca-por-usuario/1")
       .then((response) => {
         console.log("RESPONSE: ", response);
         console.log("LISTA DE RESERVAS: ", response.data);
@@ -21,7 +21,7 @@ function ListaReservaCliente() {
       })
       .catch((err) => {
         if (err.response.status === 404) {
-          console.log("Este endpoint não existe");
+          console.log("Não foi retornado nenhum item");
         } else {
           console.error(err);
         }
@@ -57,6 +57,7 @@ function ListaReservaCliente() {
                 />
               );
             }
+            return null;
           })}
         </div>
       </div>

@@ -43,7 +43,7 @@ function CadastroFaseTres() {
       'descricao': inputDescricao
     };
 
-    navigate("/cadastroEstabelecimento4", { state: novoEstabelecimento3 });
+    navigate("/cadastro-estabelecimento-pt4", { state: novoEstabelecimento3 });
   }
 
   const diasDaSemana = ["SEG", "TER", "QUA", "QUI", "SEX", "SAB", "DOM"];
