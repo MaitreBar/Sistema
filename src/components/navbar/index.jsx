@@ -1,27 +1,16 @@
-import { useNavigate } from 'react-router-dom';
-import imagem from '../../assets/logo/maitre.png';
-import './style.css';
+import { useNavigate } from "react-router-dom";
+import imagem from "../../assets/logo/maitre.png";
+import "./style.css";
+import NavbarLogadaPerfil from "./navbarPerfil/navbarPerfil";
 
 function Navbar() {
-
   const navigate = useNavigate();
 
-  return (
-    <div className='navbar'>
-        <img id="logo" src={imagem} alt=""></img>
-        <div className='nome'> <p>MAÎTRE </p></div>
-      <div id="botoes">
-        <span>
-          {" "}
-          <a onClick={() => navigate("/")}>Inicio</a>
-        </span>
-        <span className="botaoSpan">
-          {" "}
-          <a onClick={() => navigate("/login")}>Entrar</a>
-        </span>
-      </div>
-    </div>
-  );
+  if (usuarioLogado !== undefined) {
+    return <NavbarLogadaPerfil />;
+  } else {
+    return <Navbar />;
+  }
 }
 
 export default Navbar;
