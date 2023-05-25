@@ -1,8 +1,13 @@
 import './Profile.modules.css';
 
 import logo from '../../assets/images/icon/logo.png'
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function ProfileClient(){
+
+    const { state: usuarioLogado } = useLocation();
+    const navigate = useNavigate();
+
     return(
         // nav
         <div className='container'>
@@ -12,12 +17,12 @@ function ProfileClient(){
                     <div className='card-details'>
                         <div className='photo'><img src={logo} alt="logo" /></div>
                         <div className='details'>
-                            <b>$nomeEstabelecimento$</b>
-                            <p>CNPJ:</p>
-                            <p>Endereço:</p>
-                            <p>Telefone:</p>
-                            <p>Horário de funcionamento:</p>
-                            <p>Tags:</p>
+                            <b>{usuarioLogado.nome}</b>
+                            <p>CNPJ:{usuarioLogado.cnpj}</p>
+                            <p>Endereço:{usuarioLogado.logradouro}</p>
+                            <p>Descrição:{usuarioLogado.descricao}</p>
+                            <p>Horário de funcionamento:{usuarioLogado.horarioAbertura} às {usuarioLogado.horaioFechamento}</p>
+                            <p>Tags:{usuarioLogado.tags}</p>
                             <a className='btnEditar' href="">Editar</a>
                         </div>
                     </div>

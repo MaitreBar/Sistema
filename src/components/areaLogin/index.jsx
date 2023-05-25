@@ -17,35 +17,13 @@ function AreaLogin() {
     .then((response)=>{
       console.log(response);
       console.log("Logado com sucesso");
-      navigate("/catalogo")
+      const usuarioLogado = response.data;
+      navigate("/perfil" , {state: usuarioLogado})
     }).catch((err) => {
         console.error(err)
     });
 
   };
-
-  function btLogin() {
-    if (!inputEmail) {
-        console.log('O email é obrigatório.');
-        return false;
-    }
-
-    if (!inputSenha) {
-        console.log('A senha é obrigatório.');
-        return false;
-    }
-
-    login();
-
-    // if (login.length == 1) {
-    //     entrar();
-    // }
-
-    // if (login.length == 0) {
-    //     messages.mensagemAlert('Senha ou usuário inválido...');
-    //     return false;
-    // }
-  }
   
   return (
     <div className="body">

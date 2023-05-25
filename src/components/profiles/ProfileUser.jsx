@@ -2,8 +2,13 @@ import "./Profile.modules.css";
 
 import logo from "../../assets/images/icon/logo.png";
 import Navbar from "../navbar";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function ProfileUser() {
+
+  const { state: usuarioLogado } = useLocation();
+  const navigate = useNavigate();
+
   return (
     <div className="body">
       <Navbar />
@@ -16,23 +21,23 @@ function ProfileUser() {
                 <img src={logo} alt="logo" />
               </div>
               <div className="details">
-                <b>$nome$</b>
-                <p>CPF:</p>
-                <p>RG:</p>
-                <p>Data de nascimento:</p>
-                <p>E-mail:</p>
-                <p>Celular:</p>
+                <b>{usuarioLogado.nome}</b>
+                <p>CPF:{usuarioLogado.cpf}</p>
+                <p>RG:{usuarioLogado.rg}</p>
+                <p>Data de nascimento:{usuarioLogado.dtNasc}</p>
+                <p>E-mail:{usuarioLogado.email}</p>
+                <p>Celular:{usuarioLogado.celular}</p>
                 <a className="btnEditar" href="">
                   Editar
                 </a>
               </div>
             </div>
             <div className="card">
-              <a href="">
+              <a onClick={() => navigate('/lista-reserva/cliente')}>
                 <b>Consultar reservas</b>
                 <p>Confira suas reservas já feitas</p>
               </a>
-              <a href="">
+              <a onClick={() => navigate('/catalogo')}>
                 <b>Reservar agora</b>
                 <p>Reserve sua mesa para uma ocasião especial</p>
               </a>
