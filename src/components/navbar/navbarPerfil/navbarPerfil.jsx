@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import imagem from '../../assets/logo/maitre.png';
+import imagem from '../../../assets/logo/maitre.png';
 import './navbarPerfil.css';
 
 function NavbarLogadaPerfil() {
