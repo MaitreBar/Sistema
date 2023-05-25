@@ -1,0 +1,84 @@
+.background{
+    width: 100%;
+    height: auto;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #526D6D;
+    
+}
+
+.containerAtualizacao{
+    width: 40%;
+    height: 70%;
+    background-color: #BBAAA1;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0 10px 0;
+}
+
+.containerAtualizacao .titulo{
+    font-family: 'Old Standard TT', serif;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+form{
+    width: 80%;
+    height: auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputAtualizar{
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    padding-left: 15px;
+    margin: 8px;
+    border: none;
+}
+
+.btnAtualizar{
+    width: 40%;
+    height: 40px;
+    background-color: #526D6D;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.btnAtualizar:hover{
+    background-color: white;
+    color: #526D6D;
+    font-weight: 600;
+}
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+
+/* all */
+
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Quicksand&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+html, body, #root{
+  height: 100%;
+}

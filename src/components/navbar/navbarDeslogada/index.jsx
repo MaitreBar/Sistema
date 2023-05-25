@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import imagem from '../../../assets/logo/maitre.png';
 import './style.css';
 
-function Navbar() {
+function NavbarDeslogada() {
 
   const navigate = useNavigate();
 
@@ -24,4 +24,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavbarDeslogada;
