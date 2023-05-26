@@ -7,7 +7,7 @@ function perfilUsuario() {
   return (
     <div className="App">
       <Navbar/>
-      <PerfilCliente></PerfilCliente>
+      {/* <PerfilCliente></PerfilCliente> */}
       <PerfilUsuario></PerfilUsuario>
     </div>
   );

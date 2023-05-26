@@ -1,5 +1,5 @@
 import "./styleLogin.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import api from "../../api"
 import { useState } from "react";
@@ -19,6 +19,7 @@ function AreaLogin() {
       console.log("Logado com sucesso");
       const usuarioLogado = response.data;
       navigate("/perfil" , {state: usuarioLogado})
+      sessionStorage.setItem('usuario', JSON.stringify(usuarioLogado));
     }).catch((err) => {
         console.error(err)
     });

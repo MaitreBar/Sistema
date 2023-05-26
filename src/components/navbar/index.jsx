@@ -6,10 +6,10 @@ function Navbar() {
   const { state: usuarioLogado } = useLocation();
   const navigate = useNavigate();
 
-  if (usuarioLogado !== undefined) {
-    return <NavbarLogadaPerfil usuario={usuarioLogado} />;
-  } else {
-    return <NavbarDeslogada />;
+  if (sessionStorage.getItem('usuario').length == 0) {
+      return <NavbarDeslogada />;
+    } else {
+      return <NavbarLogadaPerfil usuario={usuarioLogado} />;
   }
 }
 
