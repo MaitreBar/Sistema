@@ -1,12 +1,8 @@
 import "./Profile.modules.css";
 
 import logo from "../../assets/images/icon/logo.png";
-<<<<<<< Updated upstream
 import Navbar from "../navbar";
 import { useLocation, useNavigate } from "react-router-dom";
-=======
-import Navbar from "../navbar/navbarDeslogada";
->>>>>>> Stashed changes
 
 function ProfileUser() {
 
