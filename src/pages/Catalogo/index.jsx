@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/navbar/navbarDeslogada";
+import Navbar from "../../components/navbar";
 import CardCatalogo from "../../components/cardCatalogo/cardCatalogo";
 import api from "../../api";
 import "./catalogo.css";
+import { useLocation } from "react-router";
 
 function Catalogo() {
   const [estabelecimentos, setEstabelecimentos] = useState([]);
+  const { state: usuarioLogado } = useLocation();
 
   useEffect(() => {
     getEstabelecimentos();
@@ -30,7 +32,7 @@ function Catalogo() {
 
   return (
     <div className="body">
-      <Navbar />
+      <Navbar usuarioLogado={usuarioLogado} />
 
       <div className="body">
         {estabelecimentos.map((estabelecimento) => {

@@ -1,12 +1,13 @@
 
-import Navbar from "../../components/navbar/navbarDeslogada";
-import ReservaDois from "../../components/reserva-dois";
+import Navbar from "../../components/navbar";
 import ReservaTres from "../../components/reserva-tres";
+import { useLocation } from "react-router";
 
 function TelaReservaTres() {
+    const { state: usuarioLogado } = useLocation();
     return (
         <div>
-            <div className="navbar"><Navbar></Navbar></div>
+            <div className="navbar"><Navbar usuarioLogado={usuarioLogado}/></div>
             <div className="reserva"><ReservaTres/></div>
         </div>
     );
