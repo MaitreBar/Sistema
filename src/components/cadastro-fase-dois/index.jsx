@@ -23,7 +23,7 @@ function CadastroFaseDois() {
       telefone: inputTelefone,
     };
 
-    navigate("/cadastro-estabelecimento-pt3", { state: novoEstabelecimento2 });
+    navigate("/cadastro/estabelecimento/3", { state: novoEstabelecimento2 });
   }
 
   return (

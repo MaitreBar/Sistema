@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import imagem from '../../../assets/logo/maitre.png';
 import './navbarPerfil.css';
 
-function NavbarLogadaPerfil(props) {
+function NavbarLogadaPerfil() {
 
   const navigate = useNavigate();
 
@@ -11,17 +11,17 @@ function NavbarLogadaPerfil(props) {
       <img id="logo" src={imagem} alt=""></img>
       <div className='nome'> <p>MAÎTRE </p></div>
       <div id="botoes">
-        <span className='botaoPerfil'>
+        <span onClick={() => navigate("/")} className='botaoPerfil'>
           {" "}
-          <a onClick={() => navigate("/")}>Inicio</a>
+          <a>Inicio</a>
         </span>
-        <span className='botaoVoltar'>
+        <span onClick={() => navigate("/perfil/usuario")} className='botaoVoltar'>
           {" "}
-          <a onClick={() => navigate("/perfil", {state: props.usuarioLogado})}>Perfil</a>
+          <a>Perfil</a>
         </span>
-        <span className="botaoSpan-logado">
+        <span onClick={() => {navigate("/login"); sessionStorage.clear();}} className="botaoSpan-logado">
           {" "}
-          <a onClick={() => navigate("/login")}>Sair</a>
+          <a>Sair</a>
         </span>
       </div>
     </div>

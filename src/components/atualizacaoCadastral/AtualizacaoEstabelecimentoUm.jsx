@@ -1,4 +1,4 @@
-import styles from './Atualizacao.modules.css';
+import './Atualizacao.modules.css';
 
 function AtualizacaoEstabelecimentoUm (){
     return(

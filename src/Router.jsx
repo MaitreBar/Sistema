@@ -13,25 +13,31 @@ import TelaReservaUm from "./pages/Reserva/reserva-um";
 import TelaReservaDois from "./pages/Reserva/reserva-dois";
 import TelaReservaTres from "./pages/Reserva/reserva-tres";
 import SiteInstitucional from "./pages/siteInstitucional";
-import perfilUsuario from "./pages/profiles/Index";
+import perfilUsuario from "./pages/perfilUsuario";
+import perfilEstabelecimento from "./pages/perfilEstabelecimento";
+import atualizarUsuario from "./pages/atualizarPerfilUsuario";
+import atualizarEstabelecimento from "./pages/atualizarPerfilEstabelecimento";
 
 function Routers() {
   return (
     <Routes>
       <Route path="/" element={SiteInstitucional()} />
       <Route path="/cadastro" element={Cadastro()} />
-      <Route path="/cadastro-estabelecimento-pt1" element={CadastroEstabelecimento1()} />
-      <Route path="/cadastro-estabelecimento-pt2" element={CadastroEstabelecimento2()} />
-      <Route path="/cadastro-estabelecimento-pt3" element={CadastroEstabelecimento3()} />
-      <Route path="/cadastro-estabelecimento-pt4" element={CadastroEstabelecimento4()} />
+      <Route path="/cadastro/estabelecimento/1" element={CadastroEstabelecimento1()} />
+      <Route path="/cadastro/estabelecimento/2" element={CadastroEstabelecimento2()} />
+      <Route path="/cadastro/estabelecimento/3" element={CadastroEstabelecimento3()} />
+      <Route path="/cadastro/estabelecimento/4" element={CadastroEstabelecimento4()} />
       <Route path="/login" element={Login()} />
-      <Route path="/perfil" element={perfilUsuario()} />
+      <Route path="/perfil/usuario" element={perfilUsuario()} />
+      <Route path="/perfil/estabelecimento" element={perfilEstabelecimento()} />
+      <Route path="/perfil/usuario/atualizar" element={atualizarUsuario()} />
+      <Route path="/perfil/estabelecimento/atualizar/1" element={atualizarEstabelecimento()} />
       <Route path="/catalogo" element={Catalogo()} />
-      <Route path="/tela-reserva-um" element={TelaReservaUm()} />
-      <Route path="/tela-reserva-dois" element={TelaReservaDois()} />
-      <Route path="/tela-reserva-tres" element={TelaReservaTres()} />
-      <Route path="/lista-reserva/bar" element={ListaReservaBarPages()} />
-      <Route path="/lista-reserva/cliente" element={ListaReservaClientePages()} />
+      <Route path="/reserva/nova/1" element={TelaReservaUm()} />
+      <Route path="/reserva/nova/2" element={TelaReservaDois()} />
+      <Route path="/reserva/nova/3" element={TelaReservaTres()} />
+      <Route path="/reserva/bar" element={ListaReservaBarPages()} />
+      <Route path="/reserva/cliente" element={ListaReservaClientePages()} />
     </Routes>
   );
 }
