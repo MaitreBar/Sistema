@@ -8,7 +8,7 @@ function NavbarLogadaPerfil() {
 
   return (
     <div className='navbar'>
-      <img id="logo" src={imagem} alt=""></img>
+      <img id="planta" src={imagem} alt=""></img>
       <div className='nome'> <p>MAÎTRE </p></div>
       <div id="botoes">
         <span onClick={() => navigate("/")} className='botaoPerfil'>
