@@ -17,6 +17,7 @@ import perfilUsuario from "./pages/perfilUsuario";
 import perfilEstabelecimento from "./pages/perfilEstabelecimento";
 import atualizarUsuario from "./pages/atualizarPerfilUsuario";
 import atualizarEstabelecimento from "./pages/atualizarPerfilEstabelecimento";
+import DetalhesEstabelecimentoPages from "./pages/detalhesEstabelecimento/detalheEstabPage";
 
 function Routers() {
   return (
@@ -30,6 +31,7 @@ function Routers() {
       <Route path="/login" element={Login()} />
       <Route path="/perfil/usuario" element={perfilUsuario()} />
       <Route path="/perfil/estabelecimento" element={perfilEstabelecimento()} />
+      <Route path="/detalhes/estabelecimento" element={DetalhesEstabelecimentoPages()} />
       <Route path="/perfil/usuario/atualizar" element={atualizarUsuario()} />
       <Route path="/perfil/estabelecimento/atualizar/1" element={atualizarEstabelecimento()} />
       <Route path="/catalogo" element={Catalogo()} />
