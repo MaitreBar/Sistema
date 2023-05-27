@@ -18,6 +18,7 @@ import perfilEstabelecimento from "./pages/perfilEstabelecimento";
 import atualizarUsuario from "./pages/atualizarPerfilUsuario";
 import atualizarEstabelecimento from "./pages/atualizarPerfilEstabelecimento";
 import DetalhesEstabelecimentoPages from "./pages/detalhesEstabelecimento/detalheEstabPage";
+import atualizarEstabelecimentoDois from "./pages/atualizarPerfilEstabelecimento/atualizarCadastroDois";
 
 function Routers() {
   return (
@@ -34,6 +35,7 @@ function Routers() {
       <Route path="/detalhes/estabelecimento" element={DetalhesEstabelecimentoPages()} />
       <Route path="/perfil/usuario/atualizar" element={atualizarUsuario()} />
       <Route path="/perfil/estabelecimento/atualizar/1" element={atualizarEstabelecimento()} />
+      <Route path="/perfil/estabelecimento/atualizar/2" element={atualizarEstabelecimentoDois()} />
       <Route path="/catalogo" element={Catalogo()} />
       <Route path="/reserva/nova/1" element={TelaReservaUm()} />
       <Route path="/reserva/nova/2" element={TelaReservaDois()} />

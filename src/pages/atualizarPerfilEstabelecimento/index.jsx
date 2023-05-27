@@ -1,14 +1,14 @@
 import AtualizacaoEstabelecimentoUm from "../../components/atualizacaoCadastral/AtualizacaoEstabelecimentoUm";
 import Navbar from "../../components/navbar";
 
-function atualizarEstabelecimento() {
+function AtualizarEstabelecimento() {
 
   return (
     <div className="App">
-      <Navbar/>
+      <Navbar />
       <AtualizacaoEstabelecimentoUm />
     </div>
   );
 }
 
-export default atualizarEstabelecimento;
+export default AtualizarEstabelecimento;
