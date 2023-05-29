@@ -1,4 +1,4 @@
-nav{
+.navbarInstitucional{
     width: 100%;
     display: flex;
     align-items: center;
@@ -17,11 +17,11 @@ nav{
     flex-direction:row;
 }
 
-nav img{
+.navbarInstitucional img{
     width: 50px;
 }
 
-nav p{
+.navbarInstitucional p{
     color: #526D6D;
     margin: 0 10px 0 10px;
     font-family: 'Old Standard TT', serif;

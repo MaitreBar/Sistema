@@ -59,7 +59,7 @@ function ListaReserva(props) {
         </span>
       </div>
 
-      <div className="Quantidade-reserva">
+      <div className="quantidade-reserva">
         <span>Quantidade pessoal: 1</span>
       </div>
       <div className="button-cancelar-reserva">

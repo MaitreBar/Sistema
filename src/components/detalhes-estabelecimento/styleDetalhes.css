@@ -236,8 +236,12 @@
     background-color: rgba(110, 93, 84, 0.7);
 }
 
-.card-botoes a b,
-p {
+.card-botoes a b {
+    color: #fff;
+    font-size: 18px;
+}
+
+.card-botoes a p {
     color: #fff;
     font-size: 18px;
 }

@@ -5,7 +5,7 @@ function AtualizacaoCliente (){
         <div className='background'>
             <div className='containerAtualizacao'>
                 <p className='titulo'>Atualizar perfil</p>
-                <form action="">
+                <form action="" className='formAtualizacao'>
                     <input type="text" placeholder='Nome completo' className='inputAtualizar' />
                     <input type="text" placeholder='E-mail' className='inputAtualizar' />
                     <input type="text" placeholder='RG' className='inputAtualizar' />

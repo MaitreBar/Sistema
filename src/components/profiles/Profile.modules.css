@@ -80,7 +80,12 @@
     background-color: rgba(110, 93, 84, 0.7);
 }
 
-.card a b,p{
+.card a p{
+    color: antiquewhite;
+    font-size: 12px;
+}
+
+.card a b{
     color: antiquewhite;
     font-size: 12px;
 }
