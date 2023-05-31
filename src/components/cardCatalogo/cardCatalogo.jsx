@@ -16,7 +16,7 @@ function CardCatalogo(props) {
   return (
     <div className="container">
       <div className="content">
-        <img src={imagem} alt="Imagem" />
+        <img className="contentImg" src={imagem} alt="Imagem" />
         <div className="text">
           <span className="negrito">{props.estabelecimento.nome}</span>
           <p>

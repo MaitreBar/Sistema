@@ -12,7 +12,7 @@ function Navb() {
   }
 
   return (
-    <nav>
+    <nav className="navbarInstitucional">
       <div className="iconNav">
         <a href="">
           <img src={logo} alt="logo maître" />

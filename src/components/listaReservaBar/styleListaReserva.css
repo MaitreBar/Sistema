@@ -13,7 +13,7 @@
   background-color: #526D6D;
 }
 
-a {
+.click-alfabeto a {
   cursor: pointer;
 }
 
@@ -152,7 +152,7 @@ a {
   margin-top: -20px;
 }
 
-.Quantidade-reserva {
+.quantidade-reserva {
   margin-left: 1160px;
   margin-top: -20px;
 }
