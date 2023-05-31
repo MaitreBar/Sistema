@@ -22,22 +22,22 @@ function ProfileUser() {
               </div>
               <div className="details">
                 <b>{usuarioLogado.nome}</b>
-                <p>CPF:{usuarioLogado.cpf}</p>
-                <p>RG:{usuarioLogado.rg}</p>
-                <p>Data de nascimento:{usuarioLogado.dtNasc}</p>
-                <p>E-mail:{usuarioLogado.email}</p>
-                <p>Celular:{usuarioLogado.celular}</p>
-                <a className="btnEditar" href="">
+                <p>CPF:{sessionStorage.cpf}</p>
+                <p>RG:{sessionStorage.rg}</p>
+                <p>Data de nascimento:{sessionStorage.dtNasc}</p>
+                <p>E-mail:{sessionStorage.email}</p>
+                <p>Celular:{sessionStorage.celular}</p>
+                <a className="btnEditar" onClick={() => navigate("/perfil/atualizar/usuario", {state: usuarioLogado})}>
                   Editar
                 </a>
               </div>
             </div>
             <div className="card">
-              <a onClick={() => navigate('/lista-reserva/cliente')}>
+              <a onClick={() => navigate('/reserva/cliente', {state: usuarioLogado})}>
                 <b>Consultar reservas</b>
                 <p>Confira suas reservas já feitas</p>
               </a>
-              <a onClick={() => navigate('/catalogo')}>
+              <a onClick={() => navigate('/catalogo', {state: usuarioLogado})}>
                 <b>Reservar agora</b>
                 <p>Reserve sua mesa para uma ocasião especial</p>
               </a>

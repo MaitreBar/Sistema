@@ -1,9 +1,8 @@
-
 import ListaReservaBar from "../../components/listaReservaBar";
-import Navbar from "../../components/navbar/navbarDeslogada";
-
+import Navbar from "../../components/navbar";
 
 function ListaReservaBarPages() {
+  
   return (
     <div>
       <div className="navbar"><Navbar /></div>

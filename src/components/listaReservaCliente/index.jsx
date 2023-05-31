@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import ListaReserva from "./listaReserva";
 import "./styleListaReserva.css";
 import { useEffect, useState } from "react";
@@ -6,6 +6,7 @@ import api from "../../api";
 
 function ListaReservaCliente() {
   const [reservas, setReservas] = useState([]);
+  const { state: usuarioLogado } = useLocation();
 
   useEffect(() => {
     getReservas();

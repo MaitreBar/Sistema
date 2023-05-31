@@ -14,7 +14,7 @@ function CadastroFaseUm() {
       senha: inputSenha,
     };
 
-    navigate("/cadastro-estabelecimento-pt2", { state: novoEstabelecimento });
+    navigate("/cadastro/estabelecimento/2", { state: novoEstabelecimento });
   }
 
   return (

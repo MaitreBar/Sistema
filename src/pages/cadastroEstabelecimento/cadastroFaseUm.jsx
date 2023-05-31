@@ -1,7 +1,8 @@
-
-import Navbar from "../../components/navbar/navbarDeslogada";
+import Navbar from "../../components/navbar";
 import CadastroFaseUm from "../../components/cadastro-fase-um";
+
 function CadastroEstabelecimento1() {
+  
   return (
     <div>
       <div className="Navbar"><Navbar /> </div>

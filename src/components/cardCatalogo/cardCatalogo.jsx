@@ -40,7 +40,7 @@ function CardCatalogo(props) {
 
         <button
           onClick={() =>
-            navigate("/tela-reserva-um", {
+            navigate("/reserva/nova/1", {
               state: props.estabelecimento,
             })
           }

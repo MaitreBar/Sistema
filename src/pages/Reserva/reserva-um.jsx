@@ -1,9 +1,9 @@
-import AreaLogin from "../../components/areaLogin";
-import Navbar from "../../components/navbar/navbarDeslogada";
+import Navbar from "../../components/navbar";
 import ReservaUm from "../../components/reserva-um";
 
 
 function TelaReservaUm() {
+    
     return (
         <div>
             <div className="navbar"><Navbar /></div>
@@ -11,8 +11,6 @@ function TelaReservaUm() {
 
         </div>
     );
-
-
 }
 export default TelaReservaUm;
 

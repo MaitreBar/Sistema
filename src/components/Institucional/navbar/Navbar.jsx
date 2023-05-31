@@ -34,7 +34,16 @@ function Navb() {
             <a className="a">Contate-nos</a>
           </li>
           <li>
-            <a className="btnReserva" onClick={() => navigate("/login")}>
+            <a
+              className="btnReserva"
+              onClick={() => {
+                if(sessionStorage.length === 0){
+                navigate("/login");
+              } else {
+                navigate("/catalogo");
+              }
+              }}
+            >
               Reservar
             </a>
           </li>

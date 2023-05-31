@@ -1,6 +1,6 @@
 
 import AreaCadastro from "../../components/areaCadastro";
-import Navbar from "../../components/navbar/navbarDeslogada";
+import Navbar from "../../components/navbar";
 
 function Cadastro() {
   return (

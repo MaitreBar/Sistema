@@ -45,7 +45,7 @@ function ListaReserva(props) {
       </div>
 
       <div className="nome-reserva">
-        <span> Nome do cliente: {/* precisa da navbar com o botão de perfil para passar os dados de login */}</span>
+        <span> Nome do cliente: {sessionStorage.getItem('nome')}</span>
       </div>
 
       <div className="horario-reserva">

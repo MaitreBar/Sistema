@@ -1,9 +1,9 @@
-import "./styleFaseTres.css";
+import "./styleAtualizarDois.css";
 import React, { useState } from "react";
 import InputMask from "react-input-mask";
 import { useLocation, useNavigate } from "react-router-dom";
 
-function CadastroFaseTres() {
+function AtualizacaoDois() {
   const navigate = useNavigate();
 
   const { state: novoEstabelecimento2 } = useLocation();
@@ -28,24 +28,6 @@ function CadastroFaseTres() {
     setButtonDias([...buttonDias, newValue]);
   };
 
-  function cadastrar() {
-    const novoEstabelecimento3 = {
-      'nome': novoEstabelecimento2.nome,
-      'senha': novoEstabelecimento2.senha,
-      'logradouro': novoEstabelecimento2.logradouro,
-      'numero': novoEstabelecimento2.numero,
-      'complemento': novoEstabelecimento2.complemento,
-      'telefone': novoEstabelecimento2.telefone,
-      'diasDaSemana': JSON.stringify(buttonDias),
-      'horarioAbertura': inputHorarioAbertura,
-      'horarioFechamento': inputHorarioFechamento,
-      'email': inputEmail,
-      'descricao': inputDescricao
-    };
-
-    navigate("/cadastro/estabelecimento/4", { state: novoEstabelecimento3 });
-  }
-
   const diasDaSemana = ["SEG", "TER", "QUA", "QUI", "SEX", "SAB", "DOM"];
 
   const expediente = "00:00 até as 00:00"; // Horário de expediente selecionável
@@ -53,12 +35,9 @@ function CadastroFaseTres() {
   return (
     <div className="body">
       <div className="inputs-cadastro">
-        <h2 className="titulos">Cadastre seu estabelecimento</h2>
-        <span className="subtitulo0">
-          <p className="numero-pg"> 3 - 4 </p>{" "}
-        </span>
+        <h2 className="titulos">Atualizar perfil</h2>
         <div className="textos">
-          <br/>
+          <br />
           <div className="expediente">
             <p>
               {" "}
@@ -82,8 +61,8 @@ function CadastroFaseTres() {
               />
             </p>
           </div>
-          <br/>
-          <div>
+          <br />
+          <div className="buttons-days">
             {diasDaSemana.map((dia, index) => (
               <button
                 key={index}
@@ -95,35 +74,26 @@ function CadastroFaseTres() {
               </button>
             ))}
           </div>
-          <br/>
-          <input
-                onChange={(evento) =>
-                  setInputEmail(evento.target.value)
-                }
-            className="campoTextoCadastro-cadastro"
-            type="text"
-            placeholder="Email"
-          ></input>
-          <br className="broken"/>
-          <input
-                onChange={(evento) =>
-                  setInputDescricao(evento.target.value)
-                }
-            className="campoTextoCadastro-cadastro"
-            type="text"
-            placeholder="Descrição"
-          ></input>
-          <br className="broken"/>
-
-          <br/>
-          <button onClick={cadastrar} className="button-28">
-            Proximo
+          <br></br>
+          <br />
+          <div className="imagem">
+            <input className="" type="file" />
+            <br />
+            <button className="button-27-adicionar">Adicionar Imagem</button>
+          </div>
+          <br></br>
+          <br />
+          <button className="button-28-atualizar">
+            Atualizar
           </button>
-          <br/>
+          <br />
         </div>
+        <br className="broken" />
+
+        <br />
       </div>
     </div>
   );
 }
 
-export default CadastroFaseTres;
+export default AtualizacaoDois;
