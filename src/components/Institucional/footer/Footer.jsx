@@ -12,8 +12,8 @@ function Footer(){
         <div class="container-footer">
             <div class="footer-box">
             <span>Contate-nos</span>
-            <p>Vire a direita, n°456 - Depois a esquerda -  SP</p>
-            <p>pocotom@email.com</p>
+            <p>Rua Haddock Lobo, n° 595 - Cerqueira César, São Paulo - SP</p>
+            <p>maitre@email.com</p>
             </div>
             <div class="footer-box">
             <span>2023</span>
@@ -24,7 +24,7 @@ function Footer(){
             </div>
             </div>
         </div>
-        <p>Copyright © Maître</p>
+        <p>Copyright © 2023 Maître</p>
         </footer>
     )
 }

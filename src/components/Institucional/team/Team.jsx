@@ -46,8 +46,8 @@ function Equipe(){
                 </div>
             </div>
             <div className="citacao">
-                <p class="quote">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p><br/>
-                <h4>- Nistro Niministro</h4>
+                <p class="quote">A nossa maior glória não reside no fato de nunca cairmos, mas sim em levantarmo-nos sempre depois de cada queda.</p><br/>
+                <h4>- Oliver Goldsmith</h4>
             </div>
         </section>
     )

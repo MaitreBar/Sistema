@@ -12,15 +12,15 @@ function Sobre(){
             <div class="containerService">
                 <div class="serviceBox">
                 <img src={coquetel} alt=""/>
-                <p>Um dia liguei para o meu pai e pedi um lego para brincar mas pisei em cima e doeu</p>
+                <p>Encontre o estabelecimento que mais se encaixa com seus gostos.</p>
                 </div>
                 <div class="serviceBox">
                 <img src={comentario} alt=""/>
-                <p>Um dia liguei para o meu pai e pedi um lego para brincar mas pisei em cima e doeu</p>
+                <p>Dê um match entre seu pefil de cliente e entre seu perfil de estabelecimento.</p>
                 </div>
                 <div class="serviceBox">
                 <img src={balcao} alt=""/>
-                <p>Um dia liguei para o meu pai e pedi um lego para brincar mas pisei em cima e doeu</p>
+                <p>Melhore seu atendimento com uma melhor gestão do seu espaço.</p>
                 </div>
             </div>
             <div class="serviceBtn">

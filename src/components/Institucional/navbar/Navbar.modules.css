@@ -46,6 +46,7 @@
     font-size: 1rem;
     color: white;
     transition:  0.3s ease-in-out;
+    cursor: pointer;
 }
 
 #navbar li .a:hover::after,
@@ -75,6 +76,7 @@
     border-radius: 5px;
     text-decoration: none;
     color: white;
+    background-color: black;
 }
 
 .btnReserva:hover{
