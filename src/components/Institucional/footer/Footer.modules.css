@@ -38,6 +38,7 @@ footer{
   .footer-box img{
     width: 30px;
     margin: 10px;
+    cursor: pointer;
   }
   
   .footer-box span{
