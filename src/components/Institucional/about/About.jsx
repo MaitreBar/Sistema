@@ -1,4 +1,5 @@
 import styles from './About.modules.css'
+import { useNavigate } from "react-router-dom";
 
 import coquetel from '../../../assets/images/icon/coquetel.png'
 import comentario from '../../../assets/images/icon/comentarios.png'
@@ -6,6 +7,7 @@ import balcao from '../../../assets/images/icon/balcao-de-bar.png'
 
 
 function Sobre(){
+    const navigate = useNavigate();
     return(
         <section class="service" id='service'>
             <span class="titleG">RESERVE <span class="txtColor">&</span> DIVIRTA-SE</span>
@@ -24,7 +26,13 @@ function Sobre(){
                 </div>
             </div>
             <div class="serviceBtn">
-                <button>Conhecer mais</button>
+                <button onClick={() => {
+                if(sessionStorage.length === 0){
+                navigate("/login");
+              } else {
+                navigate("/catalogo");
+              }
+              }}>Conhecer mais</button>
                 <button>Entrar em contato</button>
             </div>
         </section>
