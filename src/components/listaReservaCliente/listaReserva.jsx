@@ -1,8 +1,12 @@
+import { useLocation } from "react-router-dom";
 import api from "../../api";
 import "./styleListaReserva.css";
 
 function ListaReserva(props) {
+  const { state: usuarioLogado } = useLocation();
+
   function cancelarReserva(reserva) {
+    
     const delet = {
       id: reserva.id,
       checkOut: true,
@@ -45,7 +49,7 @@ function ListaReserva(props) {
       </div>
 
       <div className="nome-reserva">
-        <span> Nome do cliente: {sessionStorage.getItem('nome')}</span>
+        <span> Nome do cliente: {usuarioLogado.nome}</span>
       </div>
 
       <div className="horario-reserva">

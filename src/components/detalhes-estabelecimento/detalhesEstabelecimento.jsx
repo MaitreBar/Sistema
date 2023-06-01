@@ -2,11 +2,9 @@ import "./styleDetalhes.css"
 import bar1 from "../../assets/images/carrosel/bar1.png"
 import fotoPerfil from "../../assets/fotoPerfil/Ellipse 2.png"
 import mapinha from "../../assets/images/mapinha/mapinha.png"
-import { useLocation, useNavigate } from "react-router-dom";
-import Navbar from "../navbar";
-import React from 'react';
-function DetalhesEstabelecimento() {
+import React, { useEffect, useState } from 'react';
 
+function DetalhesEstabelecimento(props) {
 
   return (
     <div className="body-detalhes">
@@ -39,15 +37,11 @@ function DetalhesEstabelecimento() {
             <div className="dados-informacoes-estabelecimento">
 
               <span className="nome-estabelecimento">
-
-                Nome {/* aqui o landim vai trocar pela variavel do nome */}
-
+                {props.estabelecimento.nome}
               </span>
 
               <span className="endereço-estabelecimento">
-
-                Rua um dois tres,123
-
+                rua
               </span>
 
             </div>

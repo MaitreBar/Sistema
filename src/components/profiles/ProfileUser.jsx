@@ -8,6 +8,7 @@ function ProfileUser() {
 
   const { state: usuarioLogado } = useLocation();
   const navigate = useNavigate();
+  console.log(usuarioLogado);
 
   return (
     <div className="body">
@@ -22,11 +23,11 @@ function ProfileUser() {
               </div>
               <div className="details">
                 <b>{usuarioLogado.nome}</b>
-                <p>CPF:{sessionStorage.cpf}</p>
-                <p>RG:{sessionStorage.rg}</p>
-                <p>Data de nascimento:{sessionStorage.dtNasc}</p>
-                <p>E-mail:{sessionStorage.email}</p>
-                <p>Celular:{sessionStorage.celular}</p>
+                <p>CPF:{usuarioLogado.cpf}</p>
+                <p>RG:{usuarioLogado.rg}</p>
+                <p>Data de nascimento:{usuarioLogado.dtNasc}</p>
+                <p>E-mail:{usuarioLogado.email}</p>
+                <p>Celular:{usuarioLogado.celular}</p>
                 <a className="btnEditar" onClick={() => navigate("/perfil/atualizar/usuario", {state: usuarioLogado})}>
                   Editar
                 </a>
