@@ -7,6 +7,7 @@ import Navbar from "../navbar";
 function ProfileClient() {
   const { state: usuarioLogado } = useLocation();
   const navigate = useNavigate();
+  console.log(usuarioLogado);
 
   return (
     <div>
@@ -29,7 +30,7 @@ function ProfileClient() {
                   {usuarioLogado.horarioFechamento}
                 </p>
                 <p>Tags:{usuarioLogado.tags}</p>
-                <a className="btnEditar" onClick={"/perfil/atualizar/estabelecimento/1"}>
+                <a className="btnEditar" onClick={() => navigate("/perfil/estabelecimento/atualizar/1", {state: usuarioLogado})}>
                   Editar
                 </a>
               </div>

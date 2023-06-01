@@ -47,7 +47,6 @@ function AtualizacaoCliente() {
           console.log(response);
           console.log("Alterou");
           navigate("/perfil/usuario", { state: atualizadoCadastro });
-          // usuarioLogado += atualizadoCadastro;
         })
         .catch((err) => {
           console.log(err);

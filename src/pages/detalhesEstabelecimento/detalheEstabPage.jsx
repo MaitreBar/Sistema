@@ -2,7 +2,6 @@ import DetalhesEstabelecimento from "../../components/detalhes-estabelecimento/d
 import Navbar from "../../components/navbar";
 import api from "../../api";
 import { useEffect, useState } from "react";
-import "./styleDetalhes.css"
 
 function DetalhesEstabelecimentoPages() {
 

@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import api from "../../api";
 import { useState } from "react";
+import { HttpStatusCode } from "axios";
 
 function AreaLogin() {
   const [inputEmail, setInputEmail] = useState();
@@ -29,7 +30,25 @@ function AreaLogin() {
         navigate("/perfil/usuario", { state: usuarioLogado });
       })
       .catch((err) => {
-        console.error(err);
+        if (err.response?.status === 404) {
+          api
+            .post(`/estabelecimentos/${inputEmail}/${inputSenha}`)
+            .then((response) => {
+              console.log(response);
+              console.log("Estabelecimento Entrou");
+              const usuarioLogado = response.data;
+              sessionStorage.setItem("id", usuarioLogado.id)
+              sessionStorage.setItem("nome", usuarioLogado.nome);
+              sessionStorage.setItem("email", usuarioLogado.email);
+              sessionStorage.setItem("cpf", usuarioLogado.cpf);
+              sessionStorage.setItem("dtNasc", usuarioLogado.dtNasc);
+              sessionStorage.setItem("celular", usuarioLogado.celular);
+              sessionStorage.setItem("rg", usuarioLogado.rg);
+              sessionStorage.setItem("tags", usuarioLogado.tags);
+              navigate("/perfil/estabelecimento", { state: usuarioLogado });
+            }
+            )
+        } else { console.error(err); }
       });
   }
 
