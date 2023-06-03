@@ -39,7 +39,7 @@ function AtualizacaoCliente() {
         tags: usuarioLogado.tags
       };
 
-      const id = usuarioLogado.id;
+      const id = sessionStorage.id;
 
       api
         .put(`/usuarios/${id}`, atualizadoCadastro)

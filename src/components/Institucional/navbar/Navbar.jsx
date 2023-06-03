@@ -33,14 +33,16 @@ function Navb() {
           <li>
             <a className="a">Contate-nos</a>
           </li>
-          <li>
-            <button className="btnReserva" onClick={() => {
-                if(sessionStorage.length === 0){
+          <li
+            onClick={() => {
+              if (sessionStorage.length === 0) {
                 navigate("/login");
               } else {
                 navigate("/catalogo");
               }
-              }}>Reservar</button>
+            }}
+          >
+            <a className="btnReserva">Reservar</a>
           </li>
         </ul>
       </div>

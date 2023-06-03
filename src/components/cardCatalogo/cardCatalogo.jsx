@@ -13,6 +13,9 @@ function CardCatalogo(props) {
   function separarTags() {
     setTags(props.estabelecimento.tags.split(","));
   }
+
+  const estabelecimento = props.estabelecimento;
+
   return (
     <div className="container">
       <div className="content">
@@ -39,11 +42,12 @@ function CardCatalogo(props) {
         </span>
 
         <button
-          onClick={() =>
+          onClick={() => {
+            const estabelecimento = props.estabelecimento;
             navigate("/detalhes/estabelecimento", {
-              state: props.estabelecimento,
-            })
-          }
+              state: estabelecimento,
+            });
+          }}
           className="button-reservar-catalogo"
         >
           Reservar

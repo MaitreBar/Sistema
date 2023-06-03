@@ -14,7 +14,7 @@ function AreaLogin() {
   function login() {
 
     api
-      .post(`/usuarios/${inputEmail}/${inputSenha}`)
+      .get(`/usuarios/${inputEmail}/${inputSenha}`)
       .then((response) => {
         console.log(response);
         console.log("Logado com sucesso");
