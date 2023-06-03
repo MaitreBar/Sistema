@@ -11,13 +11,13 @@ function NavbarDeslogada() {
       <img id="logo" src={imagem} alt=""></img>
       <div className='nome'> <p>MAÎTRE </p></div>
       <div id="botoes">
-        <span>
+        <span onClick={() => navigate("/")}>
           {" "}
-          <a onClick={() => navigate("/")}>Inicio</a>
+          <a>Inicio</a>
         </span>
-        <span className="botaoSpan">
+        <span onClick={() => navigate("/login")} className="botaoSpan">
           {" "}
-          <a onClick={() => navigate("/login")}>Entrar</a>
+          <a>Entrar</a>
         </span>
       </div>
     </div>

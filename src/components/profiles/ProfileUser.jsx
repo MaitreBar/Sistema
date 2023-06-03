@@ -28,7 +28,7 @@ function ProfileUser() {
                 <p>Data de nascimento:{usuarioLogado.dtNasc}</p>
                 <p>E-mail:{usuarioLogado.email}</p>
                 <p>Celular:{usuarioLogado.celular}</p>
-                <a className="btnEditar" onClick={() => navigate("/perfil/atualizar/usuario", {state: usuarioLogado})}>
+                <a className="btnEditar" onClick={() => navigate("/perfil/usuario/atualizar")}>
                   Editar
                 </a>
               </div>

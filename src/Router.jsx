@@ -33,7 +33,7 @@ function Routers() {
       <Route path="/perfil/usuario" element={perfilUsuario()} />
       <Route path="/perfil/estabelecimento" element={perfilEstabelecimento()} />
       <Route path="/detalhes/estabelecimento" element={DetalhesEstabelecimentoPages()} />
-      <Route path="/perfil/atualizar/usuario" element={atualizarUsuario()} />
+      <Route path="/perfil/usuario/atualizar" element={atualizarUsuario()} />
       <Route path="/perfil/estabelecimento/atualizar/1" element={atualizarEstabelecimento()} />
       <Route path="/perfil/estabelecimento/atualizar/2" element={atualizarEstabelecimentoDois()} />
       <Route path="/catalogo" element={Catalogo()} />
