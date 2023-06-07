@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,770;1,400&family=Quicksand:wght@300;400;500;600;770&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  transition: 0.3s ease-in-out;
+}
+
+html, body, #root{
+  height: auto;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+  border: 1px solid #526d6d;
+}
+
+/* NAVBAR*/
+.containerNavbar {
+  background-color: black;
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.cabecalhoNavbar {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.imagemNavbar {
+  height: 60%;
+  margin: 0 10px 0 10px;
+  cursor: pointer;
+}
+
+.nomeNavbar {
+  font-family: "Old Standard TT", serif;
+  color: #526d6d;
+  margin-top: 12px;
+  font-size: 24px;
+}
+
+.containerBotoesNavbar {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 40px;
+}
+
+@media screen and (max-width: 770px) {
+  .imagemNavbar {
+    height: 35%;
+  }
+  .cabecalhoNavbar {
+    padding-left: 15px;
+  }
+  .nomeNavbar {
+    font-size: 16px;
+  }
+  .containerNavbar {
+    height: 12vh;
+  }
+}
+
+/* BODY */
+.backgroundBody {
+  background-color: #526d6d;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/* CONTAINERS */
+.containerMarromClaro {
+  width: 45%;
+  height: auto;
+  padding: 2.5%;
+  background-color: #bbaaa1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 5% 0;
+}
+
+.containerMarromEscuro {
+  width: 80%;
+  height: auto;
+  padding: 2.5%;
+  background-color: #6e5d54;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 5% 0;
+}
+
+.containerLista {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.boxLista {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  background-color: #bbaaa1;
+  border-radius: 3px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  margin: 15px 15px;
+  justify-content: left;
+}
+
+.boxText {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  word-wrap: break-word;
+  max-width: 90%;
+  padding: 3px;
+}
+
+.boxBotao {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 3840px) {
+  .boxText {
+    min-width: 25%;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .boxText {
+    min-width: 33%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .boxText {
+    min-width: 50%;
+  }
+  .containerMarromClaro {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .boxText {
+    width: 90%;
+  }
+  .boxBotao {
+    justify-content: center;
+  }
+  .boxLista{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .boxText {
+    min-width: 33%;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .boxText {
+    min-width: 50%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .boxText {
+    min-width: 100%;
+  }
+  .boxBotao {
+    justify-content: center;
+  }
+}
+
+/* TÍTULOS E TEXTOS*/
+*{
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+}
+
+.tituloContainer {
+  width: 90%;
+  font-family: "Old Standard TT", serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 2%;
+  font-size: 24px;
+}
+
+.colorBlack {
+  color: black;
+}
+.colorWhite {
+  color: #ededed;
+}
+.colorBrown {
+  color: #bbaaa1;
+}
+
+.tituloEtapa {
+  font-family: "Old Standard TT", serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin-bottom: 2%;
+}
+
+.txtVerde {
+  color: #526d6d;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.txtBrown {
+  color: #bbaaa1;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.txtAqua {
+  color: #69bbba;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.txtDecisao {
+  margin: 1% 0;
+  font-size: 13px;
+  width: 65%;
+}
+
+.textoAlerta{
+  font-size: 12px;
+  color: red;
+}
+
+@media screen and (max-width:770px){
+  *{
+    font-size: 12px;
+  }
+  .tituloContainer{
+    font-size: 18px;
+  }
+  .txtVerde {
+    font-size: 10px;
+  }
+  .txtDecisao {
+    font-size: 10px;
+  }
+}
+
+/* INPUTS */
+.formulario {
+  width: 100%;
+  height: auto;
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.formularioInput {
+  height: 35px;
+  padding-left: 2.5%;
+  border-radius: 3px;
+  border: none;
+  margin: 5px 0;
+}
+
+.inputGrande {
+  width: 70%;
+  height: 35px;
+}
+
+.inputDuplo {
+  width: 49%;
+  height: 35px;
+}
+.containerInput {
+  width: 70%;
+  height: 35px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 770px) {
+  .formularioInput,
+  .inputGrande,
+  .inputDuplo,
+  .containerInput {
+    height: 30px;
+  }
+}
+
+/* BOTÕES */
+.btnSistema {
+  width: 100px;
+  height: 35px;
+  background-color: #526d6d;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  margin: 10px 10px 10px 10px;
+  cursor: pointer;
+}
+
+.btnColorBlack {
+  color: black;
+}
+
+.btnMedio {
+  width: 180px;
+}
+
+.btnSemFundo {
+  background-color: transparent;
+  border: 1px solid #526d6d;
+}
+
+.btnSistema:hover {
+  background-color: #69bbba;
+  color: black;
+  border: 1px solid #526d6d;
+}
+
+.containerBtnTopo {
+  width: 97%;
+  height: auto;
+  display: flex;
+  justify-content: right;
+}
+
+@media screen and (max-width: 770px) {
+  .btnSistema {
+    width: 80px;
+    height: 30px;
+  }
+  .btnMedio {
+    width: 160px;
+  }
+}
