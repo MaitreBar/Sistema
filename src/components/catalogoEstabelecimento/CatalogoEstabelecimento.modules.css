@@ -1,0 +1,45 @@
+.containerImagemListaEstabelecimento{
+    background-color: aqua;
+    width: 30%;
+    min-width: 200px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.containerImagemListaEstabelecimento img{
+    height: 100%;
+}
+
+.containerDetalheEstabelecimento{
+    background-color: pink;
+    width: 40%;
+    min-width: 400px;
+    height: 150px;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    text-align: left;
+    padding: 10px;
+}
+
+.containerSituacaoEstabelecimento{
+    background-color: rebeccapurple;
+    width: 30%;
+    max-width: 200px;
+    height: 150px;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    text-align: left;
+    padding: 10px;
+}
+
+.containerTags{
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    background-color: purple;
+}
