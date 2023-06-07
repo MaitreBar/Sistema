@@ -50,84 +50,52 @@ function Routers() {
     <Routes>
       <Route path="/" element={Institucional()} />
       <Route path="/login" element={Login()} />
+      <Route path="/recuperar" element={IdentificacaoSenhaEmail()} />
+      <Route path="/recuperar/senha" element={RecuperarSenha()} />
+      <Route path="/recuperar/email" element={RecuperarEmail()} />
+      <Route path="/cadastro" element={IdentificacaoCadastro()} />
+      <Route path="/cadastro/cliente" element={CadastroCliente()} />
       <Route
-        path="/login/identificacao-email-senha"
-        element={IdentificacaoSenhaEmail()}
-      />
-      <Route
-        path="/identificacao-email-senha/recuperacao-senha"
-        element={RecuperarSenha()}
-      />
-      <Route
-        path="/identificacao-email-senha/recuperacao-email"
-        element={RecuperarEmail()}
-      />
-      <Route
-        path="/login/identificacao-cadastro"
-        element={IdentificacaoCadastro()}
-      />
-      <Route
-        path="/identificacao-cadastro/cadastro-cliente"
-        element={CadastroCliente()}
-      />
-      <Route
-        path="/identificacao-cadastro/cadastro-estabelecimento-um"
+        path="/cadastro/estabelecimento/um"
         element={CadastroEstabelecimentoUm()}
       />
       <Route
-        path="/identificacao-cadastro/cadastro-estabelecimento-dois"
+        path="/cadastro/estabelecimento/dois"
         element={CadastroEstabelecimentoDois()}
       />
       <Route
-        path="/identificacao-cadastro/cadastro-estabelecimento-tres"
+        path="/cadastro/estabelecimento/tres"
         element={CadastroEstabelecimentoTres()}
       />
       <Route
-        path="/identificacao-cadastro/cadastro-estabelecimento-quatro"
+        path="/cadastro/estabelecimento/quatro"
         element={CadastroEstabelecimentoQuatro()}
       />
-      <Route path="/perfil-cliente" element={PerfilCliente()} />
+      <Route path="/perfil/cliente" element={PerfilCliente()} />
       <Route
-        path="/perfil-cliente/atualizar-perfil-cliente"
+        path="/perfil/cliente/atualizar"
         element={AtualizarPerfilCliente()}
       />
-      <Route path="/perfil-estabelecimento" element={PerfilEstabelecimento()} />
+      <Route path="/perfil/estabelecimento" element={PerfilEstabelecimento()} />
       <Route
-        path="/perfil-estabelecimento/atualizar-perfil-estabelecimento-um"
+        path="/perfil/estabelecimento/atualizar/um"
         element={AtualizarPerfilEstabelecimentoUm()}
       />
       <Route
-        path="/perfil-estabelecimento/atualizar-perfil-estabelecimento-dois"
+        path="/perfil/estabelecimento/atualizar/dois"
         element={AtualizarPerfilEstabelecimentoDois()}
       />
+      <Route path="/catalogo" element={CatalogoEstabelecimento()} />
+      <Route path="/catalogo/detalhes" element={DetalheEstabelecimento()} />
+      <Route path="/reserva/um" element={ReservaUm()} />
+      <Route path="/reserva/dois" element={ReservaDois()} />
+      <Route path="/reserva/tres" element={ReservaTres()} />
+      <Route path="/reservas/cliente" element={ListaReservaCliente()} />
       <Route
-        path="/login/catalogo-estabelecimento"
-        element={CatalogoEstabelecimento()}
-      />
-      <Route
-        path="/catalogo-estabelecimento/detalhe-estabelecimento"
-        element={DetalheEstabelecimento()}
-      />
-      <Route path="/detalhe-estabelecimento/modal-fila" element={ModalFila()} />
-      <Route path="/detalhe-estabelecimento/modal-vez" element={ModalVez()} />
-      <Route path="/detalhe-estabelecimento/reserva-um" element={ReservaUm()} />
-      <Route
-        path="/detalhe-estabelecimento/reserva-dois"
-        element={ReservaDois()}
-      />
-      <Route
-        path="/detalhe-estabelecimento/reserva-tres"
-        element={ReservaTres()}
-      />
-      <Route
-        path="/perfil-cliente/lista-reserva-cliente"
-        element={ListaReservaCliente()}
-      />
-      <Route
-        path="/perfil-estabelecimento/lista-reserva-estabelecimento"
+        path="/reservas/estabelecimento"
         element={ListaReservaEstabelecimento()}
       />
-      <Route path="/lista-reserva-cliente/feedback" element={Feedback()} />
+      <Route path="/reserva/cliente/feedback" element={Feedback()} />
     </Routes>
   );
 }
