@@ -1,17 +1,17 @@
 import { Routes, Route } from "react-router-dom";
-import Cadastro from "./pages/Cadastro";
-import Login from "./pages/Login";
+import Cadastro from "./pages/cadastro";
+import Login from "./pages/login";
 import CadastroEstabelecimento1 from "./pages/cadastroEstabelecimento/cadastroFaseUm";
 import CadastroEstabelecimento2 from "./pages/cadastroEstabelecimento/cadastroFaseDois";
 import CadastroEstabelecimento3 from "./pages/cadastroEstabelecimento/cadastroFaseTres";
 import CadastroEstabelecimento4 from "./pages/cadastroEstabelecimento/cadastroFaseQuatro";
 import ListaReservaClientePages from "./pages/ListaReserva/listaReservaCliente";
 
-import Catalogo from "./pages/Catalogo";
+import Catalogo from "./pages/catalogo";
 import ListaReservaBarPages from "./pages/ListaReserva/listaReservaBar";
-import TelaReservaUm from "./pages/Reserva/reserva-um";
-import TelaReservaDois from "./pages/Reserva/reserva-dois";
-import TelaReservaTres from "./pages/Reserva/reserva-tres";
+import TelaReservaUm from "./pages/reserva/reserva-um";
+import TelaReservaDois from "./pages/reserva/reserva-dois";
+import TelaReservaTres from "./pages/reserva/reserva-tres";
 import SiteInstitucional from "./pages/siteInstitucional";
 import perfilUsuario from "./pages/perfilUsuario";
 import perfilEstabelecimento from "./pages/perfilEstabelecimento";
