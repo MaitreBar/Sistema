@@ -272,6 +272,7 @@ a {
 }
 
 .textoAlerta{
+  display: none;
   font-size: 12px;
   color: red;
 }
