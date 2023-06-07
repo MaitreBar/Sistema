@@ -1,0 +1,227 @@
+/* divs de alinhamento */
+.alinhar-lado-a-lado {
+  width: 100%;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+.alinhamento-horarios {
+  background-color: #fff;
+  align-items: center;
+  padding: 0px 0px 0px 30px;
+  width: 80%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 5fr);
+  gap: 1px;
+  border-radius: 5px;
+}
+
+.alinhamento-reserva-2 {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 25px;
+  width: 100%;
+}
+
+.alinhamento-reserva-3 {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 8fr);
+  gap: 20px;
+}
+
+.alinhamento-dados {
+  overflow: auto;
+  height: 200px;
+  width: 100%;
+}
+
+.grid-container {
+  position: absolute;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0px 0px 0px 10px;
+}
+
+.grid-container-lugar {
+  position: absolute;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0px 0px 0px 10px;
+}
+
+/* containers internos   */
+.container-esquerda {
+  width: 100%;
+  height: 400px;
+  padding: 2.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 5% 0;
+}
+
+.container-direita {
+  width: 100%;
+  height: 400px;
+  padding: 2.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 5% 0;
+}
+
+.container-esquerda-reserva-2 {
+  width: 100%;
+  height: 400px;
+  padding: 2.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+.container-direita-reserva-2 {
+  width: 100%;
+  height: 400px;
+  padding: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.container-esquerda-reserva-3 {
+  width: 100%;
+  height: 400px;
+  padding: 2.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 5% 0;
+}
+
+.container-dados-cadastrados {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.detalhes-da-reserva {
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  color: #fff;
+}
+.dados {
+  margin: 5px 0px 0px 10px;
+}
+/* css da lib calendario react   */
+.react-calendar {
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar__navigation {
+  background-color: #587370;
+  border-radius: 8px 8px 0 0;
+  padding: 10px;
+}
+
+.react-calendar__navigation button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.react-calendar__navigation button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.react-calendar__navigation__label {
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
+}
+
+.react-calendar__month-view__weekdays {
+  padding: 10px;
+  background-color: #587370;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  flex: 1;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+.react-calendar__month-view__days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  padding: 10px;
+}
+
+.react-calendar__tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border: solid 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.react-calendar__tile:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar__tile--now {
+  border-radius: 100px;
+  background-color: #587370;
+  color: #fff;
+}
+
+.react-calendar__tile--active {
+  border-radius: 100px;
+  background-color: #587370;
+  color: #fff;
+}
+
+/* botoes */
+.btnHorario {
+  width: 80px;
+  height: 40px;
+}
+.btnModal {
+  width: 50px;
+}
