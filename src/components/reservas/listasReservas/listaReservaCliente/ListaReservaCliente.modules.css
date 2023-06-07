@@ -1,0 +1,12 @@
+.boxBotao button{
+    margin: 0;
+}
+
+@media screen and (max-width:630px){
+    .boxText{
+        min-width: 50%;
+      }
+    .btnMedio{
+        width: 110px;
+    }
+  }

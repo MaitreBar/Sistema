@@ -1,0 +1,29 @@
+.boxBotao button{
+    margin: 10px;
+}
+
+.containerPesquisarPorLetra{
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.containerPesquisarPorLetra a{
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.containerPesquisarPorLetra a:hover{
+  color: #BB937C;
+}
+
+
+@media screen and (max-width:630px){
+    .boxText{
+        min-width: 50%;
+      }
+    .btnMedio{
+        width: 110px;
+    }
+  }
