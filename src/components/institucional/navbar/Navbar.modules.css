@@ -1,0 +1,90 @@
+#navbar{
+    display: flex;
+    align-items:  center;
+    justify-content: center;
+}
+
+#navbar li{ 
+    list-style: none;
+    padding:  0 20px;
+    position: relative;    
+}
+
+#navbar li .a{
+    text-decoration:  none;
+    font-size: 1rem;
+    color: white;
+    transition:  0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#navbar li .a:hover::after,
+#navbar li .a:active::after{
+    content: "";
+    width: 70%;
+    height: 2px;
+    background-color: #526D6D;
+    position: absolute;
+    bottom: -8px;
+    left: 20px;
+    transition:  0.3s ease-in-out;
+}
+
+.mobile{
+    display: none;
+}
+
+.mobile i{
+    color: white;
+    align-items: center;
+}
+
+.btnReserva{
+    border: 1px solid #526D6D;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}
+
+.btnReserva:hover{
+    background-color: #526D6D;
+}
+
+@media screen and (max-width:700px){
+    #navbar{
+        display: flex;
+        flex-direction: column;
+        align-items:  flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 12vh;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background-color: black;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0, 0.1);
+        padding: 40px 0 0 10px;
+        transition: 0.3s ease-in-out;
+        border-top: 1px solid #526D6D;
+    }
+
+    #navbar.active{
+        right: 0px;
+    }
+
+    #navbar li{
+        margin-bottom: 40px;
+    }
+
+    .mobile{
+        display: block;
+    }
+
+    .mobile i{
+        font-size: 24px;
+        cursor: pointer;
+    }
+}

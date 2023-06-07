@@ -1,0 +1,94 @@
+.service{
+    width: 100%;
+    border-bottom: 1px solid #787878;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px 0 30px 0;
+  }
+  
+  
+  .containerService{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 30px 0 30px 0;
+  }
+  
+  
+  .serviceBox{
+    width: 300px;
+    height: 150px;
+    background-color: #526D6D;;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    text-align: justify;
+    font-size: 14px;
+    padding: 20px;
+    margin: 20px;
+    flex-direction: column;
+  }
+  
+  
+  .serviceBox img{
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .serviceBtn{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .serviceBtn button{
+    width: 150px;
+    height: 40px;
+    background-color: #526D6D;;
+    border: none;
+    border-radius: 3px;
+    flex-wrap: wrap;
+    cursor: pointer;
+    color: white;
+    margin: 10px;
+  }
+  
+  .serviceBtn button:hover{
+    color: black;
+    background-color: #BB937C;
+  }
+
+.titleG{
+  font-family: 'Old Standard TT', serif;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.txtColor{
+  color: #BB937C;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: 'Old Standard TT', serif;
+}
+
+@media screen and (max-width:700px){
+  .titleG{
+    font-size: 22px;
+  }
+}
+
+.txtAbout{
+  width: 80%;
+  text-align: center;
+}
