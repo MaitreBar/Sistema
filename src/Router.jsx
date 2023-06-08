@@ -55,46 +55,22 @@ function Routers() {
       <Route path="/recuperar/email" element={RecuperarEmail()} />
       <Route path="/cadastro" element={IdentificacaoCadastro()} />
       <Route path="/cadastro/cliente" element={CadastroCliente()} />
-      <Route
-        path="/cadastro/estabelecimento/um"
-        element={CadastroEstabelecimentoUm()}
-      />
-      <Route
-        path="/cadastro/estabelecimento/dois"
-        element={CadastroEstabelecimentoDois()}
-      />
-      <Route
-        path="/cadastro/estabelecimento/tres"
-        element={CadastroEstabelecimentoTres()}
-      />
-      <Route
-        path="/cadastro/estabelecimento/quatro"
-        element={CadastroEstabelecimentoQuatro()}
-      />
+      <Route path="/cadastro/estabelecimento/um" element={CadastroEstabelecimentoUm()}/>
+      <Route path="/cadastro/estabelecimento/dois" element={CadastroEstabelecimentoDois()}/>
+      <Route path="/cadastro/estabelecimento/tres" element={CadastroEstabelecimentoTres()}/>
+      <Route path="/cadastro/estabelecimento/quatro" element={CadastroEstabelecimentoQuatro()}/>
       <Route path="/perfil/cliente" element={PerfilCliente()} />
-      <Route
-        path="/perfil/cliente/atualizar"
-        element={AtualizarPerfilCliente()}
-      />
+      <Route path="/perfil/cliente/atualizar" element={AtualizarPerfilCliente()}/>
       <Route path="/perfil/estabelecimento" element={PerfilEstabelecimento()} />
-      <Route
-        path="/perfil/estabelecimento/atualizar/um"
-        element={AtualizarPerfilEstabelecimentoUm()}
-      />
-      <Route
-        path="/perfil/estabelecimento/atualizar/dois"
-        element={AtualizarPerfilEstabelecimentoDois()}
-      />
+      <Route path="/perfil/estabelecimento/atualizar/um" element={AtualizarPerfilEstabelecimentoUm()}/>
+      <Route path="/perfil/estabelecimento/atualizar/dois" element={AtualizarPerfilEstabelecimentoDois()}/>
       <Route path="/catalogo" element={CatalogoEstabelecimento()} />
       <Route path="/catalogo/detalhes" element={DetalheEstabelecimento()} />
       <Route path="/reserva/um" element={ReservaUm()} />
       <Route path="/reserva/dois" element={ReservaDois()} />
       <Route path="/reserva/tres" element={ReservaTres()} />
       <Route path="/reservas/cliente" element={ListaReservaCliente()} />
-      <Route
-        path="/reservas/estabelecimento"
-        element={ListaReservaEstabelecimento()}
-      />
+      <Route path="/reservas/estabelecimento" element={ListaReservaEstabelecimento()}/>
       <Route path="/reserva/cliente/feedback" element={Feedback()} />
     </Routes>
   );

@@ -1,4 +1,5 @@
 import './DetalheEstabelecimento.modules.css'
+import ImagemEstabelecimento from "../../assets/backgrounds/bar1.png";
 function DetalheEstabelecimento(){
     return(
         <div className='backgroundBody'> 
@@ -9,7 +10,7 @@ function DetalheEstabelecimento(){
                 <div className="containerDetalhes">
                     <div className='informacoesEstabelecimento'>
                         <div className='imagemNome'>
-                            <img src="" alt="" />
+                            <img className='imagem' src={ImagemEstabelecimento} alt="" />
                             <div className='txtImagemNome'>
                                 <b>Nome estabelecimento</b>
                                 <p>Endereço, n°123</p>
@@ -45,13 +46,16 @@ function DetalheEstabelecimento(){
                                 <p>Reserve sua mesa para uma ocasião especial.</p>
                             </button>
                         </div>
+                        <div className='nameEtapa'>
+                                <p className='tituloEtapa'>Avaliações dos clientes</p>
+                            </div>
                         <div className='containerAvaliacoes'>
-                            <p className='tituloEtapa'>Avaliações dos clientes</p>
+                            
+                            <hr />
                             <div className='avaliacoes'>
                                 <b>Nome cliente</b>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum.</p>
                             </div>
-                            <hr />
                             <div className='avaliacoes'>
                                 <b>Nome cliente</b>
                                 <p>Sed ac aliquam lacus. Maecenas lectus sapien, pulvinar eget massa sit amet, ultrices tempor nulla. Aliquam ac quam eget lorem dignissim interdum. Vestibulum non commodo sem.
