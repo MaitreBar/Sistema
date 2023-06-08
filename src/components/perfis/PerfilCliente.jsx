@@ -38,17 +38,25 @@ function PerfilCliente() {
                     Editar
                   </button>
                   <button className="btnSistema bgRed" type="submit">
-                    Exluir
+                    Excluir
                   </button>
                 </div>
               </div>
             </div>
             <div className="card">
-              <button type="submit" className="btnSistema">
+              <button
+                type="submit"
+                onClick={() => navigate("/reserva/cliente")}
+                className="btnSistema"
+              >
                 <b>Consultar reservas</b>
                 <p>Confira suas reservas já feitas</p>
               </button>
-              <button type="submit" className="btnSistema">
+              <button
+                type="submit"
+                onClick={() => navigate("/catalogo")}
+                className="btnSistema"
+              >
                 <b>Reservar agora</b>
                 <p>Reserve sua mesa para uma ocasião especial</p>
               </button>

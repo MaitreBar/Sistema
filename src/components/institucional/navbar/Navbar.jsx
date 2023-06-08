@@ -1,11 +1,11 @@
 import { useState } from "react";
 import logo from '../../../assets/logos/logo-marrom-escuro.png';
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import style from "./Navbar.modules.css";
 
 function Navbar() {
   const [state, setState] = useState(false);
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   function handleClick() {
     setState(!state);
@@ -32,7 +32,7 @@ function Navbar() {
             <a className="a">Contate-nos</a>
           </li>
           <li>
-            <button className="btnReserva" >Reservar</button>
+            <button onClick={() => navigate("/login")} className="btnReserva" >Reservar</button>
           </li>
         </ul>
         <div className="mobile" onClick={handleClick}>
