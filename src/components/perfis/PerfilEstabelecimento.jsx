@@ -27,7 +27,7 @@ function PerfilEstabelecimento() {
                   <p>Descrição: {usuarioLogado.descricao}</p>
                   <p>
                     Horário de funcionamento: {usuarioLogado.horarioAbertura} às{" "}
-                    {usuarioLogado.horarioFechamento}0
+                    {usuarioLogado.horarioFechamento}
                   </p>
                   <p>Tags: {usuarioLogado.tags}</p>
                   <div className="botoesDetails">

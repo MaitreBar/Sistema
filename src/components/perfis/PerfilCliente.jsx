@@ -46,7 +46,7 @@ function PerfilCliente() {
             <div className="card">
               <button
                 type="submit"
-                onClick={() => navigate("/reserva/cliente")}
+                onClick={() => navigate("/reservas/cliente")}
                 className="btnSistema"
               >
                 <b>Consultar reservas</b>

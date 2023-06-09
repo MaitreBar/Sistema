@@ -68,6 +68,10 @@ textarea:focus, input:focus, select:focus {
     outline: 0;
 } 
 
+.formulario .paragrafo {
+    width: 70%;
+}
+
 /* all */
 
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Quicksand&display=swap');

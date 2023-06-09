@@ -73,6 +73,7 @@ function Login() {
             type="email"
             placeholder="E-mail"
             alt="campo e-mail"
+            autoFocus
           />
           <p className="textoAlerta">Esse campo não pode ser vazio!</p>
           <input
