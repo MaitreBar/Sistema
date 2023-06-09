@@ -10,30 +10,30 @@ function ReservaEstabelecimentoUm() {
     setDate(date);
   };
   const horarios = [
-    "1:00",
-    "2:00",
-    "3:00",
-    "4:00",
-    "5:00",
-    "6:00",
-    "7:00",
-    "8:00",
-    "9:00",
-    "10:00",
-    "11:00",
-    "12:00",
-    "13:00",
-    "14:00",
-    "15:00",
-    "16:00",
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-    "23:00",
-    "00:00",
+    "1:00",    "1:30",
+    "2:00",    "2:30",
+    "3:00",    "3:30",
+    "4:00",    "4:30",
+    "5:00",    "5:30",
+    "6:00",    "6:30",
+    "7:00",    "7:30",
+    "8:00",    "8:30",
+    "9:00",    "9:30",
+    "10:00",    "10:30",
+    "11:00",    "11:30",
+    "12:00",    "12:30",
+    "13:00",    "13:30",
+    "14:00",    "14:30",
+    "15:00",    "15:30",
+    "16:00",    "16:30",
+    "17:00",    "17:30",
+    "18:00",    "18:30",
+    "19:00",    "19:30",
+    "20:00",    "20:30",
+    "21:00",    "21:30",
+    "22:00",    "22:30",
+    "23:00",    "23:30",
+    "00:00",    "00:30",
   ];
 
   return (
@@ -41,31 +41,18 @@ function ReservaEstabelecimentoUm() {
       <div className="backgroundBody">
         <div className="containerMarromEscuro">
           <div className="alinhar-lado-a-lado">
-            <div className="container-esquerda">
-              <p
-                className="tituloContainer colorWhite"
-                alt="Cadastre seu estabelecimento"
-              >
-                Escolha o dia
-              </p>
-
-              <div className="calendar-container">
-                <Calendar onChange={onChange} value={date} />
-              </div>
+            <div className="containerReservaUm">
+              <p className="tituloContainer">Escolha o dia</p>
+              <Calendar onChange={onChange} value={date} />
             </div>
-            <div className="container-direita">
-              <p
-                className="tituloContainer colorWhite"
-                alt="Cadastre seu estabelecimento"
-              >
-                Escolha o horário
-              </p>
-              <div className="alinhamento-horarios">
+            <div className="containerReservaUm">
+              <p className="tituloContainer">Escolha o horário</p>
+              <div className="horarios">
                 {horarios.map((horario, index) => (
-                  <button key={index} className="btnSistema btnHorario">
-                    {horario}
-                  </button>
-                ))}
+                    <button key={index} className="btnSistema btnHorario">
+                      {horario}
+                    </button>
+                  ))}
               </div>
             </div>
           </div>
