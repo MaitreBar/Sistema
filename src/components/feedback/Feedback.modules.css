@@ -1,0 +1,17 @@
+.formularioInput{
+    width: 80%;
+    height: auto;
+    min-height: 100px;
+}
+
+.boxLista{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.boxLista p{
+    margin-bottom: 10px;
+    text-align: justify;
+    max-width: 80%;
+}
