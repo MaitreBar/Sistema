@@ -1,7 +1,5 @@
 .containerImagemListaEstabelecimento{
-    background-color: aqua;
-    width: 30%;
-    min-width: 200px;
+    width: 20%;
     height: 150px;
     display: flex;
     justify-content: center;
@@ -11,30 +9,33 @@
 
 .containerImagemListaEstabelecimento img{
     height: 100%;
+    max-width: 100%;
 }
 
 .containerDetalheEstabelecimento{
-    background-color: pink;
-    width: 40%;
-    min-width: 400px;
+    width: 50%;
     height: 150px;
     display: flex;
-    justify-content: left;
+    justify-content: space-evenly;
     flex-direction: column;
     text-align: left;
     padding: 10px;
+    padding-left: 20px;
 }
 
 .containerSituacaoEstabelecimento{
-    background-color: rebeccapurple;
     width: 30%;
-    max-width: 200px;
     height: 150px;
     display: flex;
-    justify-content: left;
+    justify-content: space-evenly;
+    align-items: flex-end;
     flex-direction: column;
-    text-align: left;
+    text-align: right;
     padding: 10px;
+}
+
+.containerSituacaoEstabelecimento button{
+    margin: 0;
 }
 
 .containerTags{
@@ -43,3 +44,40 @@
     padding: 5px;
     background-color: purple;
 }
+
+.conainerLista{
+    background-color: yellow;
+}
+
+.fontOld{
+    font-family: "Old Standard TT", serif;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 970px) {
+    .boxLista{
+        flex-direction: column;
+    }
+    .containerImagemListaEstabelecimento,
+    .containerSituacaoEstabelecimento,
+    .containerDetalheEstabelecimento{
+        width: 100%;
+    }
+    .containerSituacaoEstabelecimento{
+       text-align: left;
+       height: 180px;
+       align-items: center;
+    }
+    .containerImagemListaEstabelecimento{
+        height: 150px;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .containerImagemListaEstabelecimento{
+        height: 100px;
+    }
+    .containerSituacaoEstabelecimento{
+        height: 150px;
+    }
+  }
