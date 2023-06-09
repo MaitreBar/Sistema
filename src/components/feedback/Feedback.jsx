@@ -1,4 +1,4 @@
-import "./Feedback.modules.css";
+import styles from "./Feedback.modules.css";
 
 function Feedback(){
     return(
@@ -7,7 +7,7 @@ function Feedback(){
             <div className='containerMarromEscuro'>
                 <p className='tituloContainer colorWhite' alt='Login'>Deixe sua avaliação</p>
                 <div className="containerLista">
-                    <div className="boxLista">
+                    <div className="boxLista listaFeedback">
                         <p>Olá, <b>nome cliente</b></p>
                         <p>Queremos saber mais sobre sua experiência!</p>
                         <p>Como foi sua reserva no <b>nome restaurante</b>?</p>

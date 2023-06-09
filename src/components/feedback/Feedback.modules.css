@@ -1,16 +1,16 @@
-.formularioInput{
+.listaFeedback .formularioInput{
     width: 80%;
     height: auto;
     min-height: 100px;
 }
 
-.boxLista{
+.listaFeedback{
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.boxLista p{
+.listaFeedback p{
     margin-bottom: 10px;
     text-align: justify;
     max-width: 80%;
