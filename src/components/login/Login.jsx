@@ -9,7 +9,7 @@ function Login() {
   const navigate = useNavigate();
 
   function logar(evento) {
-    evento.preventDefault(); 
+    evento.preventDefault();
     api
       .get(`/usuarios/${inputEmail}/${inputSenha}`)
       .then((response) => {
@@ -19,15 +19,33 @@ function Login() {
         navigate("/perfil/cliente", { state: usuarioLogado });
       })
       .catch((err) => {
-        console.error(err);
         if (err.response?.status === 404) {
           api
             .get(`/estabelecimentos/${inputEmail}/${inputSenha}`)
             .then((response) => {
               console.log(response);
               console.log("Estabelecimento Entrou");
-              const usuarioLogado = response.data;
+              const usuarioLogado = {
+                id: response.data.id,
+                nome: response.data.nome,
+                senha: response.data.senha,
+                logradouro: response.data.logradouro,
+                numero: response.data.numero,
+                complemento: response.data.complemento,
+                cep: response.data.cep,
+                diasDaSemana: response.data.diasDaSemana,
+                faixaDePreco: response.data.faixaDePreco,
+                cnpj: response.data.cnpj,
+                horarioAbertura: response.data.horarioAbertura,
+                horarioFechamento: response.data.horarioFechamento,
+                descricao: response.data.descricao,
+                email: response.data.email,
+                tags: response.data.tags,
+              };
               navigate("/perfil/estabelecimento", { state: usuarioLogado });
+            })
+            .catch((err2) => {
+              console.error(err2);
             });
         } else {
           console.error(err);

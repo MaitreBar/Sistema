@@ -1,8 +1,11 @@
 import "./Perfil.modules.css";
 
 import logo from "../../assets/logos/logo-marrom-escuro.png";
+import { useLocation, useNavigate } from "react-router";
 
 function PerfilEstabelecimento() {
+  const { state: usuarioLogado } = useLocation();
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -16,23 +19,45 @@ function PerfilEstabelecimento() {
                   <img src={logo} alt="logo" />
                 </div>
                 <div className="details">
-                  <b>Nome</b>
-                  <p>CNPJ:</p>
-                  <p>Endereço:</p>
-                  <p>Descrição:</p>
+                  <b>Nome: {usuarioLogado.nome}</b>
+                  <p>CNPJ: {usuarioLogado.cnpj}</p>
                   <p>
-                    Horário de funcionamento: 0 às 0
-                    0
+                    Endereço: {usuarioLogado.logradouro}, {usuarioLogado.numero}
                   </p>
-                  <p>Tags:</p>
+                  <p>Descrição: {usuarioLogado.descricao}</p>
+                  <p>
+                    Horário de funcionamento: {usuarioLogado.horarioAbertura} às{" "}
+                    {usuarioLogado.horarioFechamento}0
+                  </p>
+                  <p>Tags: {usuarioLogado.tags}</p>
                   <div className="botoesDetails">
-                    <button className="btnSistema" type="submit">Editar</button>
-                    <button className="btnSistema bgRed" type="submit">Exluir</button>
+                    <button
+                      onClick={() =>
+                        navigate("/perfil/estabelecimento/atualizar/um", {
+                          state: usuarioLogado,
+                        })
+                      }
+                      className="btnSistema"
+                      type="submit"
+                    >
+                      Editar
+                    </button>
+                    <button className="btnSistema bgRed" type="submit">
+                      Excluir
+                    </button>
                   </div>
                 </div>
               </div>
               <div className="card">
-                <button type="submit" className="btnSistema">
+                <button
+                  type="submit"
+                  onClick={() =>
+                    navigate("/reservas/estabelecimento", {
+                      state: usuarioLogado,
+                    })
+                  }
+                  className="btnSistema"
+                >
                   <b>Consultar reservas</b>
                   <p>Confira as reservas dos seus cliente</p>
                 </button>

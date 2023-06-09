@@ -1,5 +1,4 @@
 import CadastroCliente from "../../components/cadastros/cadastroCliente/CadastroCliente";
-import NavbarLogada from "../../components/navbar/NavbarDeslogada";
 
 function CadastroClientePage() {
   return (

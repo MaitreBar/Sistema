@@ -5,7 +5,7 @@ function ListaReservaEstabelecimento(){
         <section>
             <div className='backgroundBody'>            
                 <div className='containerMarromEscuro'>
-                    <p className='tituloContainer colorWhite' alt='Login'>Confira suas reservas</p>
+                    <p className='tituloContainer colorWhite' alt='Confira suas reservas'>Confira suas reservas</p>
                     <div className="containerPesquisarPorLetra colorWhite">
                         <b>Filtrar clientes</b><br/>
                         <a> A </a>
