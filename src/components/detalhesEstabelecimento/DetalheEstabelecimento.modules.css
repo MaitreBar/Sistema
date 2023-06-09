@@ -4,68 +4,123 @@
     padding: 10px 5px;
     background-color: #BBAAA1;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 
-.containerDetalhes{
+  .containerCardEstabelecimento{
     width: 100%;
     height: auto;
-    padding: 10px;
-    display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    border-radius: 5px;
-}
+    display: flex;
+    flex-direction: row;
+  }
 
-.informacoesEstabelecimento{
-    width: 48%;
-    min-height: 62vh;
-    height: auto;
-    background-color: #BBAAA1;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.acoesAvaliacao{
+  .containerDetalhesEstabelecimento{
     width: 48%;
     height: auto;
     background-color: #BBAAA1;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.botoesReserva{
-    width: 100%;
-    height: 40%;
-    padding: 10px;
+    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-}
-
-.botoesReserva button{
-    width: 100%;
-    height: 65px;
-    background-color: #526D6D;
-    margin: 5px;
-    text-align: left;
-    padding: 10px;
-    border: none;
     border-radius: 5px;
-    transition:  0.1s ease-in-out;
+    flex-direction: column;
+  }
 
-}
-
-.containerAvaliacoes{
+  .cardImagem{
     width: 100%;
-    height: 300px;
-    padding: 10px;
-    overflow-y: scroll;
+    height: auto;
+    min-height: 150px;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .imagem{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
 }
 
-.avaliacoes{
+.txtImagemNome{
+    text-align: left;
+    margin-left: 10px;
+}
+
+  .cardDetalhes{
+    width: 100%;
+    height: auto;
+    min-height: 250px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    flex-direction: column;
+  }
+
+  .cardMapa{
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .cardBotoes{
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .cardBotoes button{
+    width: 100%;
+    height: auto;
+    min-height: 80px;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+  }
+
+  .cardAvaliacoes{
+    width: 100%;
+    height: auto;
+    min-height: 390px;
+    padding: 5px;
+  }
+
+  .txtAvaliacoes{
+    width: 100%;
+    height: auto;
+    min-height: 40px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .containerComentarios{
+    width: 100%;
+    height: 340px;
+    overflow-y: scroll;
+  }
+
+  .tituloEtapa {
+    margin-bottom: 0;
+  }
+
+  .avaliacoes{
     width: 100%;
     height: auto;
     padding: 5px;
@@ -88,66 +143,20 @@
     margin: 15px 0;
 }
 
-.imagemNome{
-    width: 100%;
-    height: auto;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
-
-.imagem{
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    margin: 10px 10px;
-}
-
-.txtImagemNome{
-    text-align: left;
-}
-
-.detalhesEstabelecimento{
-    text-align: left;
-    padding: 15px;
-}
-
-.enderecoEstabelecimento{
-    display: flex;
-    justify-content: center;
-    align-items: left;
-    flex-direction: column;
-    padding: 15px;
-}
-
-.enderecoEstabelecimento .btnSistema{
-    margin: 0 auto;
-}
-
-.nameEtapa{
-    width: 100%;
-    padding-top: 20px;
-}
-
-@media screen and (max-width: 970px) {
-    .containerDetalhes{
+    @media screen and (max-width: 900px) {
+    .containerCardEstabelecimento{
         flex-direction: column;
     }
-    .informacoesEstabelecimento{
-        width: 80%;
+    .containerDetalhesEstabelecimento{
+        width: 90%;
+        margin: 10px 0;
     }
-  }
-
-  @media screen and (max-width: 540px) {
-    .imagem{
-        width: 50px;
-        height: 50px;
-    }
-    .imagemNome{
+    .cardImagem{
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     .txtImagemNome{
-        text-align: center;
+        margin-top: 10px;
     }
   }
