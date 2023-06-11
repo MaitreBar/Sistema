@@ -1,41 +1,40 @@
 import "./CatalogoEstabelecimento.modules.css";
 import imagemEstabelecimento from "../../assets/estabelecimentos/bar-amarelo.png";
+import React, { useEffect } from "react";
+import api from "../../api";
+import { useState } from "react";
+import CardEstabelecimento from "./CardEstabelecimento";
 
-function CatalogoEstabelecimento(){
-    return(
-        <section>
-            <div className='backgroundBody'>            
-                <div className='containerMarromEscuro'>
-                    <p className='tituloContainer colorWhite' alt='Login'>Restaurantes da região</p>
-                    <div className="containerLista">
-                        <div className="boxLista">
-                                <div className="containerImagemListaEstabelecimento">
-                                    <img src={imagemEstabelecimento} alt="" />
-                                </div>
-                                <div className="containerDetalheEstabelecimento">
-                                    <b>Nome</b>
-                                    <p>Endereço: </p>
-                                    <br/>
-                                    <b>Faixa de preço: </b>
-                                    <p>De R$ a R$</p>
-                                    <div className="containerTags">
+function CatalogoEstabelecimento() {
+  const [estabelecimentos, setEstabelecimentos] = useState([]);
 
-                                    </div>
-                                </div>
-                                <div className="containerSituacaoEstabelecimento">
-                                    <img src="" alt="" />
-                                    <b className="fontOld">0.0</b>
-                                    <p>Capacidade: </p>
-                                    <b>Lotação: </b>
-                                    <p>De R$ a R$</p>
-                                    <button className="btnSistema btnMedio" type="submit">Reservar</button>
-                                </div>
-                        </div>
-                    </div>
+  useEffect(() => {
+    api.get("/estabelecimentos").then((response) => {
+      console.log(response.data);
+      setEstabelecimentos(response.data);
+    });
+  });
 
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section>
+      <div className="backgroundBody">
+        <div className="containerMarromEscuro">
+          <p className="tituloContainer colorWhite" alt="Login">
+            Restaurantes da região
+          </p>
+          <div className="containerLista">
+            {estabelecimentos.map((estabelecimento, index) => {
+              return (
+                <CardEstabelecimento
+                  estabelecimento={estabelecimento}
+                  key={index}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 export default CatalogoEstabelecimento;
