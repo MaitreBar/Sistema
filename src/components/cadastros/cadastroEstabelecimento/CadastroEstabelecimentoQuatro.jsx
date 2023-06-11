@@ -1,11 +1,18 @@
 import NavbarDeslogada from "../../navbar/NavbarDeslogada";
 import "../../../index.css";
 import React, { useState } from "react";
+import {
+  useLocation,
+  useNavigate,
+} from "react-router-dom/dist/umd/react-router-dom.development";
+import api from "../../../api";
 
 function CadastroEstabelicimentoQuatro() {
   const [tagSelecionadas, setTagSelecionadas] = useState([]);
-  const [textoSelecao, setTextoSelecao] = useState("");
   const [novaTag, setNovaTag] = useState("");
+
+  const { state: novoEstabelecimento3 } = useLocation();
+  const navigate = useNavigate();
 
   const [tags, setTags] = useState([
     "Drinks",
@@ -17,12 +24,6 @@ function CadastroEstabelicimentoQuatro() {
     "Feijoada",
     "Pizza",
     "Shows",
-    "Raggae",
-    "Trap",
-    "Samba",
-    "Raggae",
-    "Trap",
-    "Samba",
     "Raggae",
     "Trap",
     "Samba",
@@ -38,10 +39,6 @@ function CadastroEstabelicimentoQuatro() {
     }
   };
 
-  const handleTextoChange = (event) => {
-    setTextoSelecao(event.target.value);
-  };
-
   const handleNovaTagChange = (event) => {
     setNovaTag(event.target.value);
   };
@@ -52,6 +49,38 @@ function CadastroEstabelicimentoQuatro() {
       setNovaTag("");
     }
   };
+
+  function cadastrar4(evento) {
+    evento.preventDefault();
+    const novoEstabelecimento4 = {
+      email: novoEstabelecimento3.email,
+      senha: novoEstabelecimento3.senha,
+      cep: novoEstabelecimento3.cep,
+      logradouro: novoEstabelecimento3.logradouro,
+      numero: novoEstabelecimento3.numero,
+      complemento: novoEstabelecimento3.complemento,
+      horarioAbertura: novoEstabelecimento3.horarioAbertura,
+      horarioFechamento: novoEstabelecimento3.horarioFechamento,
+      nome: novoEstabelecimento3.nome,
+      cnpj: novoEstabelecimento3.cnpj,
+      descricao: novoEstabelecimento3.descricao,
+      diasDaSemana: JSON.stringify(novoEstabelecimento3.diasDaSemana),
+      tags: JSON.stringify(tagSelecionadas),
+    };
+
+    api
+      .post("/estabelecimentos", novoEstabelecimento4)
+      .then((response) => {
+        console.log("Enviando os dados para a API");
+        console.log(response);
+        console.log("API recebeu os dados corretamente");
+        console.log("Novo estabelecimento:", novoEstabelecimento4);
+        navigate("/login");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
 
   return (
     <section>
@@ -67,12 +96,16 @@ function CadastroEstabelicimentoQuatro() {
           <p className="txtDecisao">
             <b> 4 - 4</b>
           </p>
-          <form onSubmit="" className="formulario">
+          <form
+            onSubmit={(evento) => cadastrar4(evento)}
+            className="formulario"
+          >
             <p className="colorBlack">Tags</p>
             <div className="alinhamento-tags">
               {tags.map((tag, index) => (
                 <button
                   key={index}
+                  type="button"
                   className="btnSistema btnTag"
                   id={`fruta ${
                     tagSelecionadas.includes(tag) ? "selecionada" : ""
@@ -99,7 +132,29 @@ function CadastroEstabelicimentoQuatro() {
             <button type="submit" className=" btnSistema btnMedio">
               Proximo
             </button>
-            <button type="submit" className="btnSistema btnSemFundo">
+            <button
+              type="button"
+              onClick={() => {
+                const novoEstabelecimento2 = {
+                  email: novoEstabelecimento3.email,
+                  senha: novoEstabelecimento3.senha,
+                  cep: novoEstabelecimento3.cep,
+                  logradouro: novoEstabelecimento3.logradouro,
+                  numero: novoEstabelecimento3.numero,
+                  complemento: novoEstabelecimento3.complemento,
+                  horarioAbertura: novoEstabelecimento3.horarioAbertura,
+                  horarioFechamento: novoEstabelecimento3.horarioFechamento,
+                  nome: novoEstabelecimento3.nome,
+                  cnpj: novoEstabelecimento3.cnpj,
+                  descricao: novoEstabelecimento3.descricao,
+                  diasDaSemana: novoEstabelecimento3.diasDaSemana,
+                };
+                navigate("/cadastro/estabelecimento/tres", {
+                  state: novoEstabelecimento2,
+                });
+              }}
+              className="btnSistema btnSemFundo"
+            >
               Voltar
             </button>
           </form>

@@ -26,6 +26,7 @@ function Login() {
               console.log(response);
               console.log("Estabelecimento Entrou");
               const usuarioLogado = {
+                estabelecimento: true,
                 id: response.data.id,
                 nome: response.data.nome,
                 senha: response.data.senha,
@@ -61,7 +62,7 @@ function Login() {
         </p>
         <p className="txtDecisao">
           Não possui login?{" "}
-          <a className="txtVerde" href="">
+          <a className="txtVerde" href="/cadastro">
             Cadastre-se
           </a>
         </p>
@@ -86,7 +87,7 @@ function Login() {
           <p className="textoAlerta">Esse campo não pode ser vazio!</p>
           <p className="txtDecisao">
             Esqueceu a senha ou o e-mail?{" "}
-            <a className="txtVerde" href="">
+            <a className="txtVerde" href="/recuperar">
               Clique aqui!
             </a>
           </p>
