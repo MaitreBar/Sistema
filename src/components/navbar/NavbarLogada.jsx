@@ -21,7 +21,7 @@ function NavbarLogada() {
           <button
             className="btnSistema btnSemFundo"
             onClick={() => {
-              if (usuarioLogado.estabelecimento) {
+              if (usuarioLogado?.estabelecimento) {
                 navigate("/perfil/estabelecimento", { state: usuarioLogado });
               } else {
                 navigate("/perfil/cliente", { state: usuarioLogado });
