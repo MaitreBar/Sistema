@@ -7,11 +7,34 @@ import {
 } from "react-router-dom/dist/umd/react-router-dom.development";
 import { useEffect, useState } from "react";
 import CardFeedback from "./CardFeedback";
+
 function DetalheEstabelecimento() {
   const { state: usuarioLogado, state: dadosEstabelecimento } = useLocation();
   const navigate = useNavigate();
 
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [posicaoNaFila, setPosicaoNaFila] = useState(null);
+
+  const [modalAberto, setModalAberto] = useState(false);
+  const abrirModal = () => {
+    setModalAberto(true);
+  };
+
   const [endereco, setEndereco] = useState({});
+
+  // const abrirModal = () => {
+    
+  //   fetch('/posicaoReserva/{idUsuario}')
+  //   .then(response => response.json())
+  //   .then(data => {
+  //       setPosicaoNaFila(data.posicao);
+  //       setModalVisible(true);
+  //     })
+  //     .catch(error => {
+  //       console.error('Erro ao obter a posição na fila:', error);
+  //     });
+  //     console.warn("Aqui abriu")
+  // }
 
   useEffect(() => {
     axios
@@ -71,10 +94,19 @@ function DetalheEstabelecimento() {
                 <b>Reservar agora</b>
                 <p>Reserve sua mesa para uma ocasião especial.</p>
               </button>
-              <button type="submit" className="btnSistema">
-                <b>Entrar na fila</b>
+              <button type="submit" className="btnSistema" onClick={abrirModal}>
+                <p>Entrar na Fila</p>
                 <p>Entre na fila de espere um lugar só para você.</p>
               </button>
+              {modalAberto && (
+                      <div className="modal">
+                        <p>Sua posição na fila é:</p>
+                        <div className="position">
+                          <p>10</p>
+                        </div>
+                        <p>Por favor, aguarde na fila!</p>
+                      </div>
+                    )}
             </div>
             <div className="cardAvaliacoes">
               <div className="txtAvaliacoes">

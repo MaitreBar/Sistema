@@ -22,13 +22,12 @@ function AtualizacaoPerfilCliente() {
 
   function atualizaUsuario(evento) {
     evento.preventDefault();
-    const atualizadoCadastro = undefined;
 
     if (inputSenha != usuarioLogado.senha) {
       alert("Senha incorreta");
     } else {
       if (inputSenha === usuarioLogado.senha && inputSenha !== inputNovaSenha) {
-        atualizadoCadastro = {
+        const atualizadoCadastro = {
           id: usuarioLogado.id,
           nome: inputNomeCompleto,
           email: inputEmail,
@@ -40,8 +39,22 @@ function AtualizacaoPerfilCliente() {
           reservas: usuarioLogado.reservas,
           tags: usuarioLogado.tags,
         };
+
+        const id = usuarioLogado.id;
+        
+        api
+        .put(`/usuarios/${id}`, atualizadoCadastro)
+        .then((response) => {
+          console.log(response);
+          console.log("Alteração okay");
+          navigate("/perfil/cliente", { state: atualizadoCadastro });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+        
       } else if ((inputSenha === "" || inputSenha === undefined) && (inputNovaSenha === "" || inputNovaSenha === undefined)) {
-        atualizadoCadastro = {
+        const atualizadoCadastro = {
           id: usuarioLogado.id,
           nome: inputNomeCompleto,
           email: inputEmail,
@@ -54,22 +67,9 @@ function AtualizacaoPerfilCliente() {
           tags: usuarioLogado.tags,
         };
       }
-
-      const id = usuarioLogado.id;
-
-      api
-        .put(`/usuarios/${id}`, atualizadoCadastro)
-        .then((response) => {
-          console.log(response);
-          console.log("Alteração okay");
-          navigate("/perfil/cliente", { state: atualizadoCadastro });
-        })
-        .catch((err) => {
-          console.log(err);
-        });
     }
   }
-
+  
   return (
     <div className="backgroundBody">
       <div className="containerMarromClaro">
