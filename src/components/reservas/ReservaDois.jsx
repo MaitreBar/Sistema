@@ -7,7 +7,7 @@ function ReservaEstabelecimentoDois() {
     <section>
       <div className="backgroundBody">
         <div className="containerMarromEscuro">
-          <div className="alinhamento-reserva-2">
+          <div className="alinhar-lado-a-lado">
             <div className="container-esquerda-reserva-2">
               <p
                 className="tituloContainer colorWhite"
@@ -21,14 +21,12 @@ function ReservaEstabelecimentoDois() {
                 placeholder="Nome completo"
                 alt="campo e-mail"
               />
-              <br></br>
               <input
                 className="formularioInput inputGrande"
                 type="text"
                 placeholder="Data de nascimento"
                 alt="campo e-mail"
               />
-              <br></br>
 
               <input
                 className="formularioInput inputGrande"

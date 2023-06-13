@@ -22,10 +22,6 @@ function ReservaEstabelecimentoTres() {
     "M10",
     "M11",
     "M12",
-    "M13",
-    "M14",
-    "M15",
-    "M16",
   ];
   const lugares = ["L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8"];
   const abrirModal = () => {
@@ -50,15 +46,15 @@ function ReservaEstabelecimentoTres() {
     <section>
       <div className="backgroundBody">
         <div className="containerMarromEscuro">
-          <div className="alinhamento-reserva-3">
-            <div className="container-esquerda-reserva-3">
+          <div className="alinhar-lado-a-lado">
+            <div className="container-esquerda">
               <p
                 className="tituloContainer colorWhite"
                 alt="Cadastre seu estabelecimento"
               >
                 Planta baixa do restaurante
               </p>
-              <img src={planta} />
+              <img src={planta} className="planta" />
             </div>
             <div className="container-direita">
               <p className="tituloContainer colorWhite">Detalhes da reserva</p>
