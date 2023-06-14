@@ -1,5 +1,9 @@
 import "./DetalheEstabelecimento.modules.css";
 import ImagemEstabelecimento from "../../assets/backgrounds/bar1.png";
+import img1 from "../../assets/carrosel/Rectangle17.png";
+import img2 from "../../assets/carrosel/Rectangle18.png";
+import img3 from "../../assets/carrosel/Rectangle19.png";
+
 import axios from "axios";
 import {
   useLocation,
@@ -23,7 +27,7 @@ function DetalheEstabelecimento() {
   const [endereco, setEndereco] = useState({});
 
   // const abrirModal = () => {
-    
+
   //   fetch('/posicaoReserva/{idUsuario}')
   //   .then(response => response.json())
   //   .then(data => {
@@ -51,7 +55,14 @@ function DetalheEstabelecimento() {
         <p className="tituloContainer colorWhite" alt="restaurantes da região">
           Conheça nossos parceiros e divirta-se
         </p>
-        <div className="containerCarrossel"></div>
+        <div className="containerCarrossel carrossel-position ">
+          <img src={img1}></img>
+          <img src={img2}></img>
+          <img src={img3}></img>
+          <img src={img2}></img>
+          <img src={img2}></img>
+          <img src={img3}></img>
+        </div>
         <div className="containerCardEstabelecimento">
           <div className="containerDetalhesEstabelecimento">
             <div className="cardImagem">
@@ -105,14 +116,14 @@ function DetalheEstabelecimento() {
                 <p>Entre na fila de espere um lugar só para você.</p>
               </button>
               {modalAberto && (
-                      <div className="modal">
-                        <p>Sua posição na fila é:</p>
-                        <div className="position">
-                          <p>10</p>
-                        </div>
-                        <p>Por favor, aguarde na fila!</p>
-                      </div>
-                    )}
+                <div className="modal">
+                  <p>Sua posição na fila é:</p>
+                  <div className="position">
+                    <p>10</p>
+                  </div>
+                  <p>Por favor, aguarde na fila!</p>
+                </div>
+              )}
             </div>
             <div className="cardAvaliacoes">
               <div className="txtAvaliacoes">
