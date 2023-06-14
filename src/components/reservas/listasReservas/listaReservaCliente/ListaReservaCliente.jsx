@@ -1,78 +1,63 @@
+import { useEffect } from "react";
 import "./ListaReservaCliente.modules.css";
+import {
+  useLocation,
+  useNavigate,
+} from "react-router-dom/dist/umd/react-router-dom.development";
+import CardReservaCliente from "./CardReservaCliente";
+import api from "../../../../api";
+import { useState } from "react";
 
-function ListaReservaCliente(){
-    return(
-        <section>
-            <div className='backgroundBody'>            
-                <div className='containerMarromEscuro'>
-                    <p className='tituloContainer colorWhite' alt='Login'>Confira suas reservas</p>
-                    <div className="containerBtnTopo">
-                        <button className="btnSistema btnMedio" type="submit">Nova reserva</button>
-                    </div>
-                    <div className="containerLista">
-                        <div className="boxLista">
-                                <div className="boxText">
-                                    <b>Dia:</b>
-                                    <p>dd/mm/yyyy</p>
-                                </div>
-                                <div className="boxText">
-                                    <b>Horário:</b>
-                                    <span>00:00 à 00:00</span>
-                                </div>
-                                <div className="boxText">
-                                    <b>Mesa:</b>
-                                    <p>0</p>
-                                </div>
-                                <div className="boxText">
-                                    <b>Quantidade pessoas:</b>
-                                    <p>0</p>
-                                </div>
-                                <div className="boxText">
-                                    <b>Nome estabelecimento:</b>
-                                    <p>Nome</p>
-                                </div>
-                                <div className="boxText">
-                                    <b>Endereço:</b>
-                                    <p>Endereço</p>
-                                </div>
-                            <div className="boxBotao">
-                                <button className="btnSistema btnMedio" type="submit">Cancelar reserva</button>
-                            </div>
-                        </div>
-                        <br /><p className='tituloContainer colorWhite' alt='reservas já concluídas'>Reservas já concluídas</p>
-                        <div className="boxLista">
-                                <div className="boxText">
-                                    <b>Dia:</b>
-                                    <p>dd/mm/yyyy</p>
-                                </div>
-                                <div className="boxText">
-                                    <b>Horário:</b>
-                                    <span>00:00 à 00:00</span>
-                                </div>
-                                <div className="boxText">
-                                    <b>Mesa:</b>
-                                    <p>0</p>
-                                </div>
-                                <div className="boxText">
-                                    <b>Quantidade pessoas:</b>
-                                    <p>0</p>
-                                </div>
-                                <div className="boxText">
-                                    <b>Nome estabelecimento:</b>
-                                    <p>Nome</p>
-                                </div>
-                                <div className="boxText">
-                                    <b>Endereço:</b>
-                                    <p>Endereço</p>
-                                </div>
-                            <div className="boxBotao">
-                                <button className="btnSistema btnMedio" type="submit">Realizar feedback</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
+function ListaReservaCliente() {
+  const { state: usuarioLogado } = useLocation();
+  const navigate = useNavigate();
+
+  const [reservas, setReservas] = useState([]);
+
+  useEffect(() => {
+    api
+      .get(`/reservas/busca-por-usuario/${usuarioLogado.idUsuario}`)
+      .then((response) => {
+        console.log(response);
+        setReservas(response.data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+
+  return (
+    <section>
+      <div className="backgroundBody">
+        <div className="containerMarromEscuro">
+          <p className="tituloContainer colorWhite" alt="Login">
+            Confira suas reservas
+          </p>
+          <div className="containerBtnTopo">
+            <button className="btnSistema btnMedio" type="submit">
+              Nova reserva
+            </button>
+          </div>
+          <div className="containerLista">
+            {reservas.map((reserva, index) => {
+              if (!reserva.checkOut) {
+                return <CardReservaCliente reserva={reserva} key={index} />;
+              }
+            })}
+            <br />
+            <p
+              className="tituloContainer colorWhite"
+              alt="reservas já concluídas"
+            >
+              Reservas já concluídas
+            </p>
+            {reservas.map((reserva, index) => {
+              if (reserva.checkOut) {
+                return <CardReservaCliente reserva={reserva} key={index} />;
+              }
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 export default ListaReservaCliente;

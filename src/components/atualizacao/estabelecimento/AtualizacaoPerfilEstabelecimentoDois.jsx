@@ -48,7 +48,7 @@ function AtualizacaoEstabelecimentoDois() {
       };
 
       api
-        .put(`/estabelecimentos/${usuarioAtualizado.id}`, atualizadoCadastro)
+        .put(`/estabelecimentos/${usuarioAtualizado.idUsuario}`, atualizadoCadastro)
         .then((response) => {
           console.log(response);
           console.log("Estabelecimento atualizado com sucesso");

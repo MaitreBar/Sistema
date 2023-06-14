@@ -25,26 +25,8 @@ function Login() {
             .then((response) => {
               console.log(response);
               console.log("Estabelecimento Entrou");
-              const usuarioLogado = {
-                estabelecimento: true,
-                id: response.data.id,
-                nome: response.data.nome,
-                senha: response.data.senha,
-                logradouro: response.data.logradouro,
-                numero: response.data.numero,
-                complemento: response.data.complemento,
-                cep: response.data.cep,
-                diasDaSemana: response.data.diasDaSemana,
-                faixaDePreco: response.data.faixaDePreco,
-                cnpj: response.data.cnpj,
-                horarioAbertura: response.data.horarioAbertura,
-                horarioFechamento: response.data.horarioFechamento,
-                descricao: response.data.descricao,
-                email: response.data.email,
-                tags: response.data.tags,
-                assentos: response.data.assentos,
-              };
-              navigate("/perfil/estabelecimento", { state: usuarioLogado });
+              const estabelecimentoLogado = response.data;
+              navigate("/perfil/estabelecimento", { state: estabelecimentoLogado });
             })
             .catch((err2) => {
               console.error(err2);

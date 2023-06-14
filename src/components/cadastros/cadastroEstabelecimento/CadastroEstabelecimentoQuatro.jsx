@@ -27,12 +27,6 @@ function CadastroEstabelicimentoQuatro() {
     "Raggae",
     "Trap",
     "Samba",
-    "Raggae",
-    "Trap",
-    "Samba",
-    "Raggae",
-    "Trap",
-    "Samba",
   ]);
 
   const handleTagClick = (tag) => {

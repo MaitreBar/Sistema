@@ -31,7 +31,7 @@ function AtualizacaoPerfilEstabelecimentoUm() {
       inputNovaSenha !== ""
     ) {
       const usuarioAtualizado = {
-        id: usuarioLogado.id,
+        id: usuarioLogado.idUsuario,
         nome: inputNome,
         senha: inputNovaSenha,
         logradouro: inputLogradouro,
@@ -57,7 +57,7 @@ function AtualizacaoPerfilEstabelecimentoUm() {
       (inputNovaSenha === "" || inputNovaSenha === undefined)
     ) {
       const usuarioAtualizado = {
-        id: usuarioLogado.id,
+        id: usuarioLogado.idUsuario,
         nome: inputNome,
         senha: usuarioLogado.senha,
         logradouro: inputLogradouro,

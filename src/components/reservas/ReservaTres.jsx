@@ -30,9 +30,9 @@ function ReservaEstabelecimentoTres() {
     const reserva = {
       dtReserva: propriedade.novaReserva.dtReserva,
       horaReserva: propriedade.novaReserva.horaReserva,
-      checkIn: undefined,
+      checkIn: false,
       dtHoraCheckIn: undefined,
-      checkOut: undefined,
+      checkOut: false,
       dtHoraCheckOut: undefined,
       feedback: undefined,
       estabelecimento: propriedade.dadosEstabelecimento,
@@ -45,11 +45,11 @@ function ReservaEstabelecimentoTres() {
       .then((response) => {
         console.log(response);
         const assento = {
-          id: lugarSelecionado.id,
+          id: lugarSelecionado.idAssento,
           disponivel: false,
         };
         api
-          .put(`/assentos/${lugarSelecionado.id}`, assento)
+          .put(`/assentos/${lugarSelecionado.idAssento}`, assento)
           .then((response) => {
             console.log(response);
             const usuarioLogado = propriedade.usuarioLogado;
@@ -97,7 +97,7 @@ function ReservaEstabelecimentoTres() {
               <span className="colorWhite">
                 Assento selecionado:{" "}
                 {lugarSelecionado !== undefined
-                  ? lugarSelecionado.id
+                  ? lugarSelecionado.idAssento
                   : lugarSelecionado}
               </span>
 
@@ -125,7 +125,7 @@ function ReservaEstabelecimentoTres() {
                                 key={index}
                                 onClick={() => selecionarLugar(lugar)}
                               >
-                                {lugar.id}
+                                {lugar.idAssento}
                               </button>
                             );
                           }

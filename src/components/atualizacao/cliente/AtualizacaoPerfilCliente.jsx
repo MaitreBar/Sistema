@@ -28,7 +28,7 @@ function AtualizacaoPerfilCliente() {
     } else {
       if (inputSenha === usuarioLogado.senha && inputSenha !== inputNovaSenha) {
         const atualizadoCadastro = {
-          id: usuarioLogado.id,
+          id: usuarioLogado.idUsuario,
           nome: inputNomeCompleto,
           email: inputEmail,
           rg: inputRG,
@@ -40,7 +40,7 @@ function AtualizacaoPerfilCliente() {
           tags: usuarioLogado.tags,
         };
 
-        const id = usuarioLogado.id;
+        const id = usuarioLogado.idUsuario;
         
         api
         .put(`/usuarios/${id}`, atualizadoCadastro)
@@ -55,7 +55,7 @@ function AtualizacaoPerfilCliente() {
         
       } else if ((inputSenha === "" || inputSenha === undefined) && (inputNovaSenha === "" || inputNovaSenha === undefined)) {
         const atualizadoCadastro = {
-          id: usuarioLogado.id,
+          id: usuarioLogado.idUsuario,
           nome: inputNomeCompleto,
           email: inputEmail,
           rg: inputRG,

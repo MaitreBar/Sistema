@@ -79,12 +79,18 @@ function CadastroEstabelecimentoTres() {
                 className="formularioInput inputDuploAlinhado"
                 type="time"
                 placeholder="00:00"
+                onChange={(evento) =>
+                  setInputHorarioAbertura(evento.target.value)
+                }
               />
               <p className="colorBlack">ás</p>
               <input
                 className="formularioInput inputDuploAlinhado"
                 type="time"
                 placeholder="00:00"
+                onChange={(evento) =>
+                  setInputHorarioFechamento(evento.target.value)
+                }
               />
             </div>
             <div>
@@ -104,18 +110,24 @@ function CadastroEstabelecimentoTres() {
               className="formularioInput inputGrande"
               type="text"
               placeholder="Nome Estabelecimento"
+              onChange={(evento) => setInputNome(evento.target.value)}
             />
             <br></br>
-            <input
+            <ReactInputMask
               className="formularioInput inputGrande"
               type="text"
               placeholder="CNPJ"
+              mask={"99.999.999/9999-99"}
+              onChange={(evento) => setInputCNPJ(evento.target.value)}
             />
+            <br></br>
             <input
               className="formularioInput inputGrande inputLargo"
               type="text"
-              placeholder="Descriçao do Estabelecimento"
+              placeholder="Insira uma descrição sobre o seu estabelecimento"
+              onChange={(evento) => setInputDescricao(evento.target.value)}
             />
+            <br></br>
             <button type="submit" className=" btnSistema btnMedio">
               Proximo
             </button>
