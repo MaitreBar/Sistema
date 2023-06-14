@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import CardFeedback from "./CardFeedback";
 
 function DetalheEstabelecimento() {
-  const { state: usuarioLogado, state: dadosEstabelecimento } = useLocation();
+  const { state: propriedades } = useLocation();
   const navigate = useNavigate();
 
   const [isModalVisible, setModalVisible] = useState(false);
@@ -38,7 +38,7 @@ function DetalheEstabelecimento() {
 
   useEffect(() => {
     axios
-      .get(`https://viacep.com.br/ws/${dadosEstabelecimento.cep}/json`)
+      .get(`https://viacep.com.br/ws/${propriedades.dadosEstabelecimento.cep}/json`)
       .then((response) => {
         console.log(response.data);
         setEndereco(response.data);
@@ -57,30 +57,30 @@ function DetalheEstabelecimento() {
             <div className="cardImagem">
               <img className="imagem" src={ImagemEstabelecimento} alt="" />
               <div className="txtImagemNome">
-                <b>{dadosEstabelecimento.nome}</b>
+                <b>{propriedades.dadosEstabelecimento.nome}</b>
                 <p>
-                  {endereco.logradouro}, n°{dadosEstabelecimento.numero}
+                  {endereco.logradouro}, n°{propriedades.dadosEstabelecimento.numero}
                 </p>
               </div>
             </div>
             <div className="cardDetalhes">
               <hr />
               <b>Sobre</b>
-              <p>{dadosEstabelecimento.descricao}</p>
+              <p>{propriedades.dadosEstabelecimento.descricao}</p>
               <b>Faixa de preço</b>
               <p>de R$ a R$</p>
               <b>Horário de funcionamento</b>
               <p>
-                Das {dadosEstabelecimento.horarioAbertura} às{" "}
-                {dadosEstabelecimento.horarioFechamento} |{" "}
-                {dadosEstabelecimento.diasDaSemana}
+                Das {propriedades.dadosEstabelecimento.horarioAbertura} às{" "}
+                {propriedades.dadosEstabelecimento.horarioFechamento} |{" "}
+                {propriedades.dadosEstabelecimento.diasDaSemana}
               </p>
             </div>
             <div className="cardMapa">
               <hr />
               <b>Como chegar</b>
               <p>
-                {endereco.logradouro}, n°{dadosEstabelecimento.numero} -{" "}
+                {endereco.logradouro}, n°{propriedades.dadosEstabelecimento.numero} -{" "}
                 {endereco.bairro} - {endereco.localidade}-{endereco.uf} |{" "}
                 {endereco.cep}
               </p>
@@ -90,7 +90,13 @@ function DetalheEstabelecimento() {
           </div>
           <div className="containerDetalhesEstabelecimento">
             <div className="cardBotoes">
-              <button type="submit" className="btnSistema">
+              <button
+                onClick={() => navigate("/reserva/um", {
+                  state: propriedades
+                })}
+                type="button"
+                className="btnSistema"
+              >
                 <b>Reservar agora</b>
                 <p>Reserve sua mesa para uma ocasião especial.</p>
               </button>
@@ -114,7 +120,7 @@ function DetalheEstabelecimento() {
               </div>
               <div className="containerComentarios">
                 <hr />
-                {dadosEstabelecimento.reservas.map((reserva, index) => {
+                {propriedades.dadosEstabelecimento.reservas.map((reserva, index) => {
                   if (
                     reserva.feedback !== undefined &&
                     reserva.feedback !== null &&

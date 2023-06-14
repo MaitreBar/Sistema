@@ -3,10 +3,12 @@ import React, { useEffect } from "react";
 import api from "../../api";
 import { useState } from "react";
 import CardEstabelecimento from "./CardEstabelecimento";
+import { useLocation } from "react-router-dom/dist/umd/react-router-dom.development";
 
 function CatalogoEstabelecimento() {
   const [estabelecimentos, setEstabelecimentos] = useState([]);
-  
+  const { state: usuarioLogado } = useLocation();
+
   useEffect(() => {
     api.get("/estabelecimentos").then((response) => {
       console.log(response.data);
@@ -26,6 +28,7 @@ function CatalogoEstabelecimento() {
               return (
                 <CardEstabelecimento
                   estabelecimento={estabelecimento}
+                  usuario={usuarioLogado}
                   key={index}
                 />
               );

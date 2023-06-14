@@ -71,7 +71,7 @@ function Routers() {
       <Route path="/reserva/tres" element={ReservaTres()} />
       <Route path="/reservas/cliente" element={ListaReservaCliente()} />
       <Route path="/reservas/estabelecimento" element={ListaReservaEstabelecimento()}/>
-      <Route path="/reserva/cliente/feedback" element={Feedback()} />
+      <Route path="/reservas/cliente/feedback" element={Feedback()} />
     </Routes>
   );
 }

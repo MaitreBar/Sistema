@@ -1,40 +1,73 @@
 import "../../index.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Reserva.modules.css";
 import Calendar from "react-calendar";
+import {
+  useLocation,
+  useNavigate,
+} from "react-router-dom/dist/umd/react-router-dom.development";
+import { format } from "date-fns";
 
 function ReservaEstabelecimentoUm() {
+  const { state: propriedades } = useLocation();
+  const navigate = useNavigate();
+
   const [date, setDate] = useState(new Date());
+  const [horario, setHorario] = useState();
 
   const onChange = (date) => {
     setDate(date);
   };
-  const horarios = [
-    "1:00",    "1:30",
-    "2:00",    "2:30",
-    "3:00",    "3:30",
-    "4:00",    "4:30",
-    "5:00",    "5:30",
-    "6:00",    "6:30",
-    "7:00",    "7:30",
-    "8:00",    "8:30",
-    "9:00",    "9:30",
-    "10:00",    "10:30",
-    "11:00",    "11:30",
-    "12:00",    "12:30",
-    "13:00",    "13:30",
-    "14:00",    "14:30",
-    "15:00",    "15:30",
-    "16:00",    "16:30",
-    "17:00",    "17:30",
-    "18:00",    "18:30",
-    "19:00",    "19:30",
-    "20:00",    "20:30",
-    "21:00",    "21:30",
-    "22:00",    "22:30",
-    "23:00",    "23:30",
-    "00:00",    "00:30",
-  ];
+
+  const startTime = propriedades.dadosEstabelecimento.horarioAbertura;
+  const endTime = propriedades.dadosEstabelecimento.horarioFechamento;
+
+  const timeToMinutes = (time) => {
+    const [hours, minutes] = time.split(":").map(Number);
+    return hours * 60 + minutes;
+  };
+
+  const startMinutes = timeToMinutes(startTime);
+  const endMinutes = timeToMinutes(endTime);
+
+  const [timeArray, setTimeArray] = useState([]);
+
+  useEffect(() => {
+    const generateTimeArray = () => {
+      const newArray = [];
+      for (let minutes = startMinutes; minutes <= endMinutes; minutes += 30) {
+        const hours = Math.floor(minutes / 60);
+        const mins = minutes % 60;
+        const time = `${String(hours).padStart(2, "0")}:${String(mins).padStart(
+          2,
+          "0"
+        )}`;
+        newArray.push(time);
+      }
+      setTimeArray(newArray);
+    };
+
+    generateTimeArray();
+  }, [startMinutes, endMinutes]); // Dependências corretamente fornecidas: startMinutes e endMinutes
+
+  function reservar() {
+    const novaReserva = {
+      dtReserva: format(date, "yyyy-MM-dd"),
+      horaReserva: horario,
+      checkIn: false,
+      dtHoraCheckIn: null,
+      checkOut: false,
+      dtHoraCheckOut: null,
+    };
+
+    const propriedade = {
+      usuarioLogado: propriedades.usuarioLogado,
+      dadosEstabelecimento: propriedades.dadosEstabelecimento,
+      novaReserva: novaReserva,
+    };
+
+    navigate("/reserva/dois", { state: propriedade });
+  }
 
   return (
     <section>
@@ -48,15 +81,21 @@ function ReservaEstabelecimentoUm() {
             <div className="containerReservaUm">
               <p className="tituloContainer">Escolha o horário</p>
               <div className="horarios">
-                {horarios.map((horario, index) => (
-                    <button key={index} className="btnSistema btnHorario">
-                      {horario}
-                    </button>
-                  ))}
+                {timeArray.map((horario, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setHorario(horario)}
+                    className="btnSistema btnHorario"
+                  >
+                    {horario}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
-          <button className="btnSistema btnMedio">Proximo</button>
+          <button onClick={() => reservar()} className="btnSistema btnMedio">
+            Próximo
+          </button>
         </div>
       </div>
     </section>

@@ -42,6 +42,7 @@ function Login() {
                 descricao: response.data.descricao,
                 email: response.data.email,
                 tags: response.data.tags,
+                assentos: response.data.assentos,
               };
               navigate("/perfil/estabelecimento", { state: usuarioLogado });
             })

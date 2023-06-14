@@ -32,7 +32,7 @@
   height: 400px;
   justify-items: center;
   display: grid;
-  grid-template-columns: repeat(4, 5fr);
+  grid-template-columns: repeat(5, 5fr);
   overflow-y: scroll;
   border-radius: 5px;
 }

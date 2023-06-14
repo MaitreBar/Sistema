@@ -7,7 +7,6 @@ import {
 
 function CardEstabelecimento(props) {
   const navigate = useNavigate();
-  const { state: usuarioLogado } = useLocation();
 
   function lotacao() {
     let i = 0;
@@ -62,10 +61,12 @@ function CardEstabelecimento(props) {
           className="btnSistema btnMedio"
           type="button"
           onClick={() => {
-            const dadosEstabelecimento = props.estabelecimento;
+            const propriedades = {
+              dadosEstabelecimento: props.estabelecimento,
+              usuarioLogado: props.usuario,
+            };
             navigate("/catalogo/detalhes", {
-              state: usuarioLogado,
-              state: dadosEstabelecimento,
+              state: propriedades,
             });
           }}
         >

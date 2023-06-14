@@ -1,8 +1,37 @@
 import "../../index.css";
 import React, { useState } from "react";
 import "./Reserva.modules.css";
+import {
+  useLocation,
+  useNavigate,
+} from "react-router-dom/dist/umd/react-router-dom.development";
+import ReactInputMask from "react-input-mask";
+import CardPessoa from "./cardPessoa";
 
 function ReservaEstabelecimentoDois() {
+  const { state: propriedade } = useLocation();
+  const navigate = useNavigate();
+
+  const [date, setDate] = useState();
+  const [nome, setNome] = useState();
+  const [cpf, setCpf] = useState();
+
+  const [pessoas, setPessoas] = useState([propriedade.usuarioLogado]);
+
+  function reserva2() {
+    navigate("/reserva/tres", { state: propriedade });
+  }
+
+  function handleAdicionarPessoa() {
+    const novaPessoa = {
+      nome: nome,
+      cpf: cpf,
+      dtNasc: date,
+    };
+
+    setPessoas(...pessoas, novaPessoa);
+  }
+
   return (
     <section>
       <div className="backgroundBody">
@@ -19,23 +48,32 @@ function ReservaEstabelecimentoDois() {
                 className="formularioInput inputGrande"
                 type="text"
                 placeholder="Nome completo"
-                alt="campo e-mail"
+                alt="campo nome completo"
+                onChange={(evento) => setNome(evento.target.value)}
               />
               <input
                 className="formularioInput inputGrande"
-                type="text"
+                type="date"
                 placeholder="Data de nascimento"
-                alt="campo e-mail"
+                alt="campo data de nascimento"
+                onChange={(evento) => setDate(evento.target.value)}
               />
 
-              <input
+              <ReactInputMask
                 className="formularioInput inputGrande"
                 type="text"
-                placeholder="RG/CPF"
-                alt="campo e-mail"
+                placeholder="CPF"
+                alt="campo CPF"
+                mask={"999.999.999-99"}
+                onChange={(evento) => setCpf(evento.target.value)}
               />
               <br></br>
-              <button className="btnSistema btnMedio">Adicionar Pessoa</button>
+              <button
+                onClick={() => handleAdicionarPessoa()}
+                className="btnSistema btnMedio"
+              >
+                Adicionar Pessoa
+              </button>
             </div>
             <div className="container-direita-reserva-2">
               <p
@@ -48,71 +86,18 @@ function ReservaEstabelecimentoDois() {
 
               <div className="container-dados-cadastrados">
                 <div className="alinhamento-dados">
-                  <div className="dados">
-                    <div>
-                      <span className="colorWhite">Nome:</span>
-                      <span className="colorWhite">Luiza Mel</span>
-                    </div>
-                    <div>
-                      <span className="colorWhite">Data de nascimento:</span>
-                    </div>
-                    <div>
-                      <span className="colorWhite">20/05/1990</span>
-                    </div>
-                    <div>
-                      <span className="colorWhite">RG/CPF:</span>
-                      <span className="colorWhite">390.123.657-18</span>
-                    </div>
-                    <div>
-                      <span className="colorWhite">ID:</span>
-                      <span className="colorWhite">03</span>
-                    </div>
-                  </div>
-                  <div className="dados">
-                    <div>
-                      <span className="colorWhite">Nome:</span>
-                      <span className="colorWhite">Luiza Mel</span>
-                    </div>
-                    <div>
-                      <span className="colorWhite">Data de nascimento:</span>
-                    </div>
-                    <div>
-                      <span className="colorWhite">20/05/1990</span>
-                    </div>
-                    <div>
-                      <span className="colorWhite">RG/CPF:</span>
-                      <span className="colorWhite">390.123.657-18</span>
-                    </div>
-                    <div>
-                      <span className="colorWhite">ID:</span>
-                      <span className="colorWhite">03</span>
-                    </div>
-                  </div>
-                  <div className="dados">
-                    <div>
-                      <span className="colorWhite">Nome:</span>
-                      <span className="colorWhite">Luiza Mel</span>
-                    </div>
-                    <div>
-                      <span className="colorWhite">Data de nascimento:</span>
-                    </div>
-                    <div>
-                      <span className="colorWhite">20/05/1990</span>
-                    </div>
-                    <div>
-                      <span className="colorWhite">RG/CPF:</span>
-                      <span className="colorWhite">390.123.657-18</span>
-                    </div>
-                    <div>
-                      <span className="colorWhite">ID:</span>
-                      <span className="colorWhite">03</span>
-                    </div>
-                  </div>
+                  {pessoas.map((pessoa, index) => {
+                    return (
+                      <CardPessoa pessoa={pessoa} index={index} key={index} />
+                    );
+                  })}
                 </div>
               </div>
             </div>
           </div>
-          <button className="btnSistema btnMedio">Confirmar reserva</button>
+          <button onClick={() => reserva2()} className="btnSistema btnMedio">
+            Próximo
+          </button>
         </div>
       </div>
     </section>
