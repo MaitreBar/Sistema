@@ -1,12 +1,13 @@
-import IdentificacaoCadastro from '../../../components/identificacao/IdentificacaoCadastro';
-import NavbarDeslogada from '../../../components/navbar/NavbarDeslogada';
-
-function Index(){
-    return(
-        <div>
-            <NavbarDeslogada></NavbarDeslogada>
-            <IdentificacaoCadastro/>
-        </div>
-    );
+import IdentificacaoCadastro from "../../../components/identificacao/IdentificacaoCadastro";
+import NavbarDeslogada from "../../../components/navbar/NavbarDeslogada";
+import VLibras from "@djpfs/react-vlibras";
+function Index() {
+  return (
+    <div>
+      <VLibras forceOnload={true} />
+      <NavbarDeslogada></NavbarDeslogada>
+      <IdentificacaoCadastro />
+    </div>
+  );
 }
 export default Index;

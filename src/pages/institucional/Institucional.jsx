@@ -4,10 +4,11 @@ import About from "../../components/institucional/about/About";
 import Historia from "../../components/institucional/history/History";
 import Equipe from "../../components/institucional/team/Team";
 import Footer from "../../components/institucional/footer/Footer";
-
+import VLibras from "@djpfs/react-vlibras";
 function Institucional() {
   return (
     <div>
+      <VLibras forceOnload={true} />
       <Navbar />
       <Home />
       <About />
