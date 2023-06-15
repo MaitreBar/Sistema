@@ -67,8 +67,8 @@ function DetalheEstabelecimento() {
               <hr />
               <b>Sobre</b>
               <p>{propriedades.dadosEstabelecimento.descricao}</p>
-              <b>Faixa de preço</b>
-              <p>de R$ a R$</p>
+              {/* <b>Faixa de preço</b> */}
+              {/* <p>de R$ a R$</p> */}
               <b>Horário de funcionamento</b>
               <p>
                 Das {propriedades.dadosEstabelecimento.horarioAbertura} às{" "}

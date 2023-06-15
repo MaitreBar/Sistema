@@ -19,19 +19,19 @@ function CardEstabelecimento(props) {
     });
 
     if ((qtdDisponivel / qtd) * 100 < 50) {
-      return <p style={{ color: "green" }}>Baixa</p>;
+      return <p style={{ color: "black" }}>Cheio</p>;
     } else if (
       (qtdDisponivel / qtd) * 100 >= 50 &&
       (qtdDisponivel / qtd) * 100 < 75
     ) {
-      return <p style={{ color: "yellow" }}>Média</p>;
+      return <p style={{ color: "red" }}>Alta</p>;
     } else if (
       (qtdDisponivel / qtd) * 100 >= 75 &&
       (qtdDisponivel / qtd) * 100 < 100
     ) {
-      return <p style={{ color: "red" }}>Alto</p>;
+      return <p style={{ color: "yellow" }}>Média</p>;
     } else if ((qtdDisponivel / qtd) * 100 >= 100) {
-      return <p style={{ color: "black" }}>Cheio</p>;
+      return <p style={{ color: "green" }}>Baixa</p>;
     }
   }
 

@@ -22,7 +22,7 @@ function ReservaEstabelecimentoTres() {
   };
 
   const selecionarLugar = (lugar) => {
-    setLugarSelecionado(...lugarSelecionado, lugar);
+    setLugarSelecionado(lugar);
     setModalAberto2(false);
   };
 
@@ -97,7 +97,7 @@ function ReservaEstabelecimentoTres() {
               <span className="colorWhite">
                 Assento selecionado:{" "}
                 {lugarSelecionado !== undefined
-                  ? lugarSelecionado.idAssento
+                  ? lugarSelecionado.id
                   : lugarSelecionado}
               </span>
 
@@ -119,13 +119,14 @@ function ReservaEstabelecimentoTres() {
                       <div className="grid-container-lugar">
                         {lugares.map((lugar, index) => {
                           if (lugar.disponivel) {
+                              console.log(lugar)
                             return (
                               <button
                                 className="btnSistema btnModal"
                                 key={index}
                                 onClick={() => selecionarLugar(lugar)}
                               >
-                                {lugar.idAssento}
+                                {lugar.id}
                               </button>
                             );
                           }

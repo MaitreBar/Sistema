@@ -13,10 +13,11 @@ function ListaReservaCliente() {
   const navigate = useNavigate();
 
   const [reservas, setReservas] = useState([]);
+  console.log(usuarioLogado.id)
 
   useEffect(() => {
     api
-      .get(`/reservas/busca-por-usuario/${usuarioLogado.idUsuario}`)
+      .get(`/reservas/busca-por-usuario/${usuarioLogado.id}`)
       .then((response) => {
         console.log(response);
         setReservas(response.data);
@@ -32,7 +33,11 @@ function ListaReservaCliente() {
             Confira suas reservas
           </p>
           <div className="containerBtnTopo">
-            <button className="btnSistema btnMedio" type="submit">
+            <button
+              className="btnSistema btnMedio"
+              onClick={() => navigate("/catalogo", { state: usuarioLogado })}
+              type="button"
+            >
               Nova reserva
             </button>
           </div>
