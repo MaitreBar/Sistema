@@ -12,6 +12,8 @@ function AtualizacaoEstabelecimentoDois() {
   const [selectedButton, setSelectedButton] = useState(null);
   const diasDaSemana = ["SEG", "TER", "QUA", "QUI", "SEX", "SAB", "DOM"];
 
+  console.log(usuarioAtualizado)
+
   const [inputHorarioAbertura, setInputHorarioAbertura] = useState(
     usuarioAtualizado.horarioAbertura
   );
@@ -31,6 +33,7 @@ function AtualizacaoEstabelecimentoDois() {
       inputTags !== undefined
     ) {
       const atualizadoCadastro = {
+        idEstabelecimento: usuarioAtualizado.id,
         nome: usuarioAtualizado.nome,
         senha: usuarioAtualizado.senha,
         logradouro: usuarioAtualizado.logradouro,
@@ -48,7 +51,10 @@ function AtualizacaoEstabelecimentoDois() {
       };
 
       api
-        .put(`/estabelecimentos/${usuarioAtualizado.idUsuario}`, atualizadoCadastro)
+        .put(
+          `/estabelecimentos/${usuarioAtualizado.id}`,
+          atualizadoCadastro
+        )
         .then((response) => {
           console.log(response);
           console.log("Estabelecimento atualizado com sucesso");
@@ -102,6 +108,7 @@ function AtualizacaoEstabelecimentoDois() {
                   key={index}
                   className="btnDia btnSistema"
                   id={selectedButton === index ? "selecionado" : ""}
+                  type="button"
                 >
                   {dia}
                 </button>

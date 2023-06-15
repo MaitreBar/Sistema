@@ -7,6 +7,7 @@ import logo from "../../assets/logos/logo-marrom-escuro.png";
 function NavbarLogada() {
   const navigate = useNavigate();
   const { state: usuarioLogado } = useLocation();
+  const { state: estabelecimentoLogado } = useLocation();
 
   return (
     <div>
@@ -21,8 +22,13 @@ function NavbarLogada() {
           <button
             className="btnSistema btnSemFundo"
             onClick={() => {
-              if (usuarioLogado?.estabelecimento) {
-                navigate("/perfil/estabelecimento", { state: usuarioLogado });
+              if (
+                estabelecimentoLogado !== undefined &&
+                estabelecimentoLogado !== null
+              ) {
+                navigate("/perfil/estabelecimento", {
+                  state: estabelecimentoLogado,
+                });
               } else {
                 navigate("/perfil/cliente", { state: usuarioLogado });
               }
@@ -40,7 +46,7 @@ function NavbarLogada() {
           </button>
           <button
             className="btnSistema"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/", { state: null })}
             alt="botão sair navbar"
           >
             Sair

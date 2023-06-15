@@ -4,7 +4,7 @@ import logo from "../../assets/logos/logo-marrom-escuro.png";
 import { useLocation, useNavigate } from "react-router";
 
 function PerfilEstabelecimento() {
-  const { state: usuarioLogado } = useLocation();
+  const { state: estabelecimentoLogado } = useLocation();
   const navigate = useNavigate();
 
   return (
@@ -19,22 +19,22 @@ function PerfilEstabelecimento() {
                   <img src={logo} alt="logo" />
                 </div>
                 <div className="details">
-                  <b>Nome: {usuarioLogado.nome}</b>
-                  <p>CNPJ: {usuarioLogado.cnpj}</p>
+                  <b>Nome: {estabelecimentoLogado.nome}</b>
+                  <p>CNPJ: {estabelecimentoLogado.cnpj}</p>
                   <p>
-                    Endereço: {usuarioLogado.logradouro}, {usuarioLogado.numero}
+                    Endereço: {estabelecimentoLogado.logradouro}, {estabelecimentoLogado.numero}
                   </p>
-                  <p>Descrição: {usuarioLogado.descricao}</p>
+                  <p>Descrição: {estabelecimentoLogado.descricao}</p>
                   <p>
-                    Horário de funcionamento: {usuarioLogado.horarioAbertura} às{" "}
-                    {usuarioLogado.horarioFechamento}
+                    Horário de funcionamento: {estabelecimentoLogado.horarioAbertura} às{" "}
+                    {estabelecimentoLogado.horarioFechamento}
                   </p>
-                  <p>Tags: {usuarioLogado.tags}</p>
+                  <p>Tags: {estabelecimentoLogado.tags}</p>
                   <div className="botoesDetails">
                     <button
                       onClick={() =>
                         navigate("/perfil/estabelecimento/atualizar/um", {
-                          state: usuarioLogado,
+                          state: estabelecimentoLogado,
                         })
                       }
                       className="btnSistema"
@@ -53,7 +53,7 @@ function PerfilEstabelecimento() {
                   type="submit"
                   onClick={() =>
                     navigate("/reservas/estabelecimento", {
-                      state: usuarioLogado,
+                      state: estabelecimentoLogado,
                     })
                   }
                   className="btnSistema"

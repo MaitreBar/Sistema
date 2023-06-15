@@ -45,11 +45,11 @@ function ReservaEstabelecimentoTres() {
       .then((response) => {
         console.log(response);
         const assento = {
-          id: lugarSelecionado.idAssento,
+          id: lugarSelecionado.map((assento) => assento.idAssento),
           disponivel: false,
         };
         api
-          .put(`/assentos/${lugarSelecionado.idAssento}`, assento)
+          .put(`/assentos/${lugarSelecionado.map((assento) => assento.idAssento)}`, assento)
           .then((response) => {
             console.log(response);
             const usuarioLogado = propriedade.usuarioLogado;

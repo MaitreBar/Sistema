@@ -12,15 +12,15 @@ function ListaReservaCliente() {
   const { state: usuarioLogado } = useLocation();
   const navigate = useNavigate();
 
-  const [reservas, setReservas] = useState([]);
-  console.log(usuarioLogado.id)
+  const [estabelecimentos, setEstabelecimento] = useState([]);
+  console.log(usuarioLogado.id);
 
   useEffect(() => {
     api
       .get(`/reservas/busca-por-usuario/${usuarioLogado.id}`)
       .then((response) => {
         console.log(response);
-        setReservas(response.data);
+        setEstabelecimento(response.data);
       })
       .catch((err) => console.error(err));
   }, []);
@@ -42,10 +42,22 @@ function ListaReservaCliente() {
             </button>
           </div>
           <div className="containerLista">
-            {reservas.map((reserva, index) => {
-              if (!reserva.checkOut) {
-                return <CardReservaCliente reserva={reserva} key={index} />;
-              }
+            {estabelecimentos.map((estabelecimento) => {
+              return estabelecimento.reservas.map((reserva, index) => {
+                if (!reserva.checkOut) {
+                  return usuarioLogado.reservas.map((reservaid) => {
+                    if (reservaid.id === reserva.id) {
+                      return (
+                        <CardReservaCliente
+                          estabelecimento={estabelecimento}
+                          reserva={reserva}
+                          key={index}
+                        />
+                      );
+                    }
+                  });
+                }
+              });
             })}
             <br />
             <p
@@ -54,10 +66,12 @@ function ListaReservaCliente() {
             >
               Reservas já concluídas
             </p>
-            {reservas.map((reserva, index) => {
-              if (reserva.checkOut) {
-                return <CardReservaCliente reserva={reserva} key={index} />;
-              }
+            {estabelecimentos.map((estabelecimento) => {
+              return estabelecimento.reservas.map((reserva, index) => {
+                if (reserva.checkOut) {
+                  return <CardReservaCliente reserva={reserva} key={index} />;
+                }
+              });
             })}
           </div>
         </div>

@@ -65,12 +65,13 @@ function CardReservaCliente(props) {
       </div>
       <div className="boxText">
         <b>Nome estabelecimento:</b>
-        <p>{props.reserva.estabelecimento}</p>
+        <p>{props.estabelecimento.nome}</p>
       </div>
       <div className="boxText">
         <b>Endereço:</b>
         <p>
-          {props.reserva.estabelecimento}, {props.reserva.estabelecimento}
+          {props.estabelecimento.logradouro}, {props.estabelecimento.numero} -{" "}
+          {props.estabelecimento.complemento}
         </p>
       </div>
       <div className="boxBotao">{botao()}</div>

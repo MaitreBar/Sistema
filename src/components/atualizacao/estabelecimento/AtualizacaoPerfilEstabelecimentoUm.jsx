@@ -4,48 +4,52 @@ import InputMask from "react-input-mask";
 import { useState } from "react";
 
 function AtualizacaoPerfilEstabelecimentoUm() {
-  const { state: usuarioLogado } = useLocation();
+  const { state: estabelecimentoLogado } = useLocation();
   const navigate = useNavigate();
 
-  const [inputNome, setInputNome] = useState(usuarioLogado.nome);
-  const [inputCNPJ, setInputCNPJ] = useState(usuarioLogado.cnpj);
-  const [inputCEP, setInputCEP] = useState(usuarioLogado.cep);
+  console.log(estabelecimentoLogado)
+
+  const [inputNome, setInputNome] = useState(estabelecimentoLogado.nome);
+  const [inputCNPJ, setInputCNPJ] = useState(estabelecimentoLogado.cnpj);
+  const [inputCEP, setInputCEP] = useState(estabelecimentoLogado.cep);
   const [inputLogradouro, setInputLogradouro] = useState(
-    usuarioLogado.logradouro
+    estabelecimentoLogado.logradouro
   );
-  const [inputNumero, setInputNumero] = useState(usuarioLogado.numero);
+  const [inputNumero, setInputNumero] = useState(estabelecimentoLogado.numero);
   const [inputComplemento, setInputComplemento] = useState(
-    usuarioLogado.complemento
+    estabelecimentoLogado.complemento
   );
-  const [inputDescricao, setInputDescricao] = useState(usuarioLogado.descricao);
-  const [inputEmail, setInputEmail] = useState(usuarioLogado.email);
-  const [inputSenha, setInputSenha] = useState(usuarioLogado.senha);
+  const [inputDescricao, setInputDescricao] = useState(
+    estabelecimentoLogado.descricao
+  );
+  const [inputEmail, setInputEmail] = useState(estabelecimentoLogado.email);
+  const [inputSenha, setInputSenha] = useState(estabelecimentoLogado.senha);
   const [inputNovaSenha, setInputNovaSenha] = useState();
 
   function atualizarEstabelecimento(evento) {
     evento.preventDefault();
     if (
       inputSenha !== inputNovaSenha &&
-      inputSenha === usuarioLogado.senha &&
+      inputSenha === estabelecimentoLogado.senha &&
       inputNovaSenha !== undefined &&
       inputNovaSenha !== ""
     ) {
       const usuarioAtualizado = {
-        id: usuarioLogado.idUsuario,
+        id: estabelecimentoLogado.idEstabelecimento,
         nome: inputNome,
         senha: inputNovaSenha,
         logradouro: inputLogradouro,
         numero: inputNumero,
         complemento: inputComplemento,
         cep: inputCEP,
-        diasDaSemana: usuarioLogado.diasDaSemana,
-        faixaDePreco: usuarioLogado.faixaDePreco,
+        diasDaSemana: estabelecimentoLogado.diasDaSemana,
+        faixaDePreco: estabelecimentoLogado.faixaDePreco,
         cnpj: inputCNPJ,
-        horarioAbertura: usuarioLogado.horarioAbertura,
-        horarioFechamento: usuarioLogado.horarioFechamento,
+        horarioAbertura: estabelecimentoLogado.horarioAbertura,
+        horarioFechamento: estabelecimentoLogado.horarioFechamento,
         descricao: inputDescricao,
         email: inputEmail,
-        tags: usuarioLogado.tags,
+        tags: estabelecimentoLogado.tags,
       };
 
       console.log("Passou alterando senha");
@@ -53,25 +57,25 @@ function AtualizacaoPerfilEstabelecimentoUm() {
         state: usuarioAtualizado,
       });
     } else if (
-      (inputSenha === "" || inputSenha === usuarioLogado.senha) &&
+      (inputSenha === "" || inputSenha === estabelecimentoLogado.senha) &&
       (inputNovaSenha === "" || inputNovaSenha === undefined)
     ) {
       const usuarioAtualizado = {
-        id: usuarioLogado.idUsuario,
+        id: estabelecimentoLogado.idEstabelecimento,
         nome: inputNome,
-        senha: usuarioLogado.senha,
+        senha: estabelecimentoLogado.senha,
         logradouro: inputLogradouro,
         numero: inputNumero,
         complemento: inputComplemento,
         cep: inputCEP,
-        diasDaSemana: usuarioLogado.diasDaSemana,
-        faixaDePreco: usuarioLogado.faixaDePreco,
+        diasDaSemana: estabelecimentoLogado.diasDaSemana,
+        faixaDePreco: estabelecimentoLogado.faixaDePreco,
         cnpj: inputCNPJ,
-        horarioAbertura: usuarioLogado.horarioAbertura,
-        horarioFechamento: usuarioLogado.horarioFechamento,
+        horarioAbertura: estabelecimentoLogado.horarioAbertura,
+        horarioFechamento: estabelecimentoLogado.horarioFechamento,
         descricao: inputDescricao,
         email: inputEmail,
-        tags: usuarioLogado.tags,
+        tags: estabelecimentoLogado.tags,
       };
 
       console.log("Passou sem senha");
@@ -96,7 +100,7 @@ function AtualizacaoPerfilEstabelecimentoUm() {
             type="text"
             placeholder="Nome estabelecimento"
             className="formularioInput inputGrande"
-            defaultValue={usuarioLogado.nome}
+            defaultValue={estabelecimentoLogado.nome}
           />
           <InputMask
             onChange={(evento) => setInputCNPJ(evento.target.value)}
@@ -104,7 +108,7 @@ function AtualizacaoPerfilEstabelecimentoUm() {
             mask={"99.999.999/9999-99"}
             placeholder="CNPJ"
             className="formularioInput inputGrande"
-            defaultValue={usuarioLogado.cnpj}
+            defaultValue={estabelecimentoLogado.cnpj}
           />
           <InputMask
             onChange={(evento) => setInputCEP(evento.target.value)}
@@ -112,42 +116,42 @@ function AtualizacaoPerfilEstabelecimentoUm() {
             mask={"99999-999"}
             placeholder="CEP"
             className="formularioInput inputGrande"
-            defaultValue={usuarioLogado.cep}
+            defaultValue={estabelecimentoLogado.cep}
           />
           <input
             onChange={(evento) => setInputLogradouro(evento.target.value)}
             type="text"
             placeholder="Logradouro"
             className="formularioInput inputGrande"
-            defaultValue={usuarioLogado.logradouro}
+            defaultValue={estabelecimentoLogado.logradouro}
           />
           <input
             onChange={(evento) => setInputNumero(evento.target.value)}
             type="text"
             placeholder="Número"
             className="formularioInput inputGrande"
-            defaultValue={usuarioLogado.numero}
+            defaultValue={estabelecimentoLogado.numero}
           />
           <input
             onChange={(evento) => setInputComplemento(evento.target.value)}
             type="text"
             placeholder="Complemento"
             className="formularioInput inputGrande"
-            defaultValue={usuarioLogado.complemento}
+            defaultValue={estabelecimentoLogado.complemento}
           />
           <input
             onChange={(evento) => setInputDescricao(evento.target.value)}
             type="text"
             placeholder="Descrição"
             className="formularioInput inputGrande"
-            defaultValue={usuarioLogado.descricao}
+            defaultValue={estabelecimentoLogado.descricao}
           />
           <input
             onChange={(evento) => setInputEmail(evento.target.value)}
             type="email"
             placeholder="E-mail"
             className="formularioInput inputGrande"
-            defaultValue={usuarioLogado.email}
+            defaultValue={estabelecimentoLogado.email}
           />
           <input
             onChange={(evento) => setInputSenha(evento.target.value)}

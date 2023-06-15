@@ -132,6 +132,7 @@ function CadastroEstabelecimentoTres() {
               Proximo
             </button>
             <button
+              type="button"
               onClick={() => {
                 const novoEstabelecimento = {
                   email: novoEstabelecimento2.email,
