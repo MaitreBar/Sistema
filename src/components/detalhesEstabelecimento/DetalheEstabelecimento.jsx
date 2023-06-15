@@ -16,7 +16,7 @@ import api from "../../api";
 function DetalheEstabelecimento() {
   const { state: propriedades } = useLocation();
   const navigate = useNavigate();
-  console.log(propriedades.propriedades.usuarioLogado)
+  console.log(propriedades.usuarioLogado)
 
   const [isModalVisible, setModalVisible] = useState(false);
   const [posicaoNaFila, setPosicaoNaFila] = useState(null);

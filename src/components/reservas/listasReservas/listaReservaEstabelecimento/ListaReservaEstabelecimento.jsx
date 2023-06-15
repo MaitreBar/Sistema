@@ -68,11 +68,16 @@ function ListaReservaEstabelecimento() {
             {usuarios.map((usuario) => {
               return usuario.reservas.map((reserva, index) => {
                 return (
-                  <CardReservaEstabelecimento
-                    usuario={usuario}
-                    reserva={reserva}
-                    key={index}
-                  />
+                  estabelecimentoLogado.reservas.map((reservaid) => {
+                    if (reservaid.id === reserva.id) {
+                      return <CardReservaEstabelecimento
+                        usuario={usuario}
+                        reserva={reserva}
+                        key={index}
+                      />
+                    }
+                  })
+
                 );
               });
             })}

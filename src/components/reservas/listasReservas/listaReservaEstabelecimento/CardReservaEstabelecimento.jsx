@@ -3,7 +3,7 @@ import api from "../../../../api";
 function CardReservaEstabelecimento(props) {
   function checkIn() {
     const reserva = {
-      idReserva: props.reserva.idReserva,
+      idReserva: props.reserva.id,
       dtReserva: props.reserva.dtReserva,
       horaReserva: props.reserva.horaReserva,
       checkIn: true,
@@ -15,14 +15,14 @@ function CardReservaEstabelecimento(props) {
     };
 
     api
-      .put(`/reservas/${props.reserva.idReserva}`, reserva)
+      .put(`/reservas/${props.reserva.id}`, reserva)
       .then((response) => console.log(response))
       .catch((err) => console.error(err));
   }
-  function checkIn() {
+  function checkOut() {
     if (props.reserva.checkIn) {
       const reserva = {
-        idReserva: props.reserva.idReserva,
+        idReserva: props.reserva.id,
         dtReserva: props.reserva.dtReserva,
         horaReserva: props.reserva.horaReserva,
         checkIn: props.reserva.checkIn,
@@ -34,7 +34,7 @@ function CardReservaEstabelecimento(props) {
       };
 
       api
-        .put(`/reservas/${props.reserva.idReserva}`, reserva)
+        .put(`/reservas/${props.reserva.id}`, reserva)
         .then((response) => console.log(response))
         .catch((err) => console.error(err));
     }

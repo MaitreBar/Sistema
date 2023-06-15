@@ -23,14 +23,14 @@ function NavbarLogada() {
             className="btnSistema btnSemFundo"
             onClick={() => {
               if (
-                estabelecimentoLogado !== undefined &&
-                estabelecimentoLogado !== null
+                usuarioLogado.cpf !== undefined ||
+                usuarioLogado.cpf !== null || usuarioLogado.cpf !== ""
               ) {
+                navigate("/perfil/cliente", { state: usuarioLogado });
+              } else {
                 navigate("/perfil/estabelecimento", {
                   state: estabelecimentoLogado,
                 });
-              } else {
-                navigate("/perfil/cliente", { state: usuarioLogado });
               }
             }}
             alt="botão perfil navbar"

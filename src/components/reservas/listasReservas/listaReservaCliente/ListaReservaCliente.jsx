@@ -19,7 +19,7 @@ function ListaReservaCliente() {
     api
       .get(`/reservas/busca-por-usuario/${usuarioLogado.id}`)
       .then((response) => {
-        console.log(response);
+        console.log(response.data);
         setEstabelecimento(response.data);
       })
       .catch((err) => console.error(err));
