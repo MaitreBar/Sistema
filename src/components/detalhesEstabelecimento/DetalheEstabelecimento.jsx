@@ -58,8 +58,8 @@ function DetalheEstabelecimento() {
   //Pegar posição na fila
   useEffect(() => {
     api
-      .get(`/fila/posicao/${propriedades.usuarioLogado.id}`)
-      .then((response) => {
+    .get(`/fila/posicao/${propriedades.usuarioLogado.id}`)
+    .then((response) => {
         setLocalFila(response.data);
         console.log(localFila);
       })
@@ -70,6 +70,17 @@ function DetalheEstabelecimento() {
 
   return (
     <div className="backgroundBody">
+      {modalAberto && (
+        <div className="backgroundModal">
+        <div className="modal">
+          <p>Sua posição na fila é:</p>
+          <div className="position">
+            <p>{localFila}</p>
+          </div>
+          <p>Por favor, aguarde na fila!</p>
+        </div>
+        </div>
+      )}
       <div className="containerMarromEscuro">
         <p className="tituloContainer colorWhite" alt="restaurantes da região">
           Conheça nossos parceiros e divirta-se
@@ -138,15 +149,6 @@ function DetalheEstabelecimento() {
                 <p>Entrar na Fila</p>
                 <p>Entre na fila de espere um lugar só para você.</p>
               </button>
-              {modalAberto && (
-                <div className="modal">
-                  <p>Sua posição na fila é:</p>
-                  <div className="position">
-                    <p>{localFila}</p>
-                  </div>
-                  <p>Por favor, aguarde na fila!</p>
-                </div>
-              )}
             </div>
             <div className="cardAvaliacoes">
               <div className="txtAvaliacoes">
