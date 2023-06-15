@@ -11,10 +11,12 @@ import {
 } from "react-router-dom/dist/umd/react-router-dom.development";
 import { useEffect, useState } from "react";
 import CardFeedback from "./CardFeedback";
+import api from "../../api";
 
 function DetalheEstabelecimento() {
   const { state: propriedades } = useLocation();
   const navigate = useNavigate();
+  console.log(usuarioLogado)
 
   const [isModalVisible, setModalVisible] = useState(false);
   const [posicaoNaFila, setPosicaoNaFila] = useState(null);
@@ -26,20 +28,6 @@ function DetalheEstabelecimento() {
 
   const [endereco, setEndereco] = useState({});
 
-  // const abrirModal = () => {
-
-  //   fetch('/posicaoReserva/{idUsuario}')
-  //   .then(response => response.json())
-  //   .then(data => {
-  //       setPosicaoNaFila(data.posicao);
-  //       setModalVisible(true);
-  //     })
-  //     .catch(error => {
-  //       console.error('Erro ao obter a posição na fila:', error);
-  //     });
-  //     console.warn("Aqui abriu")
-  // }
-
   useEffect(() => {
     axios
       .get(`https://viacep.com.br/ws/${propriedades.dadosEstabelecimento.cep}/json`)
@@ -48,6 +36,37 @@ function DetalheEstabelecimento() {
         setEndereco(response.data);
       });
   }, []);
+
+  const [inputId, setInputId] = useState();
+  const [localFila, setLocalFila] = useState();
+  const [addFila, setAddFila] = useState();
+
+  //Adicionar a fila
+  useEffect(() => 
+  {if(!usuarioLogado.reservas === undefined || !usuarioLogado.reservas === undefined){
+      api
+        .post(`/${inputId}`)
+        .then((response) => {
+          setAddFila(response.data);
+          console.log(addFila);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+  }}, [inputId]);
+
+  //Pegar posição na fila
+  useEffect(() => {
+    api
+      .get(`/posicao/${inputId}`)
+      .then((response) => {
+        setLocalFila(response.data);
+        console.log(localFila);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, [inputId]);
 
   return (
     <div className="backgroundBody">
@@ -96,7 +115,7 @@ function DetalheEstabelecimento() {
                 {endereco.cep}
               </p>
               <div className="mapaEstabelecimento"></div>
-              <button className="btnSistema btnMedio"> Ver mapa</button>
+              <button className="btnSistema btnMedio" onClick={addFila}> Ver mapa</button>
             </div>
           </div>
           <div className="containerDetalhesEstabelecimento">
@@ -111,7 +130,11 @@ function DetalheEstabelecimento() {
                 <b>Reservar agora</b>
                 <p>Reserve sua mesa para uma ocasião especial.</p>
               </button>
-              <button type="submit" className="btnSistema" onClick={abrirModal}>
+              <button
+                type="submit"
+                className="btnSistema"
+                onClick={() => abrirModal()}
+              >
                 <p>Entrar na Fila</p>
                 <p>Entre na fila de espere um lugar só para você.</p>
               </button>
@@ -119,7 +142,7 @@ function DetalheEstabelecimento() {
                 <div className="modal">
                   <p>Sua posição na fila é:</p>
                   <div className="position">
-                    <p>10</p>
+                    <p>{localFila}</p>
                   </div>
                   <p>Por favor, aguarde na fila!</p>
                 </div>

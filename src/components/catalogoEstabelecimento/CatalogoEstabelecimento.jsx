@@ -7,8 +7,9 @@ import { useLocation } from "react-router-dom/dist/umd/react-router-dom.developm
 
 function CatalogoEstabelecimento() {
   const [estabelecimentos, setEstabelecimentos] = useState([]);
-  const { state: usuarioLogado } = useLocation();
-
+  const { state: usuarioLogado } = useLocation()
+  console.log(usuarioLogado)
+  
   useEffect(() => {
     api.get("/estabelecimentos").then((response) => {
       console.log(response.data);
@@ -27,8 +28,8 @@ function CatalogoEstabelecimento() {
             {estabelecimentos.map((estabelecimento, index) => {
               return (
                 <CardEstabelecimento
+                  usuario ={usuarioLogado}
                   estabelecimento={estabelecimento}
-                  usuario={usuarioLogado}
                   key={index}
                 />
               );
