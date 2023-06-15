@@ -43,8 +43,7 @@ function DetalheEstabelecimento() {
 
   //Adicionar a fila
   useEffect(() => 
-  {if(propriedades.usuarioLogado.reservas !== undefined || !propriedades.usuarioLogado.reservas !== undefined){
-  {if(!propriedades.usuarioLogado.reservas === undefined || !propriedades.usuarioLogado.reservas === undefined){
+  {if(propriedades.usuarioLogado.reservas !== undefined || propriedades.usuarioLogado.reservas !== undefined){
       api
         .post(`/fila/${propriedades.usuarioLogado.id}`)
         .then((response) => {
