@@ -1,163 +1,173 @@
-.containerCarrossel{
-    width: 100%;
-    height: auto;
-    padding: 10px 5px;
-    background-color: #BBAAA1;
-    border-radius: 5px;
-    margin-bottom: 20px;
+.containerCarrossel {
+  width: 100%;
+  overflow-x: auto;
+  padding: 10px 5px;
+  background-color: #bbaaa1;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  white-space: nowrap;
 }
 
-  .containerCardEstabelecimento{
-    width: 100%;
-    height: auto;
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-  }
+.carrossel-position {
+  display: flex;
+  flex-wrap: nowrap;
+}
 
-  .containerDetalhesEstabelecimento{
-    width: 48%;
-    height: auto;
-    background-color: #BBAAA1;
-    padding: 5px;
-    display: flex;
+.containerCarrossel img {
+  margin-left: 4%;
+}
+
+.containerCardEstabelecimento {
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.containerDetalhesEstabelecimento {
+  width: 48%;
+  height: auto;
+  background-color: #bbaaa1;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  flex-direction: column;
+}
+
+.cardImagem {
+  width: 100%;
+  height: auto;
+  min-height: 150px;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.imagem {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.txtImagemNome {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.cardDetalhes {
+  width: 100%;
+  height: auto;
+  min-height: 250px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  flex-direction: column;
+}
+
+.cardMapa {
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cardBotoes {
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cardBotoes button {
+  width: 100%;
+  height: auto;
+  min-height: 80px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+}
+
+.cardAvaliacoes {
+  width: 100%;
+  height: auto;
+  min-height: 390px;
+  padding: 5px;
+}
+
+.txtAvaliacoes {
+  width: 100%;
+  height: auto;
+  min-height: 40px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerComentarios {
+  width: 100%;
+  height: 340px;
+  overflow-y: scroll;
+}
+
+.tituloEtapa {
+  margin-bottom: 0;
+}
+
+.avaliacoes {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  display: flex;
+  text-align: left;
+  margin: 5px 0;
+  flex-direction: column;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.avaliacoes p {
+  text-align: justify;
+}
+
+.mapaEstabelecimento {
+  width: 100%;
+  height: auto;
+  height: 70px;
+  background-color: sandybrown;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+
+@media screen and (max-width: 900px) {
+  .containerCardEstabelecimento {
+    flex-direction: column;
+  }
+  .containerDetalhesEstabelecimento {
+    width: 90%;
+    margin: 10px 0;
+  }
+  .cardImagem {
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    flex-direction: column;
   }
-
-  .cardImagem{
-    width: 100%;
-    height: auto;
-    min-height: 150px;
-    padding: 5px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  .txtImagemNome {
+    margin-top: 10px;
   }
-
-  .imagem{
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
 }
-
-.txtImagemNome{
-    text-align: left;
-    margin-left: 10px;
-}
-
-  .cardDetalhes{
-    width: 100%;
-    height: auto;
-    min-height: 250px;
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-    flex-direction: column;
-  }
-
-  .cardMapa{
-    width: 100%;
-    height: auto;
-    min-height: 200px;
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .cardBotoes{
-    width: 100%;
-    height: auto;
-    min-height: 200px;
-    padding: 5px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .cardBotoes button{
-    width: 100%;
-    height: auto;
-    min-height: 80px;
-    padding: 5px 10px;
-    display: flex;
-    justify-content: center;
-    align-items: left;
-    flex-direction: column;
-  }
-
-  .cardAvaliacoes{
-    width: 100%;
-    height: auto;
-    min-height: 390px;
-    padding: 5px;
-  }
-
-  .txtAvaliacoes{
-    width: 100%;
-    height: auto;
-    min-height: 40px;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .containerComentarios{
-    width: 100%;
-    height: 340px;
-    overflow-y: scroll;
-  }
-
-  .tituloEtapa {
-    margin-bottom: 0;
-  }
-
-  .avaliacoes{
-    width: 100%;
-    height: auto;
-    padding: 5px;
-    display: flex;
-    text-align: left;
-    margin: 5px 0;
-    flex-direction: column;
-    border-bottom: 1px solid #eaeaea;
-}
-
-.avaliacoes p{
-    text-align: justify;
-}
-
-.mapaEstabelecimento{
-    width: 100%;
-    height: auto;
-    height: 70px;
-    background-color: sandybrown;
-    border-radius: 5px;
-    margin: 15px 0;
-}
-
-    @media screen and (max-width: 900px) {
-    .containerCardEstabelecimento{
-        flex-direction: column;
-    }
-    .containerDetalhesEstabelecimento{
-        width: 90%;
-        margin: 10px 0;
-    }
-    .cardImagem{
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .txtImagemNome{
-        margin-top: 10px;
-    }
-  }

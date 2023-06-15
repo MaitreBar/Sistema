@@ -1,3 +1,4 @@
+import { type } from "@testing-library/user-event/dist/type";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import api from "../../api";
@@ -29,6 +30,7 @@ function Login() {
               navigate("/perfil/estabelecimento", { state: estabelecimentoLogado });
             })
             .catch((err2) => {
+              alert("usuarios ou senha invalido");
               console.error(err2);
             });
         } else {
