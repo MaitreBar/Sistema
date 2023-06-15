@@ -16,7 +16,7 @@ import api from "../../api";
 function DetalheEstabelecimento() {
   const { state: propriedades } = useLocation();
   const navigate = useNavigate();
-  console.log(usuarioLogado)
+  console.log(propriedades.usuarioLogado)
 
   const [isModalVisible, setModalVisible] = useState(false);
   const [posicaoNaFila, setPosicaoNaFila] = useState(null);
@@ -43,9 +43,9 @@ function DetalheEstabelecimento() {
 
   //Adicionar a fila
   useEffect(() => 
-  {if(!usuarioLogado.reservas === undefined || !usuarioLogado.reservas === undefined){
+  {if(!propriedades.usuarioLogado.reservas === undefined || !propriedades.usuarioLogado.reservas === undefined){
       api
-        .post(`/${inputId}`)
+        .post(`/fila/${propriedades.usuarioLogado.id}`)
         .then((response) => {
           setAddFila(response.data);
           console.log(addFila);
@@ -58,7 +58,7 @@ function DetalheEstabelecimento() {
   //Pegar posição na fila
   useEffect(() => {
     api
-      .get(`/posicao/${inputId}`)
+      .get(`/fila/posicao/${propriedades.usuarioLogado.id}`)
       .then((response) => {
         setLocalFila(response.data);
         console.log(localFila);
