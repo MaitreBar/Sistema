@@ -116,6 +116,7 @@ function CadastroEstabelicimentoDois() {
               Proximo
             </button>
             <button
+              type="button"
               onClick={() => navigate("/cadastro/estabelecimento/um")}
               className="btnSistema btnSemFundo"
             >

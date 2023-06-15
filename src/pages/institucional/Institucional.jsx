@@ -8,7 +8,7 @@ import VLibras from "@djpfs/react-vlibras";
 function Institucional() {
   return (
     <div>
-      <VLibras forceOnload={true} />
+      <VLibras />
       <Navbar />
       <Home />
       <About />

@@ -37,7 +37,6 @@ function CadastroEstabelicimentoUm() {
               type="email"
               placeholder="E-mail"
               alt="campo e-mail"
-              autoFocus
               onChange={(evento) => setInputEmail(evento.target.value)}
             />
             <p className="textoAlerta">Esse e-mail inválido!</p>
@@ -58,7 +57,11 @@ function CadastroEstabelicimentoUm() {
             <button type="submit" className=" btnSistema btnMedio">
               Proximo
             </button>
-            <button type="submit" className="btnSistema btnSemFundo">
+            <button
+              onClick={() => navigate("/institucional")}
+              type="button"
+              className="btnSistema btnSemFundo"
+            >
               Voltar
             </button>
           </form>

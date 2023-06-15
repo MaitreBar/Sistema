@@ -75,11 +75,32 @@ function CadastroEstabelicimentoQuatro() {
         console.log(response);
         console.log("API recebeu os dados corretamente");
         console.log("Novo estabelecimento:", novoEstabelecimento4);
-        navigate("/login");
       })
       .catch((err) => {
         console.error(err);
       });
+
+    let vazio;
+    try {
+      for (let prop in novoEstabelecimento4) {
+        if (novoEstabelecimento4.hasOwnProperty(prop)) {
+          if (
+            novoEstabelecimento4[prop] === null ||
+            novoEstabelecimento4[prop] === undefined ||
+            novoEstabelecimento4[prop] === ""
+          ) {
+            vazio = prop;
+            throw new Error("Erro: O JSON contém um item vazio.");
+          }
+        }
+      }
+      alert("Estabelecimento cadastrado com sucesso!!");
+      navigate("/login");
+    } catch (error) {
+      console.error(error.message);
+      alert(`Por favor verifique o campo ${vazio}`);
+      navigate("/cadastro/estabelecimento/um");
+    }
   }
 
   return (
@@ -130,7 +151,7 @@ function CadastroEstabelicimentoQuatro() {
               Adicionar Tag
             </button>
             <button type="submit" className=" btnSistema btnMedio">
-              Proximo
+              Cadastrar
             </button>
             <button
               type="button"

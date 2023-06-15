@@ -27,10 +27,12 @@ function Login() {
               console.log(response);
               console.log("Estabelecimento Entrou");
               const estabelecimentoLogado = response.data;
-              navigate("/perfil/estabelecimento", { state: estabelecimentoLogado });
+              navigate("/perfil/estabelecimento", {
+                state: estabelecimentoLogado,
+              });
             })
             .catch((err2) => {
-              alert("usuarios ou senha invalido");
+              alert("E-mail ou Senha invalido!!");
               console.error(err2);
             });
         } else {
