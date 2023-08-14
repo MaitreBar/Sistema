@@ -16,7 +16,7 @@ import api from "../../api";
 function DetalheEstabelecimento() {
   const { state: propriedades } = useLocation();
   const navigate = useNavigate();
-  console.log(propriedades.usuarioLogado)
+  console.log(propriedades.usuarioLogado);
 
   const [isModalVisible, setModalVisible] = useState(false);
   const [posicaoNaFila, setPosicaoNaFila] = useState(null);
@@ -30,7 +30,9 @@ function DetalheEstabelecimento() {
 
   useEffect(() => {
     axios
-      .get(`https://viacep.com.br/ws/${propriedades.dadosEstabelecimento.cep}/json`)
+      .get(
+        `https://viacep.com.br/ws/${propriedades.dadosEstabelecimento.cep}/json`
+      )
       .then((response) => {
         console.log(response.data);
         setEndereco(response.data);
@@ -42,8 +44,11 @@ function DetalheEstabelecimento() {
   const [addFila, setAddFila] = useState();
 
   //Adicionar a fila
-  useEffect(() => 
-  {if(propriedades.usuarioLogado.reservas !== undefined || propriedades.usuarioLogado.reservas !== undefined){
+  useEffect(() => {
+    if (
+      propriedades.usuarioLogado.reservas !== undefined ||
+      propriedades.usuarioLogado.reservas !== undefined
+    ) {
       api
         .post(`/fila/${propriedades.usuarioLogado.id}`)
         .then((response) => {
@@ -53,13 +58,14 @@ function DetalheEstabelecimento() {
         .catch((err) => {
           console.error(err);
         });
-  }}, [propriedades.usuarioLogado.id]);
+    }
+  }, [propriedades.usuarioLogado.id]);
 
   //Pegar posição na fila
   useEffect(() => {
     api
-    .get(`/fila/posicao/${propriedades.usuarioLogado.id}`)
-    .then((response) => {
+      .get(`/fila/posicao/${propriedades.usuarioLogado.id}`)
+      .then((response) => {
         setLocalFila(response.data);
         console.log(localFila);
       })
@@ -68,17 +74,23 @@ function DetalheEstabelecimento() {
       });
   });
 
+  function aparecerMapa() {
+    const mapa = document.querySelector(".iframeEstabelecimento");
+    mapa.style.display === "none" ? (mapa.style.display = "block") : (mapa.style.display = "none");
+    mapa.src = `https://www.google.com/maps/embed/v1/place?key=AIzaSyCwag5QKExuGstYr-4YtJ0smgFPeWdFAig&q=${endereco.logradouro},+${endereco.numero},+${endereco.bairro},+${endereco.localidade},+${endereco.uf}`;
+  }
+
   return (
     <div className="backgroundBody">
       {modalAberto && (
         <div className="backgroundModal">
-        <div className="modal">
-          <p>Sua posição na fila é:</p>
-          <div className="position">
-            <p>{localFila}</p>
+          <div className="modal">
+            <p>Sua posição na fila é:</p>
+            <div className="position">
+              <p>{localFila}</p>
+            </div>
+            <p>Por favor, aguarde na fila!</p>
           </div>
-          <p>Por favor, aguarde na fila!</p>
-        </div>
         </div>
       )}
       <div className="containerMarromEscuro">
@@ -100,7 +112,8 @@ function DetalheEstabelecimento() {
               <div className="txtImagemNome">
                 <b>{propriedades.dadosEstabelecimento.nome}</b>
                 <p>
-                  {endereco.logradouro}, n°{propriedades.dadosEstabelecimento.numero}
+                  {endereco.logradouro}, n°
+                  {propriedades.dadosEstabelecimento.numero}
                 </p>
               </div>
             </div>
@@ -121,20 +134,38 @@ function DetalheEstabelecimento() {
               <hr />
               <b>Como chegar</b>
               <p>
-                {endereco.logradouro}, n°{propriedades.dadosEstabelecimento.numero} -{" "}
-                {endereco.bairro} - {endereco.localidade}-{endereco.uf} |{" "}
-                {endereco.cep}
+                {endereco.logradouro}, n°
+                {propriedades.dadosEstabelecimento.numero} - {endereco.bairro} -{" "}
+                {endereco.localidade}-{endereco.uf} | {endereco.cep}
               </p>
-              <div className="mapaEstabelecimento"></div>
-              <button className="btnSistema btnMedio" onClick={addFila}> Ver mapa</button>
+              <div className="mapaEstabelecimento">
+                <button
+                  className="btnSistema btnMedio"
+                  onClick={() => {
+                    aparecerMapa();
+                  }}
+                >
+                  {" "}
+                  Ver mapa
+                </button>
+                <iframe
+                  className="iframeEstabelecimento"
+                  loading="lazy"
+                  allowfullscreen
+                  referrerpolicy="no-referrer-when-downgrade"
+                  src=""
+                ></iframe>
+              </div>
             </div>
           </div>
           <div className="containerDetalhesEstabelecimento">
             <div className="cardBotoes">
               <button
-                onClick={() => navigate("/reserva/um", {
-                  state: propriedades
-                })}
+                onClick={() =>
+                  navigate("/reserva/um", {
+                    state: propriedades,
+                  })
+                }
                 type="button"
                 className="btnSistema"
               >
@@ -156,15 +187,17 @@ function DetalheEstabelecimento() {
               </div>
               <div className="containerComentarios">
                 <hr />
-                {propriedades.dadosEstabelecimento.reservas.map((reserva, index) => {
-                  if (
-                    reserva.feedback !== undefined &&
-                    reserva.feedback !== null &&
-                    reserva.feedback !== ""
-                  ) {
-                    return <CardFeedback reserva={reserva} />;
+                {propriedades.dadosEstabelecimento.reservas.map(
+                  (reserva, index) => {
+                    if (
+                      reserva.feedback !== undefined &&
+                      reserva.feedback !== null &&
+                      reserva.feedback !== ""
+                    ) {
+                      return <CardFeedback reserva={reserva} />;
+                    }
                   }
-                })}
+                )}
               </div>
             </div>
           </div>
